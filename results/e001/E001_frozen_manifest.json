@@ -1,0 +1,25 @@
+{
+ "frozen": "2026-10-20",
+ "note": "E001 discovery evidence frozen; any rerun must reproduce these hashes or be recorded as a new version",
+ "primary_run": {
+  "git_commit": "c034d6bc6adb1b75481c229cfedf655e8d688867",
+  "code_fingerprint": "7a976639b03c1db2",
+  "acceptance_git_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+  "windows_csv_sha256": "d543187a263d2829fa27888148c9ecbe9f725197e72b83b3b22dc86fa688e718"
+ },
+ "exploratory_run": {
+  "git_commit": "5452053023def790ac92202f4bb49dd48182a26c",
+  "code_fingerprint": "f50517b43ecbd0e9"
+ },
+ "test_sessions": "sealed (no outcome computed)",
+ "artifacts_sha256": {
+  "e001_discovery.json": "8e72975c5cfe2947f437ae078ab8371849174bb626580256a84c366b7c6c6907",
+  "e001_discovery_cells.csv": "ce0e49418aa3be2729a9d0575250077e6b2f63abd296ae19bc8d66a942660e17",
+  "e001_discovery_per_session.csv": "24ddab2a2ba8a9b89bc5ca1c448ae53721325254f9f7ed01353213e5ebbd223a",
+  "e001_discovery_sensitivity.csv": "87decde63d7a037c14007554bed0be335e4672e7750a19aecdb6e0cbe6b2c64a",
+  "e001_exploratory.json": "2bfc4589345c0eba056a0fed7d7723bcbc8eed299523e68a95f2d0f667573f3d",
+  "e001_exploratory_paired.csv": "336bc6cf6067cb226366a511082d1f38b2bce4924a858c1f027283c903061411",
+  "e001_exploratory_weighting.csv": "765f9280cbe473091f3615f5d4377a94bd20fb98c60777e57c82fdeb1aa6be8d",
+  "e001_exploratory_decision_time.csv": "5e95d30e541fa4fe8e5e8e5e1a46e6489247a8e6dc741b9f0fa9d8e9cc7281c0"
+ }
+}

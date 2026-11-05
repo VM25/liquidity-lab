@@ -1,0 +1,32 @@
+# Dataset Acceptance Test 001 — fixed before the full run; changes require a recorded reason.
+test_id = "DAT-001"
+venue = "binance-spot"
+symbols = ["BTCUSDT", "ETHUSDT", "SOLUSDT"]
+tardis_days = ["2026-06-01", "2026-07-01", "2026-08-01", "2026-09-01", "2026-10-01"]
+hf_periods = ["2026-06", "2026-07", "2026-08"]
+cross_capture_days = ["2026-07-01", "2026-08-01"]   # days captured by both Tardis and crypto-lob-stream
+
+[extended_days]
+# 001b: history extension for the candidate canonical instrument (same tick/lot/timestamp regime; see acquisition_001b.toml)
+SOLUSDT = ["2025-03-01", "2025-04-01", "2025-05-01", "2025-06-01", "2025-07-01", "2025-08-01", "2025-09-01",
+           "2025-10-01", "2025-11-01", "2025-12-01", "2026-01-01", "2026-02-01", "2026-03-01", "2026-04-01", "2026-05-01"]
+
+[replay]
+grid_band = 0.30        # dense price grid spans the period's traded range +/- 30%
+n_levels = 10           # top-N levels recorded per side
+complete_below = 0      # never infer a complete book side from a short snapshot
+proven_levels = 900     # snapshot proves only its 900 best levels per side (vendor snapshots merge buffered diffs
+                        # into a 1000-level REST response; this margin absorbs up to 100 merged removals/additions)
+
+[rules]
+# A trade not followed by any depth event within this many seconds marks [trade, next event] book-invalid.
+# Binance publishes depth diffs every 100 ms whenever the book changed, and every execution changes a level.
+silence_s = 1.0
+# Windows shorter than this are reported but not counted as usable for counterfactual simulation.
+min_usable_window_s = 600
+# Engine must reproduce the vendor's own derived top of book at least this often (engine-correctness check).
+min_engine_vendor_bbo_agreement = 0.9999
+# Independent-snapshot alignment search window around the snapshot's collector timestamp (seconds before, after).
+snapshot_align_window_s = [3.0, 1.0]
+# crypto-lob-stream's collector delivered some message bursts up to ~2 minutes late; alignment tolerates that lag.
+cross_capture_max_lag_s = 120.0

@@ -1,0 +1,25 @@
+# Dataset Acceptance Test 001 — raw acquisition targets.
+# Every file is fetched once into data/raw/<source>/..., hashed, and recorded in data/raw/manifest.jsonl.
+# Raw files are never edited in place and never committed (rights unresolved; see results/data_acceptance_report.md).
+
+[tardis]
+# Free tier: first day of each month, no API key. https://docs.tardis.dev/downloadable-csv-files/overview
+base_url = "https://datasets.tardis.dev/v1"
+exchange = "binance"                       # Binance spot
+symbols = ["BTCUSDT", "ETHUSDT", "SOLUSDT"]
+dates = ["2026-06-01", "2026-07-01", "2026-08-01", "2026-09-01", "2026-10-01"]
+data_types = ["incremental_book_L2", "trades", "book_snapshot_25", "quotes"]
+
+[hf_lobstream]
+# Community archive captured with crypto-lob-stream. Pinned to an exact commit for reproducibility.
+repo = "Goooddy/crypto-lob-stream"
+revision = "2b8c544ae5b46dd57c6f8807a51965d61ea4b20c"
+include_prefixes = ["snapshots/binance/", "trades/binance/", "depth/binance/"]
+include_docs = ["README.md", "limitations_section.md"]
+
+[binance_vision]
+# Exchange-published trade archive (independent third record of the same trades). https://github.com/binance/binance-public-data
+base_url = "https://data.binance.vision/data/spot/daily/trades"
+symbols = ["BTCUSDT", "ETHUSDT", "SOLUSDT"]
+dates = ["2026-06-01", "2026-07-01", "2026-08-01", "2026-09-01", "2026-10-01",
+         "2026-06-15", "2026-07-15", "2026-08-15"]

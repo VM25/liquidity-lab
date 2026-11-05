@@ -1,0 +1,303 @@
+[
+ {
+  "day": "2025-03-01",
+  "scenarios_frozen": 25,
+  "scenarios_rerun": 25,
+  "matched": 25,
+  "mismatched_columns": [],
+  "first_cap_bind_utc": {
+   "P0 naive regional": "2025-03-01T23:47:45.127025"
+  },
+  "reproduced": true,
+  "provenance": {
+   "git_commit": "f322ed749a707433e652ef99e4874c7ac9b94e85",
+   "git_dirty": false,
+   "code_fingerprint": "b2e6e59a61f29db1",
+   "configs": {
+    "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2"
+   },
+   "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c"
+  }
+ },
+ {
+  "day": "2025-04-01",
+  "scenarios_frozen": 25,
+  "scenarios_rerun": 25,
+  "matched": 25,
+  "mismatched_columns": [],
+  "first_cap_bind_utc": {},
+  "reproduced": true,
+  "provenance": {
+   "git_commit": "f322ed749a707433e652ef99e4874c7ac9b94e85",
+   "git_dirty": false,
+   "code_fingerprint": "b2e6e59a61f29db1",
+   "configs": {
+    "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2"
+   },
+   "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c"
+  }
+ },
+ {
+  "day": "2025-05-01",
+  "scenarios_frozen": 25,
+  "scenarios_rerun": 25,
+  "matched": 25,
+  "mismatched_columns": [],
+  "first_cap_bind_utc": {},
+  "reproduced": true,
+  "provenance": {
+   "git_commit": "f322ed749a707433e652ef99e4874c7ac9b94e85",
+   "git_dirty": false,
+   "code_fingerprint": "b2e6e59a61f29db1",
+   "configs": {
+    "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2"
+   },
+   "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c"
+  }
+ },
+ {
+  "day": "2025-06-01",
+  "scenarios_frozen": 25,
+  "scenarios_rerun": 25,
+  "matched": 25,
+  "mismatched_columns": [],
+  "first_cap_bind_utc": {},
+  "reproduced": true,
+  "provenance": {
+   "git_commit": "f322ed749a707433e652ef99e4874c7ac9b94e85",
+   "git_dirty": false,
+   "code_fingerprint": "b2e6e59a61f29db1",
+   "configs": {
+    "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2"
+   },
+   "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c"
+  }
+ },
+ {
+  "day": "2025-07-01",
+  "scenarios_frozen": 25,
+  "scenarios_rerun": 25,
+  "matched": 25,
+  "mismatched_columns": [],
+  "first_cap_bind_utc": {},
+  "reproduced": true,
+  "provenance": {
+   "git_commit": "f322ed749a707433e652ef99e4874c7ac9b94e85",
+   "git_dirty": false,
+   "code_fingerprint": "b2e6e59a61f29db1",
+   "configs": {
+    "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2"
+   },
+   "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c"
+  }
+ },
+ {
+  "day": "2025-08-01",
+  "scenarios_frozen": 25,
+  "scenarios_rerun": 25,
+  "matched": 25,
+  "mismatched_columns": [],
+  "first_cap_bind_utc": {
+   "P0 optimistic tokyo": "2025-08-01T19:28:20.097527",
+   "P0 optimistic regional": "2025-08-01T17:50:02.918244",
+   "P0 optimistic distant": "2025-08-01T21:14:05.312073",
+   "P0 naive tokyo": "2025-08-01T15:46:46.360636",
+   "P0 naive regional": "2025-08-01T15:26:39.227338",
+   "P0 naive distant": "2025-08-01T18:40:18.473453",
+   "P1 optimistic regional": "2025-08-01T21:03:46.707482",
+   "P1 naive tokyo": "2025-08-01T18:17:08.856807",
+   "P1 naive regional": "2025-08-01T17:35:51.351982",
+   "P1 naive distant": "2025-08-01T19:37:25.412180"
+  },
+  "reproduced": true,
+  "provenance": {
+   "git_commit": "f322ed749a707433e652ef99e4874c7ac9b94e85",
+   "git_dirty": false,
+   "code_fingerprint": "b2e6e59a61f29db1",
+   "configs": {
+    "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2"
+   },
+   "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c"
+  }
+ },
+ {
+  "day": "2025-09-01",
+  "scenarios_frozen": 25,
+  "scenarios_rerun": 25,
+  "matched": 25,
+  "mismatched_columns": [],
+  "first_cap_bind_utc": {
+   "P0 optimistic regional": "2025-09-01T23:08:29.127417",
+   "P0 naive tokyo": "2025-09-01T18:20:49.297499",
+   "P0 naive regional": "2025-09-01T18:11:19.025310",
+   "P0 naive distant": "2025-09-01T22:58:11.112561",
+   "P1 naive tokyo": "2025-09-01T22:28:37.192068",
+   "P1 naive regional": "2025-09-01T21:59:19.127226"
+  },
+  "reproduced": true,
+  "provenance": {
+   "git_commit": "f322ed749a707433e652ef99e4874c7ac9b94e85",
+   "git_dirty": false,
+   "code_fingerprint": "b2e6e59a61f29db1",
+   "configs": {
+    "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2"
+   },
+   "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c"
+  }
+ },
+ {
+  "day": "2025-10-01",
+  "scenarios_frozen": 25,
+  "scenarios_rerun": 25,
+  "matched": 25,
+  "mismatched_columns": [],
+  "first_cap_bind_utc": {},
+  "reproduced": true,
+  "provenance": {
+   "git_commit": "f322ed749a707433e652ef99e4874c7ac9b94e85",
+   "git_dirty": false,
+   "code_fingerprint": "b2e6e59a61f29db1",
+   "configs": {
+    "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2"
+   },
+   "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c"
+  }
+ },
+ {
+  "day": "2025-11-01",
+  "scenarios_frozen": 25,
+  "scenarios_rerun": 25,
+  "matched": 25,
+  "mismatched_columns": [],
+  "first_cap_bind_utc": {},
+  "reproduced": true,
+  "provenance": {
+   "git_commit": "f322ed749a707433e652ef99e4874c7ac9b94e85",
+   "git_dirty": false,
+   "code_fingerprint": "b2e6e59a61f29db1",
+   "configs": {
+    "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2"
+   },
+   "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c"
+  }
+ },
+ {
+  "day": "2025-12-01",
+  "scenarios_frozen": 25,
+  "scenarios_rerun": 25,
+  "matched": 25,
+  "mismatched_columns": [],
+  "first_cap_bind_utc": {
+   "P0 naive tokyo": "2025-12-01T19:03:52.197332",
+   "P0 naive regional": "2025-12-01T20:08:03.225429",
+   "P1 naive tokyo": "2025-12-01T23:19:24.492125",
+   "P1 naive regional": "2025-12-01T23:54:25.827041"
+  },
+  "reproduced": true,
+  "provenance": {
+   "git_commit": "f322ed749a707433e652ef99e4874c7ac9b94e85",
+   "git_dirty": false,
+   "code_fingerprint": "b2e6e59a61f29db1",
+   "configs": {
+    "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2"
+   },
+   "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c"
+  }
+ },
+ {
+  "day": "2026-01-01",
+  "scenarios_frozen": 25,
+  "scenarios_rerun": 25,
+  "matched": 25,
+  "mismatched_columns": [],
+  "first_cap_bind_utc": {},
+  "reproduced": true,
+  "provenance": {
+   "git_commit": "f322ed749a707433e652ef99e4874c7ac9b94e85",
+   "git_dirty": false,
+   "code_fingerprint": "b2e6e59a61f29db1",
+   "configs": {
+    "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2"
+   },
+   "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c"
+  }
+ },
+ {
+  "day": "2026-02-01",
+  "scenarios_frozen": 25,
+  "scenarios_rerun": 25,
+  "matched": 25,
+  "mismatched_columns": [],
+  "first_cap_bind_utc": {
+   "P0 optimistic tokyo": "2026-02-01T23:29:07.198367",
+   "P0 naive tokyo": "2026-02-01T20:02:32.098364",
+   "P0 naive regional": "2026-02-01T21:46:58.627608",
+   "P1 naive tokyo": "2026-02-01T22:31:01.697363",
+   "P1 naive regional": "2026-02-01T23:17:32.925396"
+  },
+  "reproduced": true,
+  "provenance": {
+   "git_commit": "f322ed749a707433e652ef99e4874c7ac9b94e85",
+   "git_dirty": false,
+   "code_fingerprint": "b2e6e59a61f29db1",
+   "configs": {
+    "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2"
+   },
+   "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c"
+  }
+ },
+ {
+  "day": "2026-03-01",
+  "scenarios_frozen": 25,
+  "scenarios_rerun": 25,
+  "matched": 25,
+  "mismatched_columns": [],
+  "first_cap_bind_utc": {},
+  "reproduced": true,
+  "provenance": {
+   "git_commit": "f322ed749a707433e652ef99e4874c7ac9b94e85",
+   "git_dirty": false,
+   "code_fingerprint": "b2e6e59a61f29db1",
+   "configs": {
+    "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2"
+   },
+   "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c"
+  }
+ },
+ {
+  "day": "2026-04-01",
+  "scenarios_frozen": 25,
+  "scenarios_rerun": 25,
+  "matched": 25,
+  "mismatched_columns": [],
+  "first_cap_bind_utc": {},
+  "reproduced": true,
+  "provenance": {
+   "git_commit": "f322ed749a707433e652ef99e4874c7ac9b94e85",
+   "git_dirty": false,
+   "code_fingerprint": "b2e6e59a61f29db1",
+   "configs": {
+    "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2"
+   },
+   "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c"
+  }
+ },
+ {
+  "day": "2026-05-01",
+  "scenarios_frozen": 25,
+  "scenarios_rerun": 25,
+  "matched": 25,
+  "mismatched_columns": [],
+  "first_cap_bind_utc": {},
+  "reproduced": true,
+  "provenance": {
+   "git_commit": "f322ed749a707433e652ef99e4874c7ac9b94e85",
+   "git_dirty": false,
+   "code_fingerprint": "b2e6e59a61f29db1",
+   "configs": {
+    "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2"
+   },
+   "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c"
+  }
+ }
+]

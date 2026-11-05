@@ -1,0 +1,64 @@
+/* Home: one screen that states the paradox and shows it, four short sentences, one invitation. */
+.hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--s-7) var(--s-8); align-items: center; min-height: calc(100vh - 100px); padding-top: var(--s-7); padding-bottom: var(--s-7); }
+.hero-t { display: grid; gap: var(--s-5); justify-items: start; }
+.kicker { font-size: 0.875rem; font-weight: 550; color: var(--ink-3); }
+.hero h1 { font-size: clamp(2.75rem, 5vw, 4.5rem); line-height: 1.04; letter-spacing: -0.02em; font-weight: var(--wt-display); font-stretch: var(--w-display); max-width: 16ch; }
+.hero h1 em { font-style: normal; color: var(--coral-display); }
+.qual { font-size: 1.0625rem; color: var(--ink-3); max-width: 40ch; }
+.cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: var(--s-2); }
+.cta .btn.primary { padding: 14px 24px; font-size: 1rem; }
+.hero-fig { margin: 0; background: var(--paper); border-radius: 24px; padding: var(--s-6) var(--s-6) var(--s-2); }
+.hero-fig details.inspect { margin-top: var(--s-3); }
+
+/* four sentences, one strip */
+.strip { padding-top: var(--s-6); padding-bottom: var(--s-9); }
+.strip ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+.strip a { display: grid; gap: 8px; height: 100%; padding: var(--s-5) var(--s-5) var(--s-5) 0; color: var(--ink-2); text-decoration: none; transition: color 160ms ease; }
+.strip li + li a { padding-left: var(--s-5); border-left: 1px solid var(--line); }
+.strip b { font-size: 0.9375rem; font-weight: 560; color: var(--ink); display: inline-flex; gap: 8px; align-items: baseline; }
+.strip b::after { content: "\2192"; font-weight: 400; color: var(--ink-3); transition: transform 200ms var(--ease-out), color 160ms ease; }
+.strip span { font-size: 1.0625rem; line-height: 1.45; }
+@media (hover: hover) and (pointer: fine) { .strip a:hover { color: var(--ink); } .strip a:hover b::after { transform: translateX(3px); color: var(--coral-deep); } }
+
+/* the invitation */
+.invite { background: var(--navy); color: var(--on-navy); padding: clamp(72px, 12vh, 128px) 0; --halo: var(--navy); }
+.invite-in { display: grid; gap: var(--s-4); justify-items: start; }
+.invite h2 { color: var(--on-navy); font-size: clamp(2.25rem, 4.4vw, 3.5rem); line-height: 1.05; letter-spacing: -0.02em; font-weight: var(--wt-display); font-stretch: var(--w-display); }
+.invite p { color: var(--on-navy-2); font-size: 1.125rem; max-width: 46ch; }
+.invite + .wrap .site-foot { margin-top: 0; border-top: 0; }
+
+@media (max-width: 1100px) {
+  .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; padding-top: var(--s-8); }
+  .hero-fig { max-width: 640px; width: 100%; }
+  .strip ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .strip li:nth-child(3) a { padding-left: 0; border-left: 0; }
+  .strip li:nth-child(n+3) a { border-top: 1px solid var(--line); }
+}
+@media (max-width: 640px) {
+  .hero { padding-top: var(--s-6); gap: var(--s-6); }
+  .hero h1 { font-size: clamp(2.125rem, 9.6vw, 2.75rem); line-height: 1.06; }
+  .hero { gap: var(--s-5); }
+  .hero-t { gap: var(--s-4); }
+  .hero-fig { padding: var(--s-4) var(--s-3) var(--s-1); border-radius: 18px; margin: 0 -6px; }
+  .strip ol { grid-template-columns: minmax(0, 1fr); }
+  .strip li a, .strip li + li a { padding-left: 0; border-left: 0; }
+  .strip li + li a { border-top: 1px solid var(--line); }
+  .cta .btn.primary { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) { .strip b::after { transition: none; } }
+
+/* the one entrance on the site: the claim, its qualification and the way in arrive in reading order, the figure follows,
+   and the coral word settles last. Runs once per visit, only when index.html's head script sets .intro. */
+@keyframes hero-rise { from { opacity: 0; transform: translateY(14px); } }
+@keyframes hero-fig { from { opacity: 0; transform: translateY(18px) scale(0.99); } }
+@keyframes hero-word { from { color: var(--ink); } }
+.intro .hero-t > * { animation: hero-rise 760ms var(--ease-quint) both; }
+.intro .hero-t > :nth-child(1) { animation-delay: 40ms; }
+.intro .hero-t > :nth-child(2) { animation-delay: 110ms; }
+.intro .hero-t > :nth-child(3) { animation-delay: 220ms; }
+.intro .hero-t > :nth-child(4) { animation-delay: 300ms; }
+.intro .hero-fig { animation: hero-fig 900ms var(--ease-quint) 260ms both; }
+.intro .hero h1 em { animation: hero-word 700ms ease 700ms both; }
+
+/* the figure is a working surface: a little lift, not a card */
+.hero-fig { box-shadow: var(--lift-1); }

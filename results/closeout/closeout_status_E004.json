@@ -1,0 +1,13 @@
+{
+ "outputs": {
+  "e004_calibration.csv": "d40eebafbe84e1de1d52e541f6d8c2ba2a5820508a38f2b554c9025beb2dfdbc",
+  "e004_degradation_by_session.csv": "813d043eb30eadb1ee0d99c6cf01cc9239d956f7badf1b49e5c7861a16fae19e",
+  "e004_forecast_by_session.csv": "da11c893aedce37f3841f384bc08f5cb1a345bad20035979cf7d288d966fd206",
+  "e004_invariants.json": "d50853806f89943990b8942526a8850e447a62b8c3baca21eaf3bc09d1fef321",
+  "e004_lambda.csv": "f92605c79114eca5e0f745cbc1805fc8d5ba297eaa7b627aa4c6bf5a04e55308",
+  "e004_policy_gross_by_session.csv": "4aff10ea6a56d0c653ea7db18a81dc6d9cd604ba9da25d556fc8db76861dfe00",
+  "e004_policy_net_by_session.csv": "4c3ec08eeb8b9da2b048e9678af25f47104a39ae20075423e1d5617f9eaa338d",
+  "e004_windows_by_session.csv": "01d9fec19c8f92875e794ca989eebc0c7104925526ed79bef48d81f234ef10ea"
+ },
+ "status": "complete"
+}

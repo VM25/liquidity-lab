@@ -1,0 +1,82 @@
+# E003 — decision-time signals and quoting policies. FROZEN 2026-10-22 after two independent reviews, committed with
+# docs/experiments/E003.md before any E003 forecast or policy outcome was computed on market data.
+# Status: forecast evaluation "observed"; policy outcomes "modeled historical replay".
+# Changes after freezing require a DECISIONS.md entry stating which E003 outcomes had been seen.
+
+[scope]
+symbol = "SOLUSDT"
+session_sets = ["train", "validation"]     # test sessions sealed until the Stage 4 close-out
+validity_layer = "joint"
+min_episode_s = 600
+acceptance_git_commit = "50807dc1219d4d1de8650bcbd8e2768202695748"
+min_training_sessions = 5                  # walk-forward: evaluation sessions are s6..s15
+development_session = "2025-03-01"         # s1: runtime / invariant smoke checks only; never evaluated
+
+[instrument]
+tick = 0.01
+lot = 0.001
+min_notional = 5.0
+max_orders_per_10s = 100
+max_orders_per_day = 200000
+
+[pacing]                                   # per-side token bucket shared by every policy; cancels are free
+rate_per_s = 1.15
+burst = 20
+
+[features]
+# Units: target, ret_10s and rv_60s in bp of mid (log); spread in ticks - 1; windows (t_exch - w, t_exch] in exchange
+# time; trades only if received (Tardis local_us) by the state's receipt time.
+warmup_s = 60                              # no quoting; warm-up rows enter neither fitting nor evaluation
+windows_s = { ofi = [1, 10], flow = [1, 10], ret = 10, rv = 60 }
+decision_delay_us = 30000                  # regional clock for targets and forecast evaluation
+horizons_s = [1, 5, 30]
+primary_horizon_s = 5
+fit_thinning = 5                           # every 5th eligible state row of each training session
+session_weighting = "equal"                # OLS weight 1 / rows of the session
+clip_quantiles = [0.005, 0.995]            # of the training rows (walk-forward)
+regressors_m1 = ["imb1"]
+regressors_m2 = ["imb1", "imb5", "ofi_1s", "ofi_10s", "flow_1s", "flow_10s", "ret_10s", "spread"]
+
+[policies]
+size = 1.0
+inventory_limit = 10.0
+p1_threshold = 3.0
+p4_kappa_ticks_per_unit = 0.25
+p4_vol_gate_multiple = 3.0                 # x median rv_60s of the training rows (walk-forward)
+p4_model = "M2"
+run = ["NT", "P0", "P1", "P3_M1", "P3_M2", "P3_negM2", "P3F", "P4"]
+fee_aware = ["P3F", "P4"]                  # simulated once per fee schedule; the others are fee-free with overlays
+
+[fill_models]
+primary = ["conservative", "intermediate", "optimistic"]
+
+[latency]                                  # E002 brackets (microseconds)
+tokyo    = { entry_us = 2000,   ack_us = 2000,   md_delay_us = 0,      label = "Tokyo-hosted (decisions on 100 ms depth batches)" }
+regional = { entry_us = 30000,  ack_us = 30000,  md_delay_us = 30000,  label = "regional" }
+distant  = { entry_us = 115000, ack_us = 115000, md_delay_us = 115000, label = "distant" }
+
+[fees]
+vip0     = { maker = 0.0010,   taker = 0.0010,  label = "attainable (default)" }
+vip9     = { maker = 0.00011,  taker = 0.00023, label = "hypothetical: >= 4B USD 30-day volume" }
+lp_tier4 = { maker = -0.00008, taker = 0.00023, label = "hypothetical upper bound: >= 1% of exchange maker volume; taker assumed VIP9" }
+default = "vip0"
+
+[analysis]
+primary_scenario = { fill_model = "intermediate", latency = "regional" }
+inference_unit = "session"
+bootstrap_resamples = 10000
+seed = 20261022
+alpha = 0.05
+primary_family_size = 3                    # H1-F, H1-T, H3-risk; Bonferroni intervals reported alongside
+min_defined_sessions = 8                   # of the 10 evaluation sessions
+h1_margin_bp = 0.5                         # delta for D = gross bp(P3[M2]) - gross bp(P3[-M2])
+h1_min_gate_activity = 0.05                # H1-T "not testable: rule inactive" if P3[M2]'s or P3[-M2]'s forecast gate
+                                           # removes a wanted side on < 5% of decisions (session mean, primary, VIP0)
+h3_fee_schedule = "lp_tier4"
+h3_noninferiority_share = 0.10             # delta_h = 0.10 x |mean net per hour of P3F[M2]|
+h3_mechanical_turnover_share = 0.50        # label "risk reduction partly mechanical" below this P4/P3F turnover ratio
+abstention_share = 0.01                    # "not testable: abstention" below this share of P3[M2]'s notional
+participation_policies = ["P0", "P1", "P3_M1", "P3_M2", "P3_negM2", "P3F", "P4"]   # Bonferroni over these (VIP0)
+markout_horizons_s = [1, 5, 30]
+risk_grid_s = 300
+expected_shortfall_q = 0.05                # ES = -(mean of the ceil(0.05 n) smallest 5-minute increments)

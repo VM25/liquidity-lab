@@ -1,0 +1,29 @@
+# Close-out configuration (docs/experiments/FINAL_EVALUATION.md, section 7). DRAFT until the protocol is frozen.
+# The allow-list: inside any frozen function's output, only these leaf keys are written on test. Every interval, `eligible`,
+# label and multiplicity key is excluded by not being listed, so it is discarded in memory.
+
+[allow_list]
+leaf_keys = [
+  # boot() results and table means
+  "mean", "defined", "positive", "n", "sessions", "events",
+  # identifying keys
+  "policy", "fill_model", "latency", "fee_schedule", "model", "horizon_s", "metric", "spec", "cell", "pair", "status",
+  "replicates", "sessions_defined", "mean_p1_minus_p0",
+  # shares, ratios and flags that are not discovery-rule labels
+  "notional", "presence", "fills", "participation_differs", "n_notional_share_in_wu", "withdrawn_share_mean", "P3F", "P4",
+  "not_testable_abstention", "e003_mean", "e002_mean", "range_bp_across_fill_models", "rows",
+  # e003_analysis.DESCRIPTIVE scenario means
+  "valid_hours", "fills_at_price", "fills_through", "fills_crossing", "filled_notional", "turnover_per_hour", "gross_per_hour",
+  "net", "net_per_hour", "net_bp_per_notional", "gross_bp_per_notional", "maker_fees", "taker_fees", "gross_marked",
+  "gross_liq", "edge", "inventory_pnl", "liquidation_slippage", "orders_sent", "orders_rejected", "paced", "orders_per_fill",
+  "quote_presence_bid", "quote_presence_ask", "quote_presence_both", "fill_rate", "paced_time_share", "paced_spells",
+  "max_abs_inventory", "tw_abs_inventory_avg", "max_drawdown", "inc_std", "inc_es", "inc_worst", "own_edge_bp",
+  "own_markout_1s_bp", "own_markout_5s_bp", "own_markout_30s_bp", "liquidation_shortfall", "net_per_hour_over_inc_std",
+  "es_per_k_turnover", "inventory_per_k_turnover", "gate_active_share", "vol_closed_share",
+  # E001 summary keys
+  "analysis", "mean_of_session_means", "event_weighted_mean", "sessions_positive",
+  # forecast means
+  "r2_os", "ic", "hit_rate", "mean_abs_forecast", "share_abs_forecast_ge_half_tick", "share_abs_forecast_ge_half_spread",
+]
+# what strip_intervals keeps of e001.summarize's rows
+e001_keys = ["analysis", "spec", "cell", "metric", "sessions", "events", "mean_of_session_means", "event_weighted_mean", "sessions_positive"]

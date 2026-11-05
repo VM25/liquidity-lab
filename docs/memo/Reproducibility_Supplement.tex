@@ -1,0 +1,122 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\renewcommand{\arraystretch}{1.15}
+\setlength{\emergencystretch}{2em}
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}{-3.25ex\@plus -1ex \@minus -.2ex}{1.5ex \@plus .2ex}{\normalfont\large\bfseries}}
+\long\def\@makecaption#1#2{\vskip\abovecaptionskip\small\textbf{#1.}\ #2\par\vskip\belowcaptionskip}
+\makeatother
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+
+\title{\textbf{The Liquidity Paradox}\\[0.5em]\large Reproducibility supplement}
+\author{Vatsal Maniar}
+\date{November 2026}
+
+\begin{document}
+\maketitle
+
+\noindent This supplement records where each result in the paper comes from: the specification that fixed it, the output that
+holds it, and the version of the project repository in which each was recorded. Version identifiers are abbreviated
+commit identifiers of that repository; file paths are relative to its root. Nothing here changes a result reported in the
+paper.
+
+\section{Data}
+
+The market data are free public samples: Tardis's first-of-month captures of Binance's spot depth and trade streams for
+SOLUSDT, and Binance's public trade archive, which carries complete trade identifiers and the exchange's aggressor flag.
+Raw files are kept locally and are not redistributed. A data-acceptance test, run before any experiment, rebuilds the book
+from snapshot anchors, marks time valid only while the book is provably correct, and writes the accepted windows of every
+session to \path{results/acceptance_001/windows.csv}; its report is \path{results/data_acceptance_report.md} and its
+rules are in \path{configs/acceptance_001.toml}. The splits (ten training, five validation and five test sessions) are
+fixed in \path{configs/research_v1.toml}.
+
+\section{Specifications and outputs}
+
+\begin{table}[H]
+  \centering\footnotesize
+  \caption{Specification and output of every experiment. The specification of each experiment was recorded before any of
+  its outcomes was computed.}
+  \label{tab:map}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.2cm} L L >{\raggedright\arraybackslash}p{1.4cm}}
+    \toprule
+    Stage & Specification & Output & Run \\
+    \midrule
+    Data acceptance & \path{configs/acceptance_001.toml}; \path{docs/DATA_SPEC.md} & \path{results/data_acceptance_report.md}; \path{results/acceptance_001/} & --- \\
+    E001 & \path{configs/research_v1.toml} (fixed 2026-10-14, amended 2026-10-19, before any outcome); exploratory addenda in \path{configs/e001_exploratory_v1.toml} & \path{results/e001/E001_report.md}, \path{e001_discovery.json} & \path{c034d6b} \\
+    E002 & \path{docs/experiments/E002.md}, \path{configs/e002_v1.toml} (fixed 2026-10-20) & \path{results/e002/E002_report.md}, \path{e002_h2.json} & \path{be3fe77} \\
+    E003 & \path{docs/experiments/E003.md}, \path{configs/e003_v1.toml} (fixed 2026-10-22) & \path{results/e003/E003_report.md}, \path{e003_analysis.json} & \path{f322ed7} \\
+    E004 & \path{docs/experiments/E004.md}, \path{configs/e004_v1.toml} (fixed at \path{b967c69}; schedule hash list \path{dfad3d0}) & \path{results/e004/E004_report.md}, \path{e004_analysis.json} & \path{5c9d93e} \\
+    Held-out evaluation & \path{docs/experiments/FINAL_EVALUATION.md}, \path{configs/closeout_v1.toml} (frozen at \path{dcb9b3a}) & \path{results/closeout/CLOSEOUT_report.md}, \path{closeout_analysis.json} & \path{9adee15} \\
+    Paper figures & \path{docs/memo/figures/make_figures.py} & \path{docs/memo/figures/} & --- \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+The figure script reads only the frozen outputs listed above; it recomputes nothing from market data and forms no new
+statistic of the held-out sessions.
+
+\section{Record of the held-out evaluation}
+
+\begin{table}[H]
+  \centering\footnotesize
+  \caption{Sequence of the held-out evaluation. SHA-256 digests identify the exact files used.}
+  \label{tab:holdout-record}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{4.0cm} L >{\raggedright\arraybackslash}p{1.4cm}}
+    \toprule
+    Step & Record & Version \\
+    \midrule
+    Protocol revision approved & \path{docs/experiments/FINAL_EVALUATION.md}, revision 9 & \path{b5c5557} \\
+    Session eligibility fixed & \path{results/closeout_freeze/input_status.json} (SHA-256 \texttt{d8c5cecb\ldots}); all five sessions eligible; authorisation \path{73013b0} & \path{6e9ecaf} \\
+    Protocol frozen & freeze record \path{results/closeout_freeze/freeze_record.json} (SHA-256 \texttt{2e81527f\ldots}), pinning 27 files including the eligibility record & \path{dcb9b3a} \\
+    Freeze approved & approval of the freeze record & \path{2a22967} \\
+    Evaluation authorised & attempt 1, against the freeze record above & \path{6fd7d2b} \\
+    Evaluation started & 2026-11-05, 00:06 UTC & \path{c5aba78} \\
+    Evaluation completed & 2026-11-05, 01:52 UTC; first attempt & \path{2447d2a} \\
+    Results recorded & \path{closeout_analysis.json} (SHA-256 \texttt{f70ef880\ldots}), \path{CLOSEOUT_report.md} (SHA-256 \texttt{8a37f7f9\ldots}) & \path{9adee15} \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+The evaluation's entry point refuses to run again once an evaluation has completed. Its attempts are recorded in
+\path{results/closeout_attempts.jsonl}, to which events are only appended.
+
+\section{Checks before the held-out evaluation}
+
+Before the protocol was frozen, the evaluation code was checked on discovery sessions only. The evidence files are in
+\path{results/closeout_dev/} (recorded at \path{e1c0ea7}, all produced by the evaluated code version \path{1a28aef}):
+\begin{itemize}
+  \item \textbf{Fitted models.} Recomputing the 24 forwarded fitted artifacts in a separate copy of the repository gave
+  byte-identical files; the fitting code reproduced the frozen walk-forward models of E003 and E004 for all ten
+  evaluation sessions.
+  \item \textbf{Reproduction of discovery results.} Run on the discovery sessions, the evaluation code reproduced every
+  frozen discovery table it re-implements: E002 (2 tables), E003 (5, including the fitted models) and E004 (7) byte for
+  byte, and E001 field by field. Across the four experiments, 6{,}979 distinct frozen values matched exactly.
+  \item \textbf{Coverage of compared outputs.} Every one of the 20{,}991 entries of the four frozen discovery result files
+  was classified as compared or explained.
+  \item \textbf{Rehearsal.} The full evaluation path ran to completion on five discovery sessions standing in for the
+  test sessions.
+  \item \textbf{Failure handling.} Nineteen injected failure scenarios and eighteen eligibility-check scenarios behaved as
+  the protocol specifies.
+\end{itemize}
+
+\section{Software}
+
+The replay engine and all experiments run in Python 3.12 with dependencies pinned by \path{uv.lock} and
+\path{.python-version}; the session-eligibility record lists numpy 2.5.4, polars 2.0.0 and pyarrow 26.0.0. Each experiment
+is a module in \path{lpx/research/} (\path{e001.py} to \path{e004.py} with their analysis modules), and the held-out
+evaluation is \path{lpx/research/closeout.py} with \path{closeout_analysis.py}. The figures require matplotlib
+(drawn with version 3.9.4), and the paper is typeset with pdf\LaTeX{} and BibTeX.
+
+\end{document}

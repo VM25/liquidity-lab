@@ -1,0 +1,29 @@
+{
+ "day": "2025-08-01",
+ "scenarios_frozen": 25,
+ "scenarios_rerun": 25,
+ "matched": 25,
+ "mismatched_columns": [],
+ "first_cap_bind_utc": {
+  "P0 optimistic tokyo": "2025-08-01T19:28:20.097527",
+  "P0 optimistic regional": "2025-08-01T17:50:02.918244",
+  "P0 optimistic distant": "2025-08-01T21:14:05.312073",
+  "P0 naive tokyo": "2025-08-01T15:46:46.360636",
+  "P0 naive regional": "2025-08-01T15:26:39.227338",
+  "P0 naive distant": "2025-08-01T18:40:18.473453",
+  "P1 optimistic regional": "2025-08-01T21:03:46.707482",
+  "P1 naive tokyo": "2025-08-01T18:17:08.856807",
+  "P1 naive regional": "2025-08-01T17:35:51.351982",
+  "P1 naive distant": "2025-08-01T19:37:25.412180"
+ },
+ "reproduced": true,
+ "provenance": {
+  "git_commit": "9a9bf2bc05de060c2cc9cdf702e99287f88cbe2c",
+  "git_dirty": true,
+  "code_fingerprint": "fdffb2cbac82a143",
+  "configs": {
+   "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2"
+  },
+  "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c"
+ }
+}

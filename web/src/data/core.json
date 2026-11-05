@@ -1,0 +1,3074 @@
+{
+ "e001": {
+  "family": "one family (rs = es - 2 mo)",
+  "held_sessions": {
+   "mo_1s": {
+    "2026-06-01": 0.8435270042295875,
+    "2026-07-01": 1.1369600067380472,
+    "2026-08-01": 0.6771272696546664,
+    "2026-09-01": 0.8456755192376795,
+    "2026-10-01": 0.7444920087775571
+   },
+   "mo_30s": {
+    "2026-06-01": 1.1078663121423775,
+    "2026-07-01": 1.2285874960347514,
+    "2026-08-01": 0.8472819140580324,
+    "2026-09-01": 0.9842873673018931,
+    "2026-10-01": 0.8636271591216764
+   },
+   "mo_5s": {
+    "2026-06-01": 1.0195443717072104,
+    "2026-07-01": 1.1781915066644253,
+    "2026-08-01": 0.7591259010893012,
+    "2026-09-01": 0.9464325101556826,
+    "2026-10-01": 0.8484357201819056
+   },
+   "rs_1s": {
+    "2026-06-01": -0.2030909714635982,
+    "2026-07-01": -0.7540811285321282,
+    "2026-08-01": 0.3419600782636279,
+    "2026-09-01": -0.37698434402147646,
+    "2026-10-01": -0.39688095074047053
+   },
+   "rs_30s": {
+    "2026-06-01": -0.731769587289178,
+    "2026-07-01": -0.9373361071255367,
+    "2026-08-01": 0.0016507894568959913,
+    "2026-09-01": -0.6542080401499039,
+    "2026-10-01": -0.6351512514287092
+   },
+   "rs_5s": {
+    "2026-06-01": -0.5551257064188438,
+    "2026-07-01": -0.8365441283848845,
+    "2026-08-01": 0.17796281539435818,
+    "2026-09-01": -0.5784983258574827,
+    "2026-10-01": -0.6047683735491677
+   }
+  },
+  "horizons": [],
+  "tally": "6 of 6 confirmed"
+ },
+ "e002": {
+  "fees": [
+   {
+    "by_fill": {
+     "conservative": -11.865107069286603,
+     "intermediate": -11.689596291688696,
+     "optimistic": -11.373767192214933
+    },
+    "cfg_label": "attainable (default)",
+    "hi": -11.373767192214933,
+    "id": "vip0",
+    "label": "VIP0",
+    "lo": -11.865107069286603,
+    "op": "mean over discovery sessions per fill model, as docs/memo/figures/make_figures.py (fig_fees)",
+    "src": "results/e002/e002_net_by_session.csv?policy=P0&latency=tokyo&fee_schedule=vip0#net_bp_per_notional",
+    "status": "attainable"
+   },
+   {
+    "by_fill": {
+     "conservative": -9.363543806888252,
+     "intermediate": -9.188357450121028,
+     "optimistic": -8.873088949085053
+    },
+    "cfg_label": "hypothetical: requires holding BNB",
+    "hi": -8.873088949085053,
+    "id": "vip0_bnb",
+    "label": "VIP0 + BNB",
+    "lo": -9.363543806888252,
+    "op": "mean over discovery sessions per fill model, as docs/memo/figures/make_figures.py (fig_fees)",
+    "src": "results/e002/e002_net_by_session.csv?policy=P0&latency=tokyo&fee_schedule=vip0_bnb#net_bp_per_notional",
+    "status": "hypothetical"
+   },
+   {
+    "by_fill": {
+     "conservative": -2.9602922210996816,
+     "intermediate": -2.7857806596602805,
+     "optimistic": -2.4716782033749025
+    },
+    "cfg_label": "hypothetical: >= 4B USD 30-day volume",
+    "hi": -2.4716782033749025,
+    "id": "vip9",
+    "label": "VIP9",
+    "lo": -2.9602922210996816,
+    "op": "mean over discovery sessions per fill model, as docs/memo/figures/make_figures.py (fig_fees)",
+    "src": "results/e002/e002_net_by_session.csv?policy=P0&latency=tokyo&fee_schedule=vip9#net_bp_per_notional",
+    "status": "hypothetical"
+   },
+   {
+    "by_fill": {
+     "conservative": -1.8602922210996817,
+     "intermediate": -1.6857806596602807,
+     "optimistic": -1.3716782033749022
+    },
+    "cfg_label": "hypothetical: >= 25M USD weekly maker volume; taker assumed VIP9",
+    "hi": -1.3716782033749022,
+    "id": "lp_tier1",
+    "label": "LP tier 1",
+    "lo": -1.8602922210996817,
+    "op": "mean over discovery sessions per fill model, as docs/memo/figures/make_figures.py (fig_fees)",
+    "src": "results/e002/e002_net_by_session.csv?policy=P0&latency=tokyo&fee_schedule=lp_tier1#net_bp_per_notional",
+    "status": "hypothetical"
+   },
+   {
+    "by_fill": {
+     "conservative": -1.0602922210996817,
+     "intermediate": -0.8857806596602806,
+     "optimistic": -0.571678203374902
+    },
+    "cfg_label": "hypothetical upper bound: >= 1% of exchange maker volume; taker assumed VIP9",
+    "hi": -0.571678203374902,
+    "id": "lp_tier4",
+    "label": "LP tier 4",
+    "lo": -1.0602922210996817,
+    "op": "mean over discovery sessions per fill model, as docs/memo/figures/make_figures.py (fig_fees)",
+    "src": "results/e002/e002_net_by_session.csv?policy=P0&latency=tokyo&fee_schedule=lp_tier4#net_bp_per_notional",
+    "status": "hypothetical"
+   }
+  ],
+  "heldout_label": "reported only, no confirmation claim",
+  "matrix": [
+   {
+    "disc": -11.62861257586416,
+    "disc_hi": -11.51476821520196,
+    "disc_lo": -11.74406189884056,
+    "disc_n": 15,
+    "fill": "conservative",
+    "held": -11.636959626035189,
+    "held_n": 5,
+    "latency": "distant",
+    "policy": "P0",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/0",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/0"
+   },
+   {
+    "disc": -11.653145683803832,
+    "disc_hi": -11.543069435158174,
+    "disc_lo": -11.764752573399937,
+    "disc_n": 15,
+    "fill": "conservative",
+    "held": -11.700596505920876,
+    "held_n": 5,
+    "latency": "regional",
+    "policy": "P0",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/1",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/1"
+   },
+   {
+    "disc": -11.865107069286603,
+    "disc_hi": -11.753137110096638,
+    "disc_lo": -11.990698311187133,
+    "disc_n": 15,
+    "fill": "conservative",
+    "held": -11.947357314745776,
+    "held_n": 5,
+    "latency": "tokyo",
+    "policy": "P0",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/2",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/2"
+   },
+   {
+    "disc": -11.44492836103444,
+    "disc_hi": -11.333648784166154,
+    "disc_lo": -11.56113214195147,
+    "disc_n": 15,
+    "fill": "intermediate",
+    "held": -11.441403311682661,
+    "held_n": 5,
+    "latency": "distant",
+    "policy": "P0",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/3",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/3"
+   },
+   {
+    "disc": -11.492402839559528,
+    "disc_hi": -11.38974374758865,
+    "disc_lo": -11.60021408532778,
+    "disc_n": 15,
+    "fill": "intermediate",
+    "held": -11.47546310358933,
+    "held_n": 5,
+    "latency": "regional",
+    "policy": "P0",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/4",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/4"
+   },
+   {
+    "disc": -11.689596291688696,
+    "disc_hi": -11.576736177342129,
+    "disc_lo": -11.815192852190718,
+    "disc_n": 15,
+    "fill": "intermediate",
+    "held": -11.656077268996324,
+    "held_n": 5,
+    "latency": "tokyo",
+    "policy": "P0",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/5",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/5"
+   },
+   {
+    "disc": -11.097457669650305,
+    "disc_hi": -11.00088946757305,
+    "disc_lo": -11.192729754801375,
+    "disc_n": 15,
+    "fill": "optimistic",
+    "held": -10.98977182481754,
+    "held_n": 5,
+    "latency": "distant",
+    "policy": "P0",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/6",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/6"
+   },
+   {
+    "disc": -11.163768198497898,
+    "disc_hi": -11.082799038626764,
+    "disc_lo": -11.243852480928043,
+    "disc_n": 15,
+    "fill": "optimistic",
+    "held": -11.078262183548393,
+    "held_n": 5,
+    "latency": "regional",
+    "policy": "P0",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/7",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/7"
+   },
+   {
+    "disc": -11.373767192214931,
+    "disc_hi": -11.286611653257852,
+    "disc_lo": -11.468546252190375,
+    "disc_n": 15,
+    "fill": "optimistic",
+    "held": -11.27529633908199,
+    "held_n": 5,
+    "latency": "tokyo",
+    "policy": "P0",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/8",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/8"
+   },
+   {
+    "disc": -11.619970326395014,
+    "disc_hi": -11.53122083319026,
+    "disc_lo": -11.710536488253398,
+    "disc_n": 15,
+    "fill": "conservative",
+    "held": -11.675004819894344,
+    "held_n": 5,
+    "latency": "distant",
+    "policy": "P1",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/9",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/9"
+   },
+   {
+    "disc": -11.644727209477209,
+    "disc_hi": -11.559718578307415,
+    "disc_lo": -11.736853846676388,
+    "disc_n": 15,
+    "fill": "conservative",
+    "held": -11.694954546563483,
+    "held_n": 5,
+    "latency": "regional",
+    "policy": "P1",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/10",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/10"
+   },
+   {
+    "disc": -11.793443118918116,
+    "disc_hi": -11.694190670428718,
+    "disc_lo": -11.904970276733085,
+    "disc_n": 15,
+    "fill": "conservative",
+    "held": -11.830508738232954,
+    "held_n": 5,
+    "latency": "tokyo",
+    "policy": "P1",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/11",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/11"
+   },
+   {
+    "disc": -11.423979454734827,
+    "disc_hi": -11.328109245484338,
+    "disc_lo": -11.52282305151472,
+    "disc_n": 15,
+    "fill": "intermediate",
+    "held": -11.429830296433707,
+    "held_n": 5,
+    "latency": "distant",
+    "policy": "P1",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/12",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/12"
+   },
+   {
+    "disc": -11.461281804136453,
+    "disc_hi": -11.369222967366632,
+    "disc_lo": -11.559207189403251,
+    "disc_n": 15,
+    "fill": "intermediate",
+    "held": -11.440181339815448,
+    "held_n": 5,
+    "latency": "regional",
+    "policy": "P1",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/13",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/13"
+   },
+   {
+    "disc": -11.605848963710605,
+    "disc_hi": -11.505604457972792,
+    "disc_lo": -11.718225944106125,
+    "disc_n": 15,
+    "fill": "intermediate",
+    "held": -11.567265322869403,
+    "held_n": 5,
+    "latency": "tokyo",
+    "policy": "P1",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/14",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/14"
+   },
+   {
+    "disc": -11.069737219626827,
+    "disc_hi": -10.97947626973881,
+    "disc_lo": -11.1589644105331,
+    "disc_n": 15,
+    "fill": "optimistic",
+    "held": -11.00354349211538,
+    "held_n": 5,
+    "latency": "distant",
+    "policy": "P1",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/15",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/15"
+   },
+   {
+    "disc": -11.139298155565045,
+    "disc_hi": -11.059465939113338,
+    "disc_lo": -11.2184579406868,
+    "disc_n": 15,
+    "fill": "optimistic",
+    "held": -11.086433004875984,
+    "held_n": 5,
+    "latency": "regional",
+    "policy": "P1",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/16",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/16"
+   },
+   {
+    "disc": -11.303404707913467,
+    "disc_hi": -11.213731297223298,
+    "disc_lo": -11.39499076749654,
+    "disc_n": 15,
+    "fill": "optimistic",
+    "held": -11.240807564793423,
+    "held_n": 5,
+    "latency": "tokyo",
+    "policy": "P1",
+    "src_disc": "results/e002/e002_h2.json#/scenario_table/17",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E002/reported_only/scenario_table/17"
+   }
+  ],
+  "note": "E002 §10.10: the test sessions only report the same tables; no confirmation claim is made.",
+  "status": "modeled historical replay; VIP0 attainable, other schedules hypothetical"
+ },
+ "e003": {
+  "policies_note": "A zero for P3F or P4 is mechanical: they abstained in every discovery session at VIP0. On discovery, preferring a policy to not trading required a 99.29% interval above zero; a positive point estimate on five sessions does not show that.",
+  "policies_status": "modeled historical replay; VIP0 attainable; descriptive, no label or rule",
+  "policies_vip0": [
+   {
+    "code": "P0",
+    "disc_hi": -116.39602025581445,
+    "disc_lo": -284.64440944267074,
+    "disc_net": -197.38699953425294,
+    "disc_pos": 0,
+    "disc_turnover": 171156.611385859,
+    "held_gross": -7.701392778650965,
+    "held_maker": 54.55661699422319,
+    "held_net": -62.330727065166776,
+    "held_sessions": {
+     "2026-06-01": -47.76106231250973,
+     "2026-07-01": -82.97185446049488,
+     "2026-08-01": -13.160995706361282,
+     "2026-09-01": -77.40238026029385,
+     "2026-10-01": -90.35734258617414
+    },
+    "held_taker": 0.07271729229262677,
+    "held_turnover": 54556.61699422319,
+    "held_with_trades": 5,
+    "policy": "P0",
+    "src_disc": "results/e003/e003_analysis.json#/participation/policies/P0",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E003/policies_vip0_descriptive/policies/P0"
+   },
+   {
+    "code": "P1",
+    "disc_hi": -101.01606663862698,
+    "disc_lo": -245.63138900909075,
+    "disc_net": -171.00816553242677,
+    "disc_pos": 0,
+    "disc_turnover": 148485.56182047064,
+    "held_gross": -6.845774007495038,
+    "held_maker": 48.1590350846619,
+    "held_net": -55.03464237387764,
+    "held_sessions": {
+     "2026-06-01": -41.89633701577272,
+     "2026-07-01": -75.21143679691738,
+     "2026-08-01": -11.445063404187131,
+     "2026-09-01": -67.55287229515396,
+     "2026-10-01": -79.06750235735701
+    },
+    "held_taker": 0.02983328172070359,
+    "held_turnover": 48159.0350846619,
+    "held_with_trades": 5,
+    "policy": "P1",
+    "src_disc": "results/e003/e003_analysis.json#/participation/policies/P1",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E003/policies_vip0_descriptive/policies/P1"
+   },
+   {
+    "code": "P3[M1]",
+    "disc_hi": -27.966790597402394,
+    "disc_lo": -55.81281940200246,
+    "disc_net": -42.09640592804574,
+    "disc_pos": 0,
+    "disc_turnover": 35805.1659629927,
+    "held_gross": -3.374704650189264,
+    "held_maker": 21.254887431235964,
+    "held_net": -24.71235835075397,
+    "held_sessions": {
+     "2026-06-01": -19.663750811805805,
+     "2026-07-01": -41.18572199232392,
+     "2026-08-01": -9.700564084239433,
+     "2026-09-01": -28.18764405833766,
+     "2026-10-01": -24.824110807063015
+    },
+    "held_taker": 0.08276626932873835,
+    "held_turnover": 21254.887431235966,
+    "held_with_trades": 5,
+    "policy": "P3_M1",
+    "src_disc": "results/e003/e003_analysis.json#/participation/policies/P3_M1",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E003/policies_vip0_descriptive/policies/P3_M1"
+   },
+   {
+    "code": "P3[M2]",
+    "disc_hi": -28.422585096371847,
+    "disc_lo": -55.74257943682497,
+    "disc_net": -42.31453908414254,
+    "disc_pos": 0,
+    "disc_turnover": 35692.31475489134,
+    "held_gross": -3.328294237230613,
+    "held_maker": 21.37878230334543,
+    "held_net": -24.790663806477188,
+    "held_sessions": {
+     "2026-06-01": -19.723869446553575,
+     "2026-07-01": -41.413276225845046,
+     "2026-08-01": -9.963021569926093,
+     "2026-09-01": -28.194662084921415,
+     "2026-10-01": -24.658489705139797
+    },
+    "held_taker": 0.08358726590114028,
+    "held_turnover": 21378.782303345433,
+    "held_with_trades": 5,
+    "policy": "P3_M2",
+    "src_disc": "results/e003/e003_analysis.json#/participation/policies/P3_M2",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E003/policies_vip0_descriptive/policies/P3_M2"
+   },
+   {
+    "code": "P3[−M2]",
+    "disc_hi": -107.5600392266175,
+    "disc_lo": -266.55338561217695,
+    "disc_net": -183.6180614650879,
+    "disc_pos": 0,
+    "disc_turnover": 158228.2673655242,
+    "held_gross": -7.496906905421737,
+    "held_maker": 51.11056409294847,
+    "held_net": -58.687834619252975,
+    "held_sessions": {
+     "2026-06-01": -46.25492557041062,
+     "2026-07-01": -79.04320609530365,
+     "2026-08-01": -12.834928601851086,
+     "2026-09-01": -72.70124667942048,
+     "2026-10-01": -82.60486614927903
+    },
+    "held_taker": 0.08036362088276054,
+    "held_turnover": 51110.56409294847,
+    "held_with_trades": 5,
+    "policy": "P3_negM2",
+    "src_disc": "results/e003/e003_analysis.json#/participation/policies/P3_negM2",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E003/policies_vip0_descriptive/policies/P3_negM2"
+   },
+   {
+    "code": "P3F",
+    "disc_hi": 0.0,
+    "disc_lo": 0.0,
+    "disc_net": 0.0,
+    "disc_pos": 0,
+    "disc_turnover": 0.0,
+    "held_gross": 0.0,
+    "held_maker": 0.0,
+    "held_net": 0.0,
+    "held_sessions": {
+     "2026-06-01": 0.0,
+     "2026-07-01": 0.0,
+     "2026-08-01": 0.0,
+     "2026-09-01": 0.0,
+     "2026-10-01": 0.0
+    },
+    "held_taker": 0.0,
+    "held_turnover": 0.0,
+    "held_with_trades": 0,
+    "policy": "P3F",
+    "src_disc": "results/e003/e003_analysis.json#/participation/policies/P3F",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E003/policies_vip0_descriptive/policies/P3F"
+   },
+   {
+    "code": "P4",
+    "disc_hi": 0.0,
+    "disc_lo": 0.0,
+    "disc_net": 0.0,
+    "disc_pos": 0,
+    "disc_turnover": 0.0,
+    "held_gross": 0.0,
+    "held_maker": 0.0,
+    "held_net": 0.0,
+    "held_sessions": {
+     "2026-06-01": 0.0,
+     "2026-07-01": 0.0,
+     "2026-08-01": 0.0,
+     "2026-09-01": 0.0,
+     "2026-10-01": 0.0
+    },
+    "held_taker": 0.0,
+    "held_turnover": 0.0,
+    "held_with_trades": 0,
+    "policy": "P4",
+    "src_disc": "results/e003/e003_analysis.json#/participation/policies/P4",
+    "src_held": "results/closeout/closeout_analysis.json#/experiments/E003/policies_vip0_descriptive/policies/P4"
+   }
+  ],
+  "skill": [
+   {
+    "h": 1,
+    "hit": 0.7696540456094481,
+    "ic": 0.2605546649542948,
+    "model": "M1",
+    "r2": 0.03091017844187268,
+    "side": "disc",
+    "smp": "discovery_walkforward",
+    "src": "results/e003/e003_analysis.json#/descriptive/forecasts/0"
+   },
+   {
+    "h": 5,
+    "hit": 0.6462794408272249,
+    "ic": 0.20491103902767754,
+    "model": "M1",
+    "r2": 0.035103198851629366,
+    "side": "disc",
+    "smp": "discovery_walkforward",
+    "src": "results/e003/e003_analysis.json#/descriptive/forecasts/1"
+   },
+   {
+    "h": 30,
+    "hit": 0.5587412130555862,
+    "ic": 0.11390630087612504,
+    "model": "M1",
+    "r2": 0.014146560516036355,
+    "side": "disc",
+    "smp": "discovery_walkforward",
+    "src": "results/e003/e003_analysis.json#/descriptive/forecasts/2"
+   },
+   {
+    "h": 1,
+    "hit": 0.7692288615931512,
+    "ic": 0.26323432623392834,
+    "model": "M2",
+    "r2": 0.040868104322455724,
+    "side": "disc",
+    "smp": "discovery_walkforward",
+    "src": "results/e003/e003_analysis.json#/descriptive/forecasts/3"
+   },
+   {
+    "h": 5,
+    "hit": 0.6463994536902763,
+    "ic": 0.2054560210119687,
+    "model": "M2",
+    "r2": 0.03644788534491028,
+    "side": "disc",
+    "smp": "discovery_walkforward",
+    "src": "results/e003/e003_analysis.json#/descriptive/forecasts/4"
+   },
+   {
+    "h": 30,
+    "hit": 0.5588723149869038,
+    "ic": 0.1136894691138866,
+    "model": "M2",
+    "r2": 0.014106040643452533,
+    "side": "disc",
+    "smp": "discovery_walkforward",
+    "src": "results/e003/e003_analysis.json#/descriptive/forecasts/5"
+   },
+   {
+    "h": 1,
+    "hit": 0.7638605557031484,
+    "ic": 0.2472416749820039,
+    "model": "M1",
+    "r2": 0.050864009388828825,
+    "side": "held",
+    "smp": "heldout",
+    "src": "results/closeout/closeout_analysis.json#/experiments/E003/reported_only/descriptive/forecasts/0"
+   },
+   {
+    "h": 5,
+    "hit": 0.6553695172022804,
+    "ic": 0.2096966885584874,
+    "model": "M1",
+    "r2": 0.04099893298079662,
+    "side": "held",
+    "smp": "heldout",
+    "src": "results/closeout/closeout_analysis.json#/experiments/E003/reported_only/descriptive/forecasts/1"
+   },
+   {
+    "h": 30,
+    "hit": 0.5676238793381165,
+    "ic": 0.11706253319994944,
+    "model": "M1",
+    "r2": 0.014139161109024823,
+    "side": "held",
+    "smp": "heldout",
+    "src": "results/closeout/closeout_analysis.json#/experiments/E003/reported_only/descriptive/forecasts/2"
+   },
+   {
+    "h": 1,
+    "hit": 0.7638636594359406,
+    "ic": 0.2522252254197493,
+    "model": "M2",
+    "r2": 0.056888419522491726,
+    "side": "held",
+    "smp": "heldout",
+    "src": "results/closeout/closeout_analysis.json#/experiments/E003/reported_only/descriptive/forecasts/3"
+   },
+   {
+    "h": 5,
+    "hit": 0.6558831302222655,
+    "ic": 0.2104474058227716,
+    "model": "M2",
+    "r2": 0.04195506918105296,
+    "side": "held",
+    "smp": "heldout",
+    "src": "results/closeout/closeout_analysis.json#/experiments/E003/reported_only/descriptive/forecasts/4"
+   },
+   {
+    "h": 30,
+    "hit": 0.5681960309289666,
+    "ic": 0.11789849711285341,
+    "model": "M2",
+    "r2": 0.01426386324468316,
+    "side": "held",
+    "smp": "heldout",
+    "src": "results/closeout/closeout_analysis.json#/experiments/E003/reported_only/descriptive/forecasts/5"
+   }
+  ],
+  "tally": "3 of 3 confirmed"
+ },
+ "e004": {
+  "h40_label": "harmless",
+  "p0_interpretation": "no material deterioration under the specified threshold",
+  "p3m2_interpretation": "no material deterioration under the specified threshold",
+  "scope_note": "H4-W is a statement about fill selection (E004 §6). Realised U vs P and net per hour are descriptive replications.",
+  "tally": "2 of 2 confirmed",
+  "yview": {
+   "note": "Secondary. Largely implied by the target choice (E004 §0, §9); reported against the projection, not as a discovery.",
+   "row_label": "confirmed (point estimate)",
+   "secondary": true
+  }
+ },
+ "holdout": {
+  "attempt": 1,
+  "fee_attainability": "VIP0 is the only attainable schedule; every other is hypothetical.",
+  "freeze_record_sha256": "2e81527f73c3aff00f7a3c049b3104fe5ac6e211e702b7158480979c2be056ee",
+  "ledger": [
+   {
+    "event": "authorised",
+    "freeze_record_sha256": "2e81527f73c3aff00f7a3c049b3104fe5ac6e211e702b7158480979c2be056ee",
+    "n": 1,
+    "utc": "2026-11-05T00:06:10+00:00"
+   },
+   {
+    "event": "started",
+    "n": 1
+   },
+   {
+    "analysis_sha256": "f70ef88010a85a23ef7bf13c4780ac4794db1af3e294db9f1a4d2aa302dc4939",
+    "event": "completed",
+    "meta_sha256": "5b3ceb476529662011b1638c0bd8ea8fa0e2fdd3e104d58b1beae51e1a05d9b6",
+    "n": 1
+   }
+  ],
+  "not_refutation": "Not confirmed means the test-session point estimate failed the frozen check. With five sessions this is not a refutation of the discovery result and not evidence for the opposite claim.",
+  "relative_tick_bp": {
+   "2026-06-01": 1.2326300573288953,
+   "2026-07-01": 1.3178565431327423,
+   "2026-08-01": 1.3784104217724051,
+   "2026-09-01": 0.981656517292535,
+   "2026-10-01": 0.8468836764887745
+  },
+  "sessions": [
+   "2026-06-01",
+   "2026-07-01",
+   "2026-08-01",
+   "2026-09-01",
+   "2026-10-01"
+  ],
+  "tallies": {
+   "E001": "6 of 6 confirmed",
+   "E002": null,
+   "E003": "3 of 3 confirmed",
+   "E004": "2 of 2 confirmed"
+  },
+  "undefined_sessions": {}
+ },
+ "labels": [
+  {
+   "comment": null,
+   "discovery": {
+    "ids": [
+     "e001.mo_1s.disc"
+    ]
+   },
+   "exp": "E001",
+   "heldout": {
+    "ids": [
+     "e001.mo_1s.held"
+    ]
+   },
+   "id": "E001 mo_1s",
+   "interpretation": null,
+   "kind": "check",
+   "label": "confirmed (point estimate, 5 of 5 defined)",
+   "rule": "mean of session means has the discovery sign, and that sign holds in at least 4 of 5 sessions",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/0",
+   "status": "observed",
+   "title": "mo 1 s"
+  },
+  {
+   "comment": null,
+   "discovery": {
+    "ids": [
+     "e001.mo_5s.disc"
+    ]
+   },
+   "exp": "E001",
+   "heldout": {
+    "ids": [
+     "e001.mo_5s.held"
+    ]
+   },
+   "id": "E001 mo_5s",
+   "interpretation": null,
+   "kind": "check",
+   "label": "confirmed (point estimate, 5 of 5 defined)",
+   "rule": "mean of session means has the discovery sign, and that sign holds in at least 4 of 5 sessions",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/1",
+   "status": "observed",
+   "title": "mo 5 s"
+  },
+  {
+   "comment": null,
+   "discovery": {
+    "ids": [
+     "e001.mo_30s.disc"
+    ]
+   },
+   "exp": "E001",
+   "heldout": {
+    "ids": [
+     "e001.mo_30s.held"
+    ]
+   },
+   "id": "E001 mo_30s",
+   "interpretation": null,
+   "kind": "check",
+   "label": "confirmed (point estimate, 5 of 5 defined)",
+   "rule": "mean of session means has the discovery sign, and that sign holds in at least 4 of 5 sessions",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/2",
+   "status": "observed",
+   "title": "mo 30 s"
+  },
+  {
+   "comment": null,
+   "discovery": {
+    "ids": [
+     "e001.rs_1s.disc"
+    ]
+   },
+   "exp": "E001",
+   "heldout": {
+    "ids": [
+     "e001.rs_1s.held"
+    ]
+   },
+   "id": "E001 rs_1s",
+   "interpretation": null,
+   "kind": "check",
+   "label": "confirmed (point estimate, 5 of 5 defined)",
+   "rule": "mean of session means has the discovery sign, and that sign holds in at least 4 of 5 sessions",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/3",
+   "status": "observed",
+   "title": "rs 1 s"
+  },
+  {
+   "comment": null,
+   "discovery": {
+    "ids": [
+     "e001.rs_5s.disc"
+    ]
+   },
+   "exp": "E001",
+   "heldout": {
+    "ids": [
+     "e001.rs_5s.held"
+    ]
+   },
+   "id": "E001 rs_5s",
+   "interpretation": null,
+   "kind": "check",
+   "label": "confirmed (point estimate, 5 of 5 defined)",
+   "rule": "mean of session means has the discovery sign, and that sign holds in at least 4 of 5 sessions",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/4",
+   "status": "observed",
+   "title": "rs 5 s"
+  },
+  {
+   "comment": null,
+   "discovery": {
+    "ids": [
+     "e001.rs_30s.disc"
+    ]
+   },
+   "exp": "E001",
+   "heldout": {
+    "ids": [
+     "e001.rs_30s.held"
+    ]
+   },
+   "id": "E001 rs_30s",
+   "interpretation": null,
+   "kind": "check",
+   "label": "confirmed (point estimate, 5 of 5 defined)",
+   "rule": "mean of session means has the discovery sign, and that sign holds in at least 4 of 5 sessions",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/5",
+   "status": "observed",
+   "title": "rs 30 s"
+  },
+  {
+   "comment": "sign of a mean only",
+   "discovery": {
+    "ids": [
+     "e003.h1f.disc"
+    ]
+   },
+   "exp": "E003",
+   "heldout": {
+    "ids": [
+     "e003.h1f.held"
+    ]
+   },
+   "id": "H1-F",
+   "interpretation": null,
+   "kind": "check",
+   "label": "confirmed (point estimate, 5 of 5 defined)",
+   "rule": "mean R²_OS (M2, 5 s) > 0 (E003 §10)",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/checks/0",
+   "status": "observed",
+   "title": "H1-F forecast skill"
+  },
+  {
+   "comment": "by a margin of 0.01 bp; weakest label",
+   "discovery": {
+    "ids": [
+     "e003.h1t.disc"
+    ]
+   },
+   "exp": "E003",
+   "heldout": {
+    "ids": [
+     "e003.h1t.held"
+    ]
+   },
+   "id": "H1-T",
+   "interpretation": null,
+   "kind": "check",
+   "label": "confirmed (point estimate, 5 of 5 defined)",
+   "rule": "mean D < 0 (discovery sign) and mean D < δ = 0.5 bp (E003 §10, read literally)",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/checks/1",
+   "status": "modeled historical replay (gross, fee-free)",
+   "title": "H1-T translation"
+  },
+  {
+   "comment": "hypothetical fees; net gain about a fifth of discovery",
+   "discovery": {
+    "ids": [
+     "e003.h3.es_diff.disc",
+     "e003.h3.drawdown_diff.disc",
+     "e003.h3.net_per_hour_diff.disc"
+    ]
+   },
+   "exp": "E003",
+   "heldout": {
+    "ids": [
+     "e003.h3.es_diff.held",
+     "e003.h3.drawdown_diff.held",
+     "e003.h3.net_per_hour_diff.held"
+    ]
+   },
+   "id": "H3",
+   "interpretation": null,
+   "kind": "check",
+   "label": "confirmed (point estimate, 5 of 5 defined)",
+   "rule": "mean ES diff < 0, mean drawdown diff < 0, mean net/h diff > 0 and > -δ_h (E003 §10)",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/checks/2",
+   "status": "modeled historical replay; LP tier 4 fees hypothetical",
+   "title": "H3 risk components (P4 − P3F)"
+  },
+  {
+   "comment": null,
+   "discovery": {
+    "ids": [
+     "e004.p0.disc"
+    ]
+   },
+   "exp": "E004",
+   "heldout": {
+    "ids": [
+     "e004.p0.held"
+    ]
+   },
+   "id": "H4-W[P0]",
+   "interpretation": "no material deterioration under the specified threshold",
+   "kind": "check",
+   "label": "confirmed (point estimate, 5 of 5 defined)",
+   "rule": "mean D_W < 1 bp and D_W < 1 bp in at least 4 of 5 sessions (E004 §8; one-sided)",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/checks/0",
+   "status": "modeled historical replay under stress test",
+   "title": "H4-W[P0] stale-window fill quality"
+  },
+  {
+   "comment": null,
+   "discovery": {
+    "ids": [
+     "e004.p3m2.disc"
+    ]
+   },
+   "exp": "E004",
+   "heldout": {
+    "ids": [
+     "e004.p3m2.held"
+    ]
+   },
+   "id": "H4-W[P3_M2]",
+   "interpretation": "no material deterioration under the specified threshold",
+   "kind": "check",
+   "label": "confirmed (point estimate, 5 of 5 defined)",
+   "rule": "mean D_W < 1 bp and D_W < 1 bp in at least 4 of 5 sessions (E004 §8; one-sided)",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/checks/1",
+   "status": "modeled historical replay under stress test",
+   "title": "H4-W[P3[M2]] stale-window fill quality"
+  },
+  {
+   "comment": "secondary, outside the tally; largely implied by the target choice",
+   "discovery": {
+    "ids": [
+     "e004.yview.D1_S.disc",
+     "e004.yview.D3.disc"
+    ]
+   },
+   "exp": "E004",
+   "heldout": {
+    "ids": [
+     "e004.yview.D1_S.held",
+     "e004.yview.D3.held"
+    ]
+   },
+   "id": "H4-F y_view",
+   "interpretation": null,
+   "kind": "secondary",
+   "label": "confirmed (point estimate, 5 of 5 defined)",
+   "rule": "ρ_A = ΣA / ΣL < 0.25 (E004 §8)",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/h4f_y_view",
+   "status": "stress test",
+   "title": "H4-F y_view, D1-S and D3 (secondary)"
+  },
+  {
+   "comment": "close to mechanical; no confirmatory weight",
+   "discovery": {
+    "ids": [
+     "e001.es.disc"
+    ]
+   },
+   "exp": "E001",
+   "heldout": {
+    "ids": [
+     "e001.es.held"
+    ]
+   },
+   "id": "es",
+   "kind": "reported",
+   "label": "reported only",
+   "status": "observed",
+   "title": "E001 effective spread"
+  },
+  {
+   "comment": "E002 §10.10",
+   "discovery": {
+    "text": "not supported"
+   },
+   "exp": "E002",
+   "heldout": {
+    "ids": [
+     "e002.range.held"
+    ]
+   },
+   "id": "H2",
+   "kind": "reported",
+   "label": "reported only, no confirmation claim",
+   "status": "modeled historical replay",
+   "title": "E002 H2 execution sensitivity"
+  },
+  {
+   "comment": null,
+   "discovery": {
+    "text": "no policy's interval above zero; abstention rational"
+   },
+   "exp": "E003",
+   "heldout": {
+    "text": "every policy that trades lost in 5 of 5 sessions; P3F and P4 abstained"
+   },
+   "id": "participation",
+   "kind": "reported",
+   "label": "descriptive, no label or rule",
+   "status": "modeled historical replay",
+   "title": "E003 participation at VIP0"
+  },
+  {
+   "comment": "reported against the projection",
+   "discovery": {
+    "ids": [
+     "e004.yk.disc"
+    ],
+    "text": "inconclusive"
+   },
+   "exp": "E004",
+   "heldout": {
+    "ids": [
+     "e004.yk.D1_S.held",
+     "e004.yk.D3.held"
+    ]
+   },
+   "id": "H4-F y_k",
+   "kind": "reported",
+   "label": "reported only",
+   "status": "stress test",
+   "title": "E004 H4-F y_k, D1-S and D3"
+  },
+  {
+   "comment": null,
+   "discovery": {
+    "ids": [
+     "e004.h40.disc"
+    ],
+    "text": "harmless"
+   },
+   "exp": "E004",
+   "heldout": {
+    "ids": [
+     "e004.h40.held"
+    ]
+   },
+   "id": "H4-0",
+   "kind": "reported",
+   "label": "reported only",
+   "status": "observed (model trained under stress test)",
+   "title": "E004 H4-0 do-no-harm on clean data"
+  }
+ ],
+ "meta": {
+  "generator": "web/export/build_bundle.py",
+  "note": "Frozen values only. Held-out values come from the frozen close-out analysis and pre-outcome metadata.",
+  "sources": {
+   "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2",
+   "configs/e003_v1.toml": "be2a134bb8fcf9264b44a019ff3143f79ef44a02646f90ada6b192ec48501622",
+   "configs/research_v1.toml": "0e8279c5a830aad571871fc8c562df2f87d70a5a8ec32bf3a40142ed873dc8e0",
+   "docs/memo/FROZEN.sha256": "826848734f64dab8579d37dee7a4062090668bd42f8f84be8c72bfa8519fbef1",
+   "docs/memo/Reproducibility_Supplement.pdf": "f41ced0a8839e2d88a690354c44573969e48e58cf0f351904c37166fb39ff58b",
+   "docs/memo/The_Liquidity_Paradox.pdf": "3782455f5da952011ef465c2ba9a22f17ba02dccea5e91cf41bb50034c2129e1",
+   "docs/memo/The_Liquidity_Paradox.tex": "5c8745093d8a29754a4af57b5e454e1d6cf127815a7935f22941f685403b252e",
+   "results/closeout/closeout_analysis.json": "f70ef88010a85a23ef7bf13c4780ac4794db1af3e294db9f1a4d2aa302dc4939",
+   "results/closeout/closeout_meta.json": "5b3ceb476529662011b1638c0bd8ea8fa0e2fdd3e104d58b1beae51e1a05d9b6",
+   "results/closeout/e001_closeout.json": "b7fae310f1b15aa75f30d433dec5ae8be68fae26fdee9ee6fab864b7785ab189",
+   "results/closeout_attempts.jsonl": "52e67dce711e481acddbe3f0a960ffb9aa51a38c0cedecb4af55c15673d6b5d8",
+   "results/e001/e001_discovery.json": "8e72975c5cfe2947f437ae078ab8371849174bb626580256a84c366b7c6c6907",
+   "results/e002/e002_h2.json": "53800f8b9999bec07f64f5da747d6c70b197136ea5bc30c9b8add35bba2cb923",
+   "results/e002/e002_net_by_session.csv": "23133fb1bf70b803444b371d238099415421b9d93854f1e41be017d805f62909",
+   "results/e003/e003_analysis.json": "0f35231d3c51a7ae320cd50469618d73900bb6e8c5c34da8a6614bf4c3cf68ba",
+   "results/e003/e003_net_by_session.csv": "a467594f0b4c22016ea1b593281d9df733637805df2f7382fbb74c832b7677fd",
+   "results/e004/e004_analysis.json": "15d0a09d48430883a28da47b848cd29592a0aa518361c1eab5d40a365be38dad"
+  }
+ },
+ "paper": {
+  "files": [
+   {
+    "bytes": 517739,
+    "file": "The_Liquidity_Paradox.pdf",
+    "path": "docs/memo/The_Liquidity_Paradox.pdf",
+    "sha256": "3782455f5da952011ef465c2ba9a22f17ba02dccea5e91cf41bb50034c2129e1",
+    "title": "The Liquidity Paradox (paper, PDF)"
+   },
+   {
+    "bytes": 219702,
+    "file": "Reproducibility_Supplement.pdf",
+    "path": "docs/memo/Reproducibility_Supplement.pdf",
+    "sha256": "f41ced0a8839e2d88a690354c44573969e48e58cf0f351904c37166fb39ff58b",
+    "title": "Reproducibility supplement (PDF)"
+   }
+  ],
+  "frozen": [
+   {
+    "path": "docs/memo/The_Liquidity_Paradox.pdf",
+    "sha256": "3782455f5da952011ef465c2ba9a22f17ba02dccea5e91cf41bb50034c2129e1"
+   },
+   {
+    "path": "docs/memo/The_Liquidity_Paradox.tex",
+    "sha256": "5c8745093d8a29754a4af57b5e454e1d6cf127815a7935f22941f685403b252e"
+   },
+   {
+    "path": "docs/memo/references.bib",
+    "sha256": "dbfd0327bf1bc897f354adfc2d02121ccabdb7d7653169b1a5c528855bf30a6b"
+   },
+   {
+    "path": "docs/memo/Reproducibility_Supplement.pdf",
+    "sha256": "f41ced0a8839e2d88a690354c44573969e48e58cf0f351904c37166fb39ff58b"
+   },
+   {
+    "path": "docs/memo/Reproducibility_Supplement.tex",
+    "sha256": "ff98250a351104e8cfd7c0f670a21495d451061099e68e0b3d24d757ad4998ba"
+   },
+   {
+    "path": "docs/memo/figures/fig1_design.pdf",
+    "sha256": "b4f1cfc2e28441ee284f350cccf20113fddd5ddc509bff45856b2f58f516a847"
+   },
+   {
+    "path": "docs/memo/figures/fig2_markouts.pdf",
+    "sha256": "02d532e650ff0af1d1145c831ab65d490c5aa75aca137ee411fc0a879b9739e5"
+   },
+   {
+    "path": "docs/memo/figures/fig3_fees.pdf",
+    "sha256": "ef988111ed764ea1bdb7432b8fc28125ebb4b4257c884a6ef703300684a3d90c"
+   },
+   {
+    "path": "docs/memo/figures/fig4_turnover.pdf",
+    "sha256": "9c64099652d41083eb7bb03e65d30ae3d817e9c2194b53ff4dd51ff8ff4e00c6"
+   },
+   {
+    "path": "docs/memo/figures/fig5_holdout.pdf",
+    "sha256": "7cca58e569d31e30af8b5ffbfc34e24995e3af506ff5f13169b6de91b2e93113"
+   },
+   {
+    "path": "docs/memo/figures/make_figures.py",
+    "sha256": "9ce7c9c9fa2c3e27b4ffbaee0ae794041fb43981258e5a1a54df294b6ab70dc3"
+   }
+  ],
+  "frozen_src": "docs/memo/FROZEN.sha256"
+ },
+ "sample": {
+  "latency_labels": {
+   "distant": "distant",
+   "regional": "regional",
+   "tokyo": "Tokyo-hosted (decisions on 100 ms depth batches)"
+  },
+  "splits": {
+   "test": [
+    "2026-06-01",
+    "2026-07-01",
+    "2026-08-01",
+    "2026-09-01",
+    "2026-10-01"
+   ],
+   "train": [
+    "2025-03-01",
+    "2025-04-01",
+    "2025-05-01",
+    "2025-06-01",
+    "2025-07-01",
+    "2025-08-01",
+    "2025-09-01",
+    "2025-10-01",
+    "2025-11-01",
+    "2025-12-01"
+   ],
+   "validation": [
+    "2026-01-01",
+    "2026-02-01",
+    "2026-03-01",
+    "2026-04-01",
+    "2026-05-01"
+   ]
+  },
+  "splits_src": "configs/research_v1.toml#/splits",
+  "walkforward": [
+   "2025-08-01",
+   "2025-09-01",
+   "2025-10-01",
+   "2025-11-01",
+   "2025-12-01",
+   "2026-01-01",
+   "2026-02-01",
+   "2026-03-01",
+   "2026-04-01",
+   "2026-05-01"
+  ]
+ },
+ "values": {
+  "e001.es.disc": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/0/mean_of_session_means",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.2756880791802852
+  },
+  "e001.es.disc_hi": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/0/ci95_hi",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.4339734353240772
+  },
+  "e001.es.disc_lo": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/0/ci95_lo",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.1346631861132557
+  },
+  "e001.es.disc_pos": {
+   "d": 0,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/0/sessions_positive",
+   "st": "observed",
+   "u": "sessions",
+   "v": 15.0
+  },
+  "e001.es.held": {
+   "d": 2,
+   "lab": "reported only (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/es/components/es/mean",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.421297260156206
+  },
+  "e001.events.disc": {
+   "d": 0,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/events_primary",
+   "st": "observed",
+   "u": "events",
+   "v": 4120728.0
+  },
+  "e001.events.held": {
+   "d": 0,
+   "smp": "heldout",
+   "src": "results/closeout/e001_closeout.json#/events_primary",
+   "st": "observed",
+   "u": "events",
+   "v": 720066.0
+  },
+  "e001.mo_0.1s.disc": {
+   "d": 2,
+   "lab": "secondary horizon, descriptive",
+   "s": true,
+   "smp": "discovery",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/discovery_side/descriptive/secondary_horizons/0/mean_of_session_means",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.5966936850170496
+  },
+  "e001.mo_0.1s.held": {
+   "d": 2,
+   "lab": "secondary horizon, descriptive",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/reported_only/descriptive/secondary_horizons/0/mean_of_session_means",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.5652355012614334
+  },
+  "e001.mo_1s.disc": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/1/mean_of_session_means",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.9853312268303135
+  },
+  "e001.mo_1s.disc_hi": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/1/ci95_hi",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.1068021625524376
+  },
+  "e001.mo_1s.disc_lo": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/1/ci95_lo",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.8587507874632516
+  },
+  "e001.mo_1s.disc_pos": {
+   "d": 0,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/1/sessions_positive",
+   "st": "observed",
+   "u": "sessions",
+   "v": 15.0
+  },
+  "e001.mo_1s.held": {
+   "d": 2,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/0/components/mo_1s/mean",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.8495563617275075
+  },
+  "e001.mo_1s.held.2026-06-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/0/components/mo_1s/session_values/2026-06-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.8435270042295875
+  },
+  "e001.mo_1s.held.2026-07-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/0/components/mo_1s/session_values/2026-07-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.1369600067380472
+  },
+  "e001.mo_1s.held.2026-08-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/0/components/mo_1s/session_values/2026-08-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.6771272696546664
+  },
+  "e001.mo_1s.held.2026-09-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/0/components/mo_1s/session_values/2026-09-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.8456755192376795
+  },
+  "e001.mo_1s.held.2026-10-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/0/components/mo_1s/session_values/2026-10-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.7444920087775571
+  },
+  "e001.mo_1s.held_neg": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/0/components/mo_1s/negative",
+   "st": "observed",
+   "u": "sessions",
+   "v": 0.0
+  },
+  "e001.mo_1s.held_pos": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/0/components/mo_1s/positive",
+   "st": "observed",
+   "u": "sessions",
+   "v": 5.0
+  },
+  "e001.mo_30s.disc": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/3/mean_of_session_means",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.167127869658535
+  },
+  "e001.mo_30s.disc_hi": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/3/ci95_hi",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.2889911158998
+  },
+  "e001.mo_30s.disc_lo": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/3/ci95_lo",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.0516905246444734
+  },
+  "e001.mo_30s.disc_pos": {
+   "d": 0,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/3/sessions_positive",
+   "st": "observed",
+   "u": "sessions",
+   "v": 15.0
+  },
+  "e001.mo_30s.held": {
+   "d": 2,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/2/components/mo_30s/mean",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.0063300497317464
+  },
+  "e001.mo_30s.held.2026-06-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/2/components/mo_30s/session_values/2026-06-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.1078663121423775
+  },
+  "e001.mo_30s.held.2026-07-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/2/components/mo_30s/session_values/2026-07-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.2285874960347514
+  },
+  "e001.mo_30s.held.2026-08-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/2/components/mo_30s/session_values/2026-08-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.8472819140580324
+  },
+  "e001.mo_30s.held.2026-09-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/2/components/mo_30s/session_values/2026-09-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.9842873673018931
+  },
+  "e001.mo_30s.held.2026-10-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/2/components/mo_30s/session_values/2026-10-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.8636271591216764
+  },
+  "e001.mo_30s.held_neg": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/2/components/mo_30s/negative",
+   "st": "observed",
+   "u": "sessions",
+   "v": 0.0
+  },
+  "e001.mo_30s.held_pos": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/2/components/mo_30s/positive",
+   "st": "observed",
+   "u": "sessions",
+   "v": 5.0
+  },
+  "e001.mo_5s.disc": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/2/mean_of_session_means",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.100595332654191
+  },
+  "e001.mo_5s.disc_hi": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/2/ci95_hi",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.2300917067936992
+  },
+  "e001.mo_5s.disc_lo": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/2/ci95_lo",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.9713038619307761
+  },
+  "e001.mo_5s.disc_pos": {
+   "d": 0,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/2/sessions_positive",
+   "st": "observed",
+   "u": "sessions",
+   "v": 15.0
+  },
+  "e001.mo_5s.held": {
+   "d": 2,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/1/components/mo_5s/mean",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.950346001959705
+  },
+  "e001.mo_5s.held.2026-06-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/1/components/mo_5s/session_values/2026-06-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.0195443717072104
+  },
+  "e001.mo_5s.held.2026-07-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/1/components/mo_5s/session_values/2026-07-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.1781915066644253
+  },
+  "e001.mo_5s.held.2026-08-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/1/components/mo_5s/session_values/2026-08-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.7591259010893012
+  },
+  "e001.mo_5s.held.2026-09-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/1/components/mo_5s/session_values/2026-09-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.9464325101556826
+  },
+  "e001.mo_5s.held.2026-10-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/1/components/mo_5s/session_values/2026-10-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.8484357201819056
+  },
+  "e001.mo_5s.held_neg": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/1/components/mo_5s/negative",
+   "st": "observed",
+   "u": "sessions",
+   "v": 0.0
+  },
+  "e001.mo_5s.held_pos": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/1/components/mo_5s/positive",
+   "st": "observed",
+   "u": "sessions",
+   "v": 5.0
+  },
+  "e001.mo_60s.disc": {
+   "d": 2,
+   "lab": "secondary horizon, descriptive",
+   "s": true,
+   "smp": "discovery",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/discovery_side/descriptive/secondary_horizons/2/mean_of_session_means",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.168125553411362
+  },
+  "e001.mo_60s.held": {
+   "d": 2,
+   "lab": "secondary horizon, descriptive",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/reported_only/descriptive/secondary_horizons/2/mean_of_session_means",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.9846052129979043
+  },
+  "e001.rs_0.1s.disc": {
+   "d": 2,
+   "lab": "secondary horizon, descriptive",
+   "s": true,
+   "smp": "discovery",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/discovery_side/descriptive/secondary_horizons/1/mean_of_session_means",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.08178466477611762
+  },
+  "e001.rs_0.1s.held": {
+   "d": 2,
+   "lab": "secondary horizon, descriptive",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/reported_only/descriptive/secondary_horizons/1/mean_of_session_means",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.29034498343203896
+  },
+  "e001.rs_1s.disc": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/4/mean_of_session_means",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.6949743744803417
+  },
+  "e001.rs_1s.disc_hi": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/4/ci95_hi",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.4844867226748699
+  },
+  "e001.rs_1s.disc_lo": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/4/ci95_lo",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.884421729065863
+  },
+  "e001.rs_1s.disc_pos": {
+   "d": 0,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/4/sessions_positive",
+   "st": "observed",
+   "u": "sessions",
+   "v": 1.0
+  },
+  "e001.rs_1s.held": {
+   "d": 2,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/3/components/rs_1s/mean",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.2778154632988091
+  },
+  "e001.rs_1s.held.2026-06-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/3/components/rs_1s/session_values/2026-06-01",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.2030909714635982
+  },
+  "e001.rs_1s.held.2026-07-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/3/components/rs_1s/session_values/2026-07-01",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.7540811285321282
+  },
+  "e001.rs_1s.held.2026-08-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/3/components/rs_1s/session_values/2026-08-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.3419600782636279
+  },
+  "e001.rs_1s.held.2026-09-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/3/components/rs_1s/session_values/2026-09-01",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.37698434402147646
+  },
+  "e001.rs_1s.held.2026-10-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/3/components/rs_1s/session_values/2026-10-01",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.39688095074047053
+  },
+  "e001.rs_1s.held_neg": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/3/components/rs_1s/negative",
+   "st": "observed",
+   "u": "sessions",
+   "v": 4.0
+  },
+  "e001.rs_1s.held_pos": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/3/components/rs_1s/positive",
+   "st": "observed",
+   "u": "sessions",
+   "v": 1.0
+  },
+  "e001.rs_1s.held_thi": {
+   "d": 2,
+   "lab": "descriptive, not used",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/3/components/rs_1s/t_interval_95_descriptive_not_used/1",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.21906176072782568
+  },
+  "e001.rs_1s.held_tlo": {
+   "d": 2,
+   "lab": "descriptive, not used",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/3/components/rs_1s/t_interval_95_descriptive_not_used/0",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.7746926873254438
+  },
+  "e001.rs_30s.disc": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/6/mean_of_session_means",
+   "st": "observed",
+   "u": "bp",
+   "v": -1.0585676601367848
+  },
+  "e001.rs_30s.disc_hi": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/6/ci95_hi",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.8592913987049117
+  },
+  "e001.rs_30s.disc_lo": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/6/ci95_lo",
+   "st": "observed",
+   "u": "bp",
+   "v": -1.2366387547344122
+  },
+  "e001.rs_30s.disc_pos": {
+   "d": 0,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/6/sessions_positive",
+   "st": "observed",
+   "u": "sessions",
+   "v": 0.0
+  },
+  "e001.rs_30s.held": {
+   "d": 2,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/5/components/rs_30s/mean",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.5913628393072864
+  },
+  "e001.rs_30s.held.2026-06-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/5/components/rs_30s/session_values/2026-06-01",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.731769587289178
+  },
+  "e001.rs_30s.held.2026-07-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/5/components/rs_30s/session_values/2026-07-01",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.9373361071255367
+  },
+  "e001.rs_30s.held.2026-08-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/5/components/rs_30s/session_values/2026-08-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.0016507894568959913
+  },
+  "e001.rs_30s.held.2026-09-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/5/components/rs_30s/session_values/2026-09-01",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.6542080401499039
+  },
+  "e001.rs_30s.held.2026-10-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/5/components/rs_30s/session_values/2026-10-01",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.6351512514287092
+  },
+  "e001.rs_30s.held_neg": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/5/components/rs_30s/negative",
+   "st": "observed",
+   "u": "sessions",
+   "v": 4.0
+  },
+  "e001.rs_30s.held_pos": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/5/components/rs_30s/positive",
+   "st": "observed",
+   "u": "sessions",
+   "v": 1.0
+  },
+  "e001.rs_5s.disc": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/5/mean_of_session_means",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.925502586128097
+  },
+  "e001.rs_5s.disc_hi": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/5/ci95_hi",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.7145867016529478
+  },
+  "e001.rs_5s.disc_lo": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/5/ci95_lo",
+   "st": "observed",
+   "u": "bp",
+   "v": -1.1149646788436876
+  },
+  "e001.rs_5s.disc_pos": {
+   "d": 0,
+   "smp": "discovery",
+   "src": "results/e001/e001_discovery.json#/primary/5/sessions_positive",
+   "st": "observed",
+   "u": "sessions",
+   "v": 1.0
+  },
+  "e001.rs_5s.held": {
+   "d": 2,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/4/components/rs_5s/mean",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.4793947437632041
+  },
+  "e001.rs_5s.held.2026-06-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/4/components/rs_5s/session_values/2026-06-01",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.5551257064188438
+  },
+  "e001.rs_5s.held.2026-07-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/4/components/rs_5s/session_values/2026-07-01",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.8365441283848845
+  },
+  "e001.rs_5s.held.2026-08-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/4/components/rs_5s/session_values/2026-08-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.17796281539435818
+  },
+  "e001.rs_5s.held.2026-09-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/4/components/rs_5s/session_values/2026-09-01",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.5784983258574827
+  },
+  "e001.rs_5s.held.2026-10-01": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/4/components/rs_5s/session_values/2026-10-01",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.6047683735491677
+  },
+  "e001.rs_5s.held_neg": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/4/components/rs_5s/negative",
+   "st": "observed",
+   "u": "sessions",
+   "v": 4.0
+  },
+  "e001.rs_5s.held_pos": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/checks/4/components/rs_5s/positive",
+   "st": "observed",
+   "u": "sessions",
+   "v": 1.0
+  },
+  "e001.rs_60s.disc": {
+   "d": 2,
+   "lab": "secondary horizon, descriptive",
+   "s": true,
+   "smp": "discovery",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/discovery_side/descriptive/secondary_horizons/3/mean_of_session_means",
+   "st": "observed",
+   "u": "bp",
+   "v": -1.0604740991493253
+  },
+  "e001.rs_60s.held": {
+   "d": 2,
+   "lab": "secondary horizon, descriptive",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E001/reported_only/descriptive/secondary_horizons/3/mean_of_session_means",
+   "st": "observed",
+   "u": "bp",
+   "v": -0.5478050924913775
+  },
+  "e001.rs_share_5_30": {
+   "d": 0,
+   "frag": "52 and 56\\% of discovery size",
+   "printed": "52 and 56%",
+   "smp": "heldout",
+   "src": "docs/memo/The_Liquidity_Paradox.tex#L734",
+   "st": "observed",
+   "u": "",
+   "v": null
+  },
+  "e002.fill_diff": {
+   "d": 2,
+   "frag": "0.16 to 0.55\\bp, all below the 1.0\\bp{} threshold",
+   "printed": "0.16 to 0.55",
+   "smp": "discovery",
+   "src": "docs/memo/The_Liquidity_Paradox.tex#L532",
+   "st": "modeled historical replay",
+   "u": "bp",
+   "v": null
+  },
+  "e002.range.disc": {
+   "d": 2,
+   "frag": "lay between $-11.07$ and $-11.87$",
+   "printed": "−11.87 to −11.07",
+   "smp": "discovery",
+   "src": "docs/memo/The_Liquidity_Paradox.tex#L530",
+   "st": "modeled historical replay",
+   "u": "bp",
+   "v": null
+  },
+  "e002.range.held": {
+   "d": 2,
+   "frag": "lay between $-10.99$ and $-11.95$",
+   "lab": "reported only, no confirmation claim",
+   "printed": "−11.95 to −10.99",
+   "smp": "heldout",
+   "src": "docs/memo/The_Liquidity_Paradox.tex#L572",
+   "st": "modeled historical replay",
+   "u": "bp",
+   "v": null
+  },
+  "e003.h1f.disc": {
+   "d": 2,
+   "pct": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H1/H1-F/mean",
+   "st": "observed",
+   "u": "%",
+   "v": 0.03644788534491028
+  },
+  "e003.h1f.disc_hi": {
+   "d": 2,
+   "pct": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H1/H1-F/ci95/1",
+   "st": "observed",
+   "u": "%",
+   "v": 0.04352837015291769
+  },
+  "e003.h1f.disc_lo": {
+   "d": 2,
+   "pct": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H1/H1-F/ci95/0",
+   "st": "observed",
+   "u": "%",
+   "v": 0.029683679630255054
+  },
+  "e003.h1f.held": {
+   "d": 2,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "pct": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/checks/0/components/r2_os/mean",
+   "st": "observed",
+   "u": "%",
+   "v": 0.04195506918105296
+  },
+  "e003.h1f.held_sessions": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "sessions": {
+    "2026-06-01": 0.05560280221391489,
+    "2026-07-01": 0.031271994899606415,
+    "2026-08-01": 0.013959325165011416,
+    "2026-09-01": 0.04882718944452946,
+    "2026-10-01": 0.060114034182202625
+   },
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/checks/0/components",
+   "st": "observed",
+   "u": "",
+   "v": null
+  },
+  "e003.h1t.delta": {
+   "d": 1,
+   "smp": "parameter",
+   "src": "results/e003/e003_analysis.json#/H1/H1-T/margin_bp",
+   "st": "parameter",
+   "u": "bp",
+   "v": 0.5
+  },
+  "e003.h1t.disc": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H1/H1-T/mean",
+   "st": "modeled historical replay (gross, fee-free)",
+   "u": "bp",
+   "v": -0.12382779478153157
+  },
+  "e003.h1t.disc_hi": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H1/H1-T/ci95/1",
+   "st": "modeled historical replay (gross, fee-free)",
+   "u": "bp",
+   "v": 0.06884699658016222
+  },
+  "e003.h1t.disc_lo": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H1/H1-T/ci95/0",
+   "st": "modeled historical replay (gross, fee-free)",
+   "u": "bp",
+   "v": -0.3239027204601459
+  },
+  "e003.h1t.disc_pos": {
+   "d": 0,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H1/H1-T/positive",
+   "st": "modeled historical replay (gross, fee-free)",
+   "u": "sessions",
+   "v": 4.0
+  },
+  "e003.h1t.held": {
+   "d": 2,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/checks/1/components/D_bp/mean",
+   "st": "modeled historical replay (gross, fee-free)",
+   "u": "bp",
+   "v": -0.009701070117615073
+  },
+  "e003.h1t.held_neg": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/checks/1/components/D_bp/negative",
+   "st": "modeled historical replay (gross, fee-free)",
+   "u": "sessions",
+   "v": 2.0
+  },
+  "e003.h1t.held_sessions": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "sessions": {
+    "2026-06-01": 0.17859146419420302,
+    "2026-07-01": -0.4842379883570054,
+    "2026-08-01": 0.004318598297257115,
+    "2026-09-01": -0.2478550359539029,
+    "2026-10-01": 0.5006776112313728
+   },
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/checks/1/components",
+   "st": "modeled historical replay (gross, fee-free)",
+   "u": "",
+   "v": null
+  },
+  "e003.h1t.held_thi": {
+   "d": 2,
+   "lab": "descriptive, not used",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/checks/1/components/D_bp/t_interval_95_descriptive_not_used/1",
+   "st": "modeled historical replay (gross, fee-free)",
+   "u": "bp",
+   "v": 0.4623107768841869
+  },
+  "e003.h1t.held_tlo": {
+   "d": 2,
+   "lab": "descriptive, not used",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/checks/1/components/D_bp/t_interval_95_descriptive_not_used/0",
+   "st": "modeled historical replay (gross, fee-free)",
+   "u": "bp",
+   "v": -0.48171291711941705
+  },
+  "e003.h3.drawdown_diff.disc": {
+   "d": 1,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H3/drawdown_diff/mean",
+   "st": "modeled historical replay; LP tier 4 fees are hypothetical, not attainable",
+   "u": "USDT",
+   "v": -69.44796090624843
+  },
+  "e003.h3.drawdown_diff.disc_hi": {
+   "d": 1,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H3/drawdown_diff/ci95/1",
+   "st": "modeled historical replay; LP tier 4 fees are hypothetical, not attainable",
+   "u": "USDT",
+   "v": -37.788820383804435
+  },
+  "e003.h3.drawdown_diff.disc_lo": {
+   "d": 1,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H3/drawdown_diff/ci95/0",
+   "st": "modeled historical replay; LP tier 4 fees are hypothetical, not attainable",
+   "u": "USDT",
+   "v": -107.93801353706675
+  },
+  "e003.h3.drawdown_diff.held": {
+   "d": 1,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/checks/2/components/drawdown_diff/mean",
+   "st": "modeled historical replay; LP tier 4 fees are hypothetical, not attainable",
+   "u": "USDT",
+   "v": -19.003484815642487
+  },
+  "e003.h3.es_diff.disc": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H3/es_diff/mean",
+   "st": "modeled historical replay; LP tier 4 fees are hypothetical, not attainable",
+   "u": "USDT",
+   "v": -3.9397619382811326
+  },
+  "e003.h3.es_diff.disc_hi": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H3/es_diff/ci95/1",
+   "st": "modeled historical replay; LP tier 4 fees are hypothetical, not attainable",
+   "u": "USDT",
+   "v": -2.617171410396571
+  },
+  "e003.h3.es_diff.disc_lo": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H3/es_diff/ci95/0",
+   "st": "modeled historical replay; LP tier 4 fees are hypothetical, not attainable",
+   "u": "USDT",
+   "v": -5.357268817079203
+  },
+  "e003.h3.es_diff.held": {
+   "d": 2,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/checks/2/components/es_diff/mean",
+   "st": "modeled historical replay; LP tier 4 fees are hypothetical, not attainable",
+   "u": "USDT",
+   "v": -1.8696138202663313
+  },
+  "e003.h3.held_sessions": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "sessions": {
+    "2026-06-01": 0.6854903991443271,
+    "2026-07-01": 1.4291259022700014,
+    "2026-08-01": 0.24720912016362773,
+    "2026-09-01": 0.48070701311139796,
+    "2026-10-01": 0.41357665639278274
+   },
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/checks/2/components",
+   "st": "modeled historical replay; LP tier 4 fees are hypothetical, not attainable",
+   "u": "",
+   "v": null
+  },
+  "e003.h3.margin": {
+   "d": 2,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H3/noninferiority_margin",
+   "st": "modeled historical replay; LP tier 4 fees are hypothetical, not attainable",
+   "u": "USDT/h",
+   "v": 1.1754724725329382
+  },
+  "e003.h3.net_per_hour_diff.disc": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H3/net_per_hour_diff/mean",
+   "st": "modeled historical replay; LP tier 4 fees are hypothetical, not attainable",
+   "u": "USDT/h",
+   "v": 2.9571762606553658
+  },
+  "e003.h3.net_per_hour_diff.disc_hi": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H3/net_per_hour_diff/ci95/1",
+   "st": "modeled historical replay; LP tier 4 fees are hypothetical, not attainable",
+   "u": "USDT/h",
+   "v": 4.604520124333712
+  },
+  "e003.h3.net_per_hour_diff.disc_lo": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H3/net_per_hour_diff/ci95/0",
+   "st": "modeled historical replay; LP tier 4 fees are hypothetical, not attainable",
+   "u": "USDT/h",
+   "v": 1.5935398578131683
+  },
+  "e003.h3.net_per_hour_diff.held": {
+   "d": 2,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/checks/2/components/net_per_hour_diff/mean",
+   "st": "modeled historical replay; LP tier 4 fees are hypothetical, not attainable",
+   "u": "USDT/h",
+   "v": 0.6512218182164273
+  },
+  "e003.p0_primary.gross_bp": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/descriptive/scenarios/16/gross_bp_per_notional",
+   "st": "modeled historical replay (gross, fee-free)",
+   "u": "bp",
+   "v": -1.5097047231221425
+  },
+  "e003.p0_primary.held_gross_bp": {
+   "d": 2,
+   "lab": "reported only, descriptive (no confirmation claim)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/reported_only/descriptive/scenarios/16/gross_bp_per_notional",
+   "st": "modeled historical replay (gross, fee-free)",
+   "u": "bp",
+   "v": -1.4330080502894866
+  },
+  "e003.p0_primary.held_net_bp": {
+   "d": 2,
+   "lab": "reported only, descriptive (no confirmation claim)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/reported_only/descriptive/scenarios/16/net_bp_per_notional",
+   "st": "modeled historical replay",
+   "u": "bp",
+   "v": -11.452083179505959
+  },
+  "e003.p0_primary.net_bp": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/descriptive/scenarios/16/net_bp_per_notional",
+   "st": "modeled historical replay",
+   "u": "bp",
+   "v": -11.517006957114173
+  },
+  "e003.p3m2_p0.disc": {
+   "d": 0,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H1/reported/P3_M2_minus_P0_net_per_hour/mean",
+   "st": "modeled historical replay",
+   "u": "USDT/h",
+   "v": 155.07246045011033
+  },
+  "e003.p3m2_p0.disc_hi": {
+   "d": 0,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H1/reported/P3_M2_minus_P0_net_per_hour/ci95/1",
+   "st": "modeled historical replay",
+   "u": "USDT/h",
+   "v": 233.75082976568729
+  },
+  "e003.p3m2_p0.disc_lo": {
+   "d": 0,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H1/reported/P3_M2_minus_P0_net_per_hour/ci95/0",
+   "st": "modeled historical replay",
+   "u": "USDT/h",
+   "v": 84.34798376974939
+  },
+  "e003.p3m2_p0.disc_pos": {
+   "d": 0,
+   "smp": "discovery_walkforward",
+   "src": "results/e003/e003_analysis.json#/H1/reported/P3_M2_minus_P0_net_per_hour/positive",
+   "st": "modeled historical replay",
+   "u": "sessions",
+   "v": 10.0
+  },
+  "e003.p3m2_p0.held": {
+   "d": 1,
+   "lab": "reported only, descriptive (no confirmation claim)",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/reported_only/H1_reported/P3_M2_minus_P0_net_per_hour/mean",
+   "st": "modeled historical replay",
+   "u": "USDT/h",
+   "v": 37.540063258689585
+  },
+  "e003.p3m2_p0.held_fee_saving": {
+   "d": 1,
+   "lab": "reported only, descriptive (no confirmation claim)",
+   "note": "maker fees not paid (mechanical): the frozen maker-fee difference with its sign reversed",
+   "scale": -1.0,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/reported_only/fee_split_per_hour_vip0/P3_M2_minus_P0_net_per_hour/maker_fees_per_hour_mean_mechanical",
+   "st": "modeled historical replay",
+   "u": "USDT/h",
+   "v": 33.17783469087776
+  },
+  "e003.p3m2_p0.held_gross": {
+   "d": 1,
+   "lab": "reported only, descriptive (no confirmation claim)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/reported_only/fee_split_per_hour_vip0/P3_M2_minus_P0_net_per_hour/gross_per_hour_mean",
+   "st": "modeled historical replay",
+   "u": "USDT/h",
+   "v": 4.373098541420353
+  },
+  "e003.p3m2_p0.held_pos": {
+   "d": 0,
+   "lab": "reported only, descriptive (no confirmation claim)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E003/reported_only/H1_reported/P3_M2_minus_P0_net_per_hour/positive",
+   "st": "modeled historical replay",
+   "u": "sessions",
+   "v": 5.0
+  },
+  "e004.h40.disc": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e004/e004_analysis.json#/secondary/H4-0/difference_pp/mean",
+   "st": "observed (model trained under stress test)",
+   "u": "pp",
+   "v": 0.030129009019508414
+  },
+  "e004.h40.held": {
+   "d": 3,
+   "lab": "reported only",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/reported_only/H4_0/difference_pp/mean",
+   "st": "observed (model trained under stress test)",
+   "u": "pp",
+   "v": 0.0014080074854215141
+  },
+  "e004.p0.disc": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e004/e004_analysis.json#/primary/H4-W[P0]/D_W_bp/mean",
+   "st": "modeled historical replay under stress test",
+   "u": "bp",
+   "v": -0.04357044098637425
+  },
+  "e004.p0.disc_hi": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e004/e004_analysis.json#/primary/H4-W[P0]/D_W_bp/ci95/1",
+   "st": "modeled historical replay under stress test",
+   "u": "bp",
+   "v": 0.020073511641244483
+  },
+  "e004.p0.disc_lo": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e004/e004_analysis.json#/primary/H4-W[P0]/D_W_bp/ci95/0",
+   "st": "modeled historical replay under stress test",
+   "u": "bp",
+   "v": -0.1073880967150836
+  },
+  "e004.p0.held": {
+   "d": 2,
+   "lab": "confirmed (point estimate, 5 of 5 defined): no material deterioration under the specified threshold",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/checks/0/components/D_W_bp/mean",
+   "st": "modeled historical replay under stress test",
+   "u": "bp",
+   "v": -0.08910642248306011
+  },
+  "e004.p0.held_below": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined): no material deterioration under the specified threshold",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/checks/0/sign_count_below_delta",
+   "st": "modeled historical replay under stress test",
+   "u": "sessions",
+   "v": 5.0
+  },
+  "e004.p0.held_neg": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined): no material deterioration under the specified threshold",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/checks/0/components/D_W_bp/negative",
+   "st": "modeled historical replay under stress test",
+   "u": "sessions",
+   "v": 3.0
+  },
+  "e004.p0.held_sessions": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined): no material deterioration under the specified threshold",
+   "sessions": {
+    "2026-06-01": 0.06463780954456078,
+    "2026-07-01": -0.13439812768461867,
+    "2026-08-01": -0.07851612117573026,
+    "2026-09-01": 0.03583569862833813,
+    "2026-10-01": -0.3330913717278505
+   },
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/checks/0/components/D_W_bp/session_values",
+   "st": "modeled historical replay under stress test",
+   "u": "",
+   "v": null
+  },
+  "e004.p3m2.disc": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e004/e004_analysis.json#/primary/H4-W[P3_M2]/D_W_bp/mean",
+   "st": "modeled historical replay under stress test",
+   "u": "bp",
+   "v": -0.15914111915455992
+  },
+  "e004.p3m2.disc_hi": {
+   "d": 3,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e004/e004_analysis.json#/primary/H4-W[P3_M2]/D_W_bp/ci95/1",
+   "st": "modeled historical replay under stress test",
+   "u": "bp",
+   "v": 0.0029710086718641895
+  },
+  "e004.p3m2.disc_lo": {
+   "d": 2,
+   "s": true,
+   "smp": "discovery_walkforward",
+   "src": "results/e004/e004_analysis.json#/primary/H4-W[P3_M2]/D_W_bp/ci95/0",
+   "st": "modeled historical replay under stress test",
+   "u": "bp",
+   "v": -0.2972260499700349
+  },
+  "e004.p3m2.held": {
+   "d": 2,
+   "lab": "confirmed (point estimate, 5 of 5 defined): no material deterioration under the specified threshold",
+   "s": true,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/checks/1/components/D_W_bp/mean",
+   "st": "modeled historical replay under stress test",
+   "u": "bp",
+   "v": -0.08244476568187102
+  },
+  "e004.p3m2.held_below": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined): no material deterioration under the specified threshold",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/checks/1/sign_count_below_delta",
+   "st": "modeled historical replay under stress test",
+   "u": "sessions",
+   "v": 5.0
+  },
+  "e004.p3m2.held_neg": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined): no material deterioration under the specified threshold",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/checks/1/components/D_W_bp/negative",
+   "st": "modeled historical replay under stress test",
+   "u": "sessions",
+   "v": 3.0
+  },
+  "e004.p3m2.held_sessions": {
+   "d": 0,
+   "lab": "confirmed (point estimate, 5 of 5 defined): no material deterioration under the specified threshold",
+   "sessions": {
+    "2026-06-01": 0.35913262399081836,
+    "2026-07-01": -0.6408948360845161,
+    "2026-08-01": -0.10899499532864954,
+    "2026-09-01": 0.056216910267672615,
+    "2026-10-01": -0.07768353125468042
+   },
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/checks/1/components/D_W_bp/session_values",
+   "st": "modeled historical replay under stress test",
+   "u": "",
+   "v": null
+  },
+  "e004.yk.D1_S.held": {
+   "d": 2,
+   "lab": "reported only",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/reported_only/h4f_other/D1_S:y_k/rho_A",
+   "st": "stress test",
+   "u": "",
+   "v": 0.3569650628818227
+  },
+  "e004.yk.D1_S.projection": {
+   "d": 2,
+   "smp": "parameter",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/reported_only/h4f_other/D1_S:y_k/projection/rho_a",
+   "st": "stress test",
+   "u": "",
+   "v": 0.37
+  },
+  "e004.yk.D3.held": {
+   "d": 2,
+   "lab": "reported only",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/reported_only/h4f_other/D3:y_k/rho_A",
+   "st": "stress test",
+   "u": "",
+   "v": 0.35765905305623025
+  },
+  "e004.yk.D3.projection": {
+   "d": 2,
+   "smp": "parameter",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/reported_only/h4f_other/D3:y_k/projection/rho_a",
+   "st": "stress test",
+   "u": "",
+   "v": 0.37
+  },
+  "e004.yk.disc": {
+   "d": 2,
+   "frag": "$\\rho_A=0.57$; \\emph{inconclusive}",
+   "printed": "$\\rho_A=0.57$; \\emph{inconclusive}",
+   "smp": "discovery_walkforward",
+   "src": "docs/memo/The_Liquidity_Paradox.tex#L765",
+   "st": "stress test",
+   "u": "",
+   "v": 0.57
+  },
+  "e004.yview.D1_S.disc": {
+   "d": 3,
+   "smp": "discovery_walkforward",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/h4f_y_view/cells/D1_S/discovery_rho_A",
+   "st": "stress test",
+   "u": "",
+   "v": -0.006658534957721795
+  },
+  "e004.yview.D1_S.held": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/h4f_y_view/cells/D1_S/rho_A",
+   "st": "stress test",
+   "u": "",
+   "v": 0.01067124511981989
+  },
+  "e004.yview.D3.disc": {
+   "d": 3,
+   "smp": "discovery_walkforward",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/h4f_y_view/cells/D3/discovery_rho_A",
+   "st": "stress test",
+   "u": "",
+   "v": -0.007948162697193284
+  },
+  "e004.yview.D3.held": {
+   "d": 3,
+   "lab": "confirmed (point estimate, 5 of 5 defined)",
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/experiments/E004/h4f_y_view/cells/D3/rho_A",
+   "st": "stress test",
+   "u": "",
+   "v": 0.01065156594242147
+  },
+  "fee.lp_tier1.maker": {
+   "d": 1,
+   "scale": 10000.0,
+   "smp": "parameter",
+   "src": "configs/e002_v1.toml#/fees/lp_tier1/maker",
+   "st": "parameter",
+   "u": "bp",
+   "v": 0.0
+  },
+  "fee.lp_tier1.taker": {
+   "d": 1,
+   "scale": 10000.0,
+   "smp": "parameter",
+   "src": "configs/e002_v1.toml#/fees/lp_tier1/taker",
+   "st": "parameter",
+   "u": "bp",
+   "v": 2.3000000000000003
+  },
+  "fee.lp_tier4.maker": {
+   "d": 1,
+   "scale": 10000.0,
+   "smp": "parameter",
+   "src": "configs/e002_v1.toml#/fees/lp_tier4/maker",
+   "st": "parameter",
+   "u": "bp",
+   "v": -0.8
+  },
+  "fee.lp_tier4.taker": {
+   "d": 1,
+   "scale": 10000.0,
+   "smp": "parameter",
+   "src": "configs/e002_v1.toml#/fees/lp_tier4/taker",
+   "st": "parameter",
+   "u": "bp",
+   "v": 2.3000000000000003
+  },
+  "fee.vip0.maker": {
+   "d": 1,
+   "scale": 10000.0,
+   "smp": "parameter",
+   "src": "configs/e002_v1.toml#/fees/vip0/maker",
+   "st": "parameter",
+   "u": "bp",
+   "v": 10.0
+  },
+  "fee.vip0.taker": {
+   "d": 1,
+   "scale": 10000.0,
+   "smp": "parameter",
+   "src": "configs/e002_v1.toml#/fees/vip0/taker",
+   "st": "parameter",
+   "u": "bp",
+   "v": 10.0
+  },
+  "fee.vip0_bnb.maker": {
+   "d": 1,
+   "scale": 10000.0,
+   "smp": "parameter",
+   "src": "configs/e002_v1.toml#/fees/vip0_bnb/maker",
+   "st": "parameter",
+   "u": "bp",
+   "v": 7.5
+  },
+  "fee.vip0_bnb.taker": {
+   "d": 1,
+   "scale": 10000.0,
+   "smp": "parameter",
+   "src": "configs/e002_v1.toml#/fees/vip0_bnb/taker",
+   "st": "parameter",
+   "u": "bp",
+   "v": 7.5
+  },
+  "fee.vip9.maker": {
+   "d": 1,
+   "scale": 10000.0,
+   "smp": "parameter",
+   "src": "configs/e002_v1.toml#/fees/vip9/maker",
+   "st": "parameter",
+   "u": "bp",
+   "v": 1.1
+  },
+  "fee.vip9.taker": {
+   "d": 1,
+   "scale": 10000.0,
+   "smp": "parameter",
+   "src": "configs/e002_v1.toml#/fees/vip9/taker",
+   "st": "parameter",
+   "u": "bp",
+   "v": 2.3000000000000003
+  },
+  "holdout.tick.2026-06-01": {
+   "d": 2,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/relative_tick_bp/2026-06-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.2326300573288953
+  },
+  "holdout.tick.2026-07-01": {
+   "d": 2,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/relative_tick_bp/2026-07-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.3178565431327423
+  },
+  "holdout.tick.2026-08-01": {
+   "d": 2,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/relative_tick_bp/2026-08-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 1.3784104217724051
+  },
+  "holdout.tick.2026-09-01": {
+   "d": 2,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/relative_tick_bp/2026-09-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.981656517292535
+  },
+  "holdout.tick.2026-10-01": {
+   "d": 2,
+   "smp": "heldout",
+   "src": "results/closeout/closeout_analysis.json#/relative_tick_bp/2026-10-01",
+   "st": "observed",
+   "u": "bp",
+   "v": 0.8468836764887745
+  },
+  "lat.distant.entry_ms": {
+   "d": 0,
+   "scale": 0.001,
+   "smp": "parameter",
+   "src": "configs/e002_v1.toml#/latency/distant/entry_us",
+   "st": "parameter",
+   "u": "ms",
+   "v": 115.0
+  },
+  "lat.distant.md_ms": {
+   "d": 0,
+   "scale": 0.001,
+   "smp": "parameter",
+   "src": "configs/e002_v1.toml#/latency/distant/md_delay_us",
+   "st": "parameter",
+   "u": "ms",
+   "v": 115.0
+  },
+  "lat.regional.entry_ms": {
+   "d": 0,
+   "scale": 0.001,
+   "smp": "parameter",
+   "src": "configs/e002_v1.toml#/latency/regional/entry_us",
+   "st": "parameter",
+   "u": "ms",
+   "v": 30.0
+  },
+  "lat.regional.md_ms": {
+   "d": 0,
+   "scale": 0.001,
+   "smp": "parameter",
+   "src": "configs/e002_v1.toml#/latency/regional/md_delay_us",
+   "st": "parameter",
+   "u": "ms",
+   "v": 30.0
+  },
+  "lat.tokyo.entry_ms": {
+   "d": 0,
+   "scale": 0.001,
+   "smp": "parameter",
+   "src": "configs/e002_v1.toml#/latency/tokyo/entry_us",
+   "st": "parameter",
+   "u": "ms",
+   "v": 2.0
+  },
+  "lat.tokyo.md_ms": {
+   "d": 0,
+   "scale": 0.001,
+   "smp": "parameter",
+   "src": "configs/e002_v1.toml#/latency/tokyo/md_delay_us",
+   "st": "parameter",
+   "u": "ms",
+   "v": 0.0
+  },
+  "pacing.rate": {
+   "d": 2,
+   "smp": "parameter",
+   "src": "configs/e003_v1.toml#/pacing/rate_per_s",
+   "st": "parameter",
+   "u": "orders/s per side",
+   "v": 1.15
+  },
+  "pol.kappa": {
+   "d": 2,
+   "smp": "parameter",
+   "src": "configs/e003_v1.toml#/policies/p4_kappa_ticks_per_unit",
+   "st": "parameter",
+   "u": "tick/SOL",
+   "v": 0.25
+  },
+  "pol.limit": {
+   "d": 0,
+   "smp": "parameter",
+   "src": "configs/e003_v1.toml#/policies/inventory_limit",
+   "st": "parameter",
+   "u": "SOL",
+   "v": 10.0
+  },
+  "pol.p1": {
+   "d": 0,
+   "smp": "parameter",
+   "src": "configs/e003_v1.toml#/policies/p1_threshold",
+   "st": "parameter",
+   "u": "SOL",
+   "v": 3.0
+  },
+  "pol.size": {
+   "d": 0,
+   "smp": "parameter",
+   "src": "configs/e003_v1.toml#/policies/size",
+   "st": "parameter",
+   "u": "SOL",
+   "v": 1.0
+  },
+  "sample.disc.episodes": {
+   "d": 0,
+   "frag": "Episodes & 29 & 19 & 20",
+   "printed": "Episodes & 29 & 19 & 20",
+   "smp": "paper",
+   "src": "docs/memo/The_Liquidity_Paradox.tex#L279",
+   "st": "metadata",
+   "u": "",
+   "v": 29
+  },
+  "sample.disc.hours": {
+   "d": 1,
+   "frag": "Valid hours & 347.5 & 227.9 & 119.7",
+   "printed": "Valid hours & 347.5 & 227.9 & 119.7",
+   "smp": "paper",
+   "src": "docs/memo/The_Liquidity_Paradox.tex#L280",
+   "st": "metadata",
+   "u": "",
+   "v": 347.5
+  },
+  "sample.disc.sessions": {
+   "d": 0,
+   "frag": "Sessions & 15 & 10 & 5",
+   "printed": "Sessions & 15 & 10 & 5",
+   "smp": "paper",
+   "src": "docs/memo/The_Liquidity_Paradox.tex#L277",
+   "st": "metadata",
+   "u": "",
+   "v": 15
+  },
+  "sample.disc.tick": {
+   "d": 2,
+   "frag": "Relative tick (bp) & 0.46--1.20",
+   "printed": "0.46–1.20",
+   "smp": "paper",
+   "src": "docs/memo/The_Liquidity_Paradox.tex#L282",
+   "st": "metadata",
+   "u": "bp",
+   "v": null
+  },
+  "sample.held.episodes": {
+   "d": 0,
+   "frag": "Episodes & 29 & 19 & 20",
+   "printed": "Episodes & 29 & 19 & 20",
+   "smp": "paper",
+   "src": "docs/memo/The_Liquidity_Paradox.tex#L279",
+   "st": "metadata",
+   "u": "",
+   "v": 20
+  },
+  "sample.held.hours": {
+   "d": 1,
+   "frag": "Valid hours & 347.5 & 227.9 & 119.7",
+   "printed": "Valid hours & 347.5 & 227.9 & 119.7",
+   "smp": "paper",
+   "src": "docs/memo/The_Liquidity_Paradox.tex#L280",
+   "st": "metadata",
+   "u": "",
+   "v": 119.7
+  },
+  "sample.held.sessions": {
+   "d": 0,
+   "frag": "Sessions & 15 & 10 & 5",
+   "printed": "Sessions & 15 & 10 & 5",
+   "smp": "paper",
+   "src": "docs/memo/The_Liquidity_Paradox.tex#L277",
+   "st": "metadata",
+   "u": "",
+   "v": 5
+  },
+  "sample.held.tick": {
+   "d": 2,
+   "frag": "& --- & 0.85--1.38",
+   "printed": "0.85–1.38",
+   "smp": "paper",
+   "src": "docs/memo/The_Liquidity_Paradox.tex#L282",
+   "st": "metadata",
+   "u": "bp",
+   "v": null
+  },
+  "sample.wf.episodes": {
+   "d": 0,
+   "frag": "Episodes & 29 & 19 & 20",
+   "printed": "Episodes & 29 & 19 & 20",
+   "smp": "paper",
+   "src": "docs/memo/The_Liquidity_Paradox.tex#L279",
+   "st": "metadata",
+   "u": "",
+   "v": 19
+  },
+  "sample.wf.hours": {
+   "d": 1,
+   "frag": "Valid hours & 347.5 & 227.9 & 119.7",
+   "printed": "Valid hours & 347.5 & 227.9 & 119.7",
+   "smp": "paper",
+   "src": "docs/memo/The_Liquidity_Paradox.tex#L280",
+   "st": "metadata",
+   "u": "",
+   "v": 227.9
+  },
+  "sample.wf.sessions": {
+   "d": 0,
+   "frag": "Sessions & 15 & 10 & 5",
+   "printed": "Sessions & 15 & 10 & 5",
+   "smp": "paper",
+   "src": "docs/memo/The_Liquidity_Paradox.tex#L277",
+   "st": "metadata",
+   "u": "",
+   "v": 10
+  }
+ }
+}

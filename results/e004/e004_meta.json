@@ -1,0 +1,172 @@
+{
+ "experiment": "E004",
+ "status": {
+  "D0/REF forecasts": "observed",
+  "degraded forecasts": "stress test",
+  "REF policies": "modeled historical replay",
+  "degraded policies": "modeled historical replay under stress test",
+  "degradation statistics": "synthetic",
+  "non-VIP0 fees": "hypothetical",
+  "H4-0 forecasts": "observed (model trained under stress test)"
+ },
+ "sessions": [
+  "2025-03-01",
+  "2025-04-01",
+  "2025-05-01",
+  "2025-06-01",
+  "2025-07-01",
+  "2025-08-01",
+  "2025-09-01",
+  "2025-10-01",
+  "2025-11-01",
+  "2025-12-01",
+  "2026-01-01",
+  "2026-02-01",
+  "2026-03-01",
+  "2026-04-01",
+  "2026-05-01"
+ ],
+ "evaluation_sessions": [
+  "2025-08-01",
+  "2025-09-01",
+  "2025-10-01",
+  "2025-11-01",
+  "2025-12-01",
+  "2026-01-01",
+  "2026-02-01",
+  "2026-03-01",
+  "2026-04-01",
+  "2026-05-01"
+ ],
+ "schedules_verified": 840,
+ "invariants": {
+  "ref_policy_rows_checked": 60,
+  "d0_view_identity_jobs": 20
+ },
+ "runtime_s": 8519.0,
+ "run_at_utc": "2026-10-29T06:04:21+00:00",
+ "provenance": {
+  "git_commit": "5c9d93e39c7afc2eb1dbb2fca631270d2c44b49b",
+  "git_dirty": false,
+  "code_fingerprint": "2a594e2dc1a22940",
+  "configs": {
+   "configs/e004_v1.toml": "15d359050f6e4f78d1bf687de34f682b422850659a6215e6be401d6fba55369d",
+   "configs/e003_v1.toml": "be2a134bb8fcf9264b44a019ff3143f79ef44a02646f90ada6b192ec48501622",
+   "configs/research_v1.toml": "0e8279c5a830aad571871fc8c562df2f87d70a5a8ec32bf3a40142ed873dc8e0"
+  },
+  "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c",
+  "spec_sha256": "9c9ef80bd2ef8121a757c42571f45c6ae4378c3f1a294b7a01b2d4f8e6557c9e",
+  "schedule_hashes_sha256": "99ca1a82431e4d87b384e025150f8d05b69c4a2beb879ce6e429de80d6278618",
+  "e003_reference_files_sha256": {
+   "e003_models.json": "9f4b75a90382620776778e21a753002e4cbb27432968dbb79d23fb60bd21a4e5",
+   "e003_gross_by_session.csv": "29a6c032d7e9cc3bf52fb125f7a37821f669ece06201eba38d35531ba8366035",
+   "e003_forecast_by_session.csv": "ebf7ef8f60e0af472ccc49b5a390f52559a02f5e2f157a9115251c8ff054d2b5",
+   "e003_calibration.csv": "036a95586e7327e89d5b91a79b21a0939fe08ecb0363680b59e4b75b8cb34420"
+  },
+  "inputs": {
+   "acceptance_git_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+   "windows_csv_sha256": "d543187a263d2829fa27888148c9ecbe9f725197e72b83b3b22dc86fa688e718",
+   "sessions": {
+    "2025-03-01": {
+     "states_sha256": "b780768628cffb4e18284398cfc28e7bcc690946a3dfd2b526ff17aa42c361a3",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "5c8084f7b6ba395fc224ff2af719591eb2e5b13ca541f9b5e6a8d37786984c23",
+     "tardis_trades_sha256": "6e9efba61cc56de11bd471bb89904b7f0560c4611a3b3b362ec2916187634b92"
+    },
+    "2025-04-01": {
+     "states_sha256": "4d55e4697c0fc6e723362c1546313141539b703f982d49fbffe74966fb702d15",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "38b3656dfebdd41ab3248a58e82b9fb88762d9552cec11dc97d7710e2f9e9d4a",
+     "tardis_trades_sha256": "f96229f7887484faa4b20087c8b62058f1c9b0d426c68a496ff1e80636b0ed92"
+    },
+    "2025-05-01": {
+     "states_sha256": "59a3e011dcb8da5f7d94a028f4f44d67a1a28a1a27acb987425abbd1ed5839ed",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "0361473db135876f3d349095c1b193c70d77948f6ccb95db4443f9514076b24c",
+     "tardis_trades_sha256": "d4825e63b6856fdf2e3864449e39565717507b5b0d436a31ea51cc182465b2fe"
+    },
+    "2025-06-01": {
+     "states_sha256": "15d5eb4eb6fe8ff6affd0f1561cb3587d07af029bf06fd53b2a202f97876d50e",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "b273540f735efd0a9de8e7d1bef155a3a1e3b15a1cf51e5c584d121a68870f07",
+     "tardis_trades_sha256": "21075ef8a3717f75d63b81d216aaf74dddfad580b667c630e2b4c84e7727aa9f"
+    },
+    "2025-07-01": {
+     "states_sha256": "494256e18e1289778cde2bd2e16a1b8ba400f3d0be7f4849ce97764d22e75159",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "f3727452f047cec91811087bff6f8f303f61a8bd1f92c75c3252859e959518ba",
+     "tardis_trades_sha256": "1046456b9085571154ae9d329b52cf7feba4763c74d0c87df620f794d8106551"
+    },
+    "2025-08-01": {
+     "states_sha256": "66e4e220ca7f53291877ac8e47f1fda419004a1390bc1ee1e51a3dedad2c1896",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "f0aabf789a1624c21474644cb6e8bb1435efd81fd1b57e5a58b4b3fa1a7b53f8",
+     "tardis_trades_sha256": "5fa8ce7de48020f3120a003180d7ccfdd5757bbfb38f7f475f243b4d72130841"
+    },
+    "2025-09-01": {
+     "states_sha256": "0984913a59f9c83fa00b9ae5c666d0d09dcb9945e63d98d2b05ed64cd65ca981",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "851705d266c82d54769e519c50039bf0e63032b1b36f3e68e2cd892b64f01475",
+     "tardis_trades_sha256": "d655b6a366cc3cee14226a5f6fffeba76b7fdc7e9c77e36f3e0455cd25316b11"
+    },
+    "2025-10-01": {
+     "states_sha256": "01796feed1c825dccf51234f389331b37e704224fc90935f19d84128381be294",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "40cc8ed1117f8dc04f17c4c8b5c7c4fb26ad5a90e76f7040d9ed0de86ebc9312",
+     "tardis_trades_sha256": "d022e07353112cd03ea7085842f37ec7eecd7faa1a2814a62c29a1b83d1b0e56"
+    },
+    "2025-11-01": {
+     "states_sha256": "b21b67e6291e015facec7db278cd1cd27b9e147c0093440067b1b0f3a86d89c6",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "c464ab5c726340d0cc1cd2dc80729e5618cc006644296e3734071b14b5641326",
+     "tardis_trades_sha256": "ac745cde866de2a7d99d4c3d32b53907156e718d7332a3b72a4e8834db1fca9e"
+    },
+    "2025-12-01": {
+     "states_sha256": "06ed1dc02477a144f87670788c46a2ca4d6a1fca0d56d655c46fc4d6423f971c",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "0c240dc112031db591895f07dbec78b78c392552e496b0062561e742894c75fb",
+     "tardis_trades_sha256": "0a85bcddf79d4e247da32839665aa751494897ba2611a9387c56e12416769868"
+    },
+    "2026-01-01": {
+     "states_sha256": "3ce265a8acb92bcac94e47adc8fa19db0db5e7d2c54a3e8dff06379afd349216",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "601dd83395d9f42d0073d1a4feb6a92aff34cbe6c971adc7a41f8c3870c6ccf2",
+     "tardis_trades_sha256": "6312a7ebbe12f372487ad40ed0f37ef4815066ef15685d249cc14a932ad9afb6"
+    },
+    "2026-02-01": {
+     "states_sha256": "3624b2f4f0ed5ace71b8145331ec39def49b9f18e4815d26312195391e3f470f",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "30bc57651351cfcd55d3fd16bbfb66aabaa5293745027040608a0d8fb62b0be4",
+     "tardis_trades_sha256": "387ac2a7cfc26d83c691e3721324a3cbcb29e58a41b9b08e4561dd1edf8db13b"
+    },
+    "2026-03-01": {
+     "states_sha256": "8755448bf7ef365120f1164c87b6871c0c64f29ab1e5fdc247e7bd6707192a28",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "10f5b80a4d13c8dea2721e922014aaebf16d8d244f74dac97ef40ff1133ec8a7",
+     "tardis_trades_sha256": "04cabcafa36e916c0901a6e268d528b474b240b08f0ce97b5c3baa74d077c87c"
+    },
+    "2026-04-01": {
+     "states_sha256": "9a178747a1bffc31b166adcfb20e9dbee879a12f733871b31c0b1bb576ef1279",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "0dd868c89952b6425c824f2f18b653b8831916d9b41b9326dd8e3e9d0aab3af0",
+     "tardis_trades_sha256": "a8c59ecc1c71e6cf37b5c210719d48e9ac2f4524fbf117fbbfb269ce746d581c"
+    },
+    "2026-05-01": {
+     "states_sha256": "2399826f6f34b9ad4e380cd1c303a06effcfa4ae81b38ca20dd2fee2ef2bc68e",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "c4b51f92d093619a839a0c62a3de36fa6779b6d126977af7c154407d3d92033b",
+     "tardis_trades_sha256": "4918ca34a6018724b30a17b75ef310e8555a3bdd40b5ab4ddd91af7b79277617"
+    }
+   }
+  }
+ },
+ "outputs_sha256": {
+  "e004_forecast_by_session.csv": "7834d2fa5605f54f6a65a5580c43e76aa7b2d71b6a730cc6969ae577e5f3e780",
+  "e004_calibration.csv": "813813c5f0e5e0a1a71b97403fa60e8d18da0aa3d910e9fc0a5e5f087ded2b4c",
+  "e004_degradation_by_session.csv": "cd0d91f3477fcbf7f4898c729864322c9ac88ef3c1a8e8c938dc922e664c2b51",
+  "e004_lambda.csv": "04903016b1eb61a30a98b6c203951694c416ef5bba315466756367f6917381c7",
+  "e004_policy_gross_by_session.csv": "5819ac3815602edb00a55cde0bdb266250b8368b960f456e1b892d7bc4620dca",
+  "e004_policy_net_by_session.csv": "5c459a02f43082b661cc4d65db02375e4ff74ce8457c04061d45be15f1aa2612",
+  "e004_windows_by_session.csv": "81e8172b8fe21f7f3a56f7110400f2c77bff23764c58920b96be385b277f8c81"
+ }
+}

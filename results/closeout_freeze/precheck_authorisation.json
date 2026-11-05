@@ -1,0 +1,18 @@
+{
+ "code_commit": "1a28aef361ed76906b87598680c62f9a1082a194",
+ "note": "Authorised by the owner on 2026-11-04 (explicit instruction); this record and the docs/DECISIONS.md approval line were written by the implementer on the owner's behalf. Permits only the prescribed input hashing and restricted acceptance-metadata checks.",
+ "protocol_revision": 9,
+ "sha256": {
+  "configs/closeout_v1.toml": "0191b33c3353422e1019ff8d19ecdee786fedbb5d56ccb4d7f0b0e25a8346fd5",
+  "configs/e003_v1.toml": "be2a134bb8fcf9264b44a019ff3143f79ef44a02646f90ada6b192ec48501622",
+  "configs/e004_v1.toml": "15d359050f6e4f78d1bf687de34f682b422850659a6215e6be401d6fba55369d",
+  "configs/research_v1.toml": "0e8279c5a830aad571871fc8c562df2f87d70a5a8ec32bf3a40142ed873dc8e0",
+  "docs/experiments/FINAL_EVALUATION.md": "cc7cff348a32fc1abc2b4ddf2e8fe0bc6264bcd02296ce494e44b574126433f3",
+  "lpx/research/closeout.py": "2af281a087a28abf56199670cc403627b54b77adf0f2b089048ab7b035fa8b12",
+  "results/acceptance_001/summary.json": "9a50c8feb805be30a27db3b1b83e3e4ee04b7f1f89edd1c8b24f6c7917fe6af1",
+  "results/acceptance_001/windows.csv": "d543187a263d2829fa27888148c9ecbe9f725197e72b83b3b22dc86fa688e718",
+  "results/e004_prefreeze/schedule_hashes.json": "99ca1a82431e4d87b384e025150f8d05b69c4a2beb879ce6e429de80d6278618",
+  "tools/closeout_precheck.py": "5fa2bcc5386e902bc63d68036c84b41ddec8045c79b40f7daf88e2a685ed4e0c"
+ },
+ "step": "closeout pre-check step 3"
+}

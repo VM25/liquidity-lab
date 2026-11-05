@@ -1,0 +1,35 @@
+# Instrument metadata used for normalization and replay.
+# Source: Binance spot exchange filters (PRICE_FILTER tickSize, LOT_SIZE stepSize) as mirrored in public CCXT market
+# fixtures dated 2025-04-15, ~2026-06 and 2026-09-28 (the exchange endpoint is geo-restricted here and was not used);
+# no tick/step change for these pairs was found in Binance announcements scanned for 2026-05-22 .. 2026-10-14.
+# Every price and quantity in every accepted file lies on these grids (grid_book / grid_trades audits in
+# results/acceptance_001/summary.json). Historical filters for SOLUSDT confirmed 2026-10-20 from archived exchange
+# metadata (exchangeInfo 2025-04-26, 2025-12-09, 2026-10-06; 34 product-list snapshots 2025-02-28 .. 2026-09-03):
+# tick 0.01, step 0.001, minNotional 5 USDT throughout — docs/experiments/E002_assumptions_evidence.md.
+# Fee schedules are scenario inputs for Stage 3, recorded with their source and effective dates when adopted.
+
+[binance-spot.BTCUSDT]
+instrument_type = "spot"
+base = "BTC"
+quote = "USDT"
+tick_size = 0.01
+lot_size = 0.00001
+contract_multiplier = 1.0
+
+[binance-spot.ETHUSDT]
+instrument_type = "spot"
+base = "ETH"
+quote = "USDT"
+tick_size = 0.01
+lot_size = 0.0001
+contract_multiplier = 1.0
+
+[binance-spot.SOLUSDT]
+# tick 0.01 / step 0.001 / minNotional 5 USDT confirmed for 2025-03-01 .. 2026-10-01 (archived primary sources)
+min_notional = 5.0
+instrument_type = "spot"
+base = "SOL"
+quote = "USDT"
+tick_size = 0.01
+lot_size = 0.001
+contract_multiplier = 1.0

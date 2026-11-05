@@ -1,0 +1,204 @@
+{
+ "attempt": 1,
+ "freeze_record_sha256": "2e81527f73c3aff00f7a3c049b3104fe5ac6e211e702b7158480979c2be056ee",
+ "mode": "test",
+ "sessions": {
+  "E001": [
+   "2026-06-01",
+   "2026-07-01",
+   "2026-08-01",
+   "2026-09-01",
+   "2026-10-01"
+  ],
+  "E002": [
+   "2026-06-01",
+   "2026-07-01",
+   "2026-08-01",
+   "2026-09-01",
+   "2026-10-01"
+  ],
+  "E003": [
+   "2026-06-01",
+   "2026-07-01",
+   "2026-08-01",
+   "2026-09-01",
+   "2026-10-01"
+  ],
+  "E004": [
+   "2026-06-01",
+   "2026-07-01",
+   "2026-08-01",
+   "2026-09-01",
+   "2026-10-01"
+  ]
+ },
+ "statuses": {
+  "E001": {
+   "outputs": {
+    "e001_cells.csv": "2e0e87ccf9ae8d1e85256a8c125844ca4216e9e6e082cf7c8d1d69e029d1026d",
+    "e001_closeout.json": "b7fae310f1b15aa75f30d433dec5ae8be68fae26fdee9ee6fab864b7785ab189",
+    "e001_per_session.csv": "56e2ba05effaf05c169d9beb8d4950b1b826ff54e62312231c824113cee553e0",
+    "e001_sensitivity.csv": "0e2c0cece7353ad73414c76d789e4e53cc3569fb3e842bf5af013874c0e83b96"
+   },
+   "status": "complete"
+  },
+  "E002": {
+   "outputs": {
+    "e002_gross_by_session.csv": "e1999ea94dffe030db2022a23d52f1b9129c3f9eae7f324f97afd8e923c28d5d",
+    "e002_net_by_session.csv": "1a23c751e329f809af6b859286d7f92c54c98b65e79fe5e4762fc8dd919e7f0e"
+   },
+   "status": "complete"
+  },
+  "E003": {
+   "outputs": {
+    "e003_calibration.csv": "4a3b05490dfe085492038eb4e43535b43ad670f7c8e44e1b001da622e2fc5616",
+    "e003_forecast_by_session.csv": "3e8cddd734fa3a81d8a7e7fd3120401234285ff6f0fd46ae20317958a7f06210",
+    "e003_gross_by_session.csv": "657aa5b5f7061983a3d8beceaf1b3d426a1b4996314a68180e58a328fb012982",
+    "e003_models.json": "c3369789074e16e3dc1afb6235d07aba5ea626240872778d270fd994ce52456a",
+    "e003_net_by_session.csv": "992ca97b0e2f3677b473491b1b1d94ca33d7cf5b08b9e2a2791c02e35a489316",
+    "e003_trades_without_receipt_time.json": "d03f404a10bdbdba2c5d16502cc9298b0783c931dc13735efa760f5413260aa5"
+   },
+   "status": "complete"
+  },
+  "E004": {
+   "outputs": {
+    "e004_calibration.csv": "d40eebafbe84e1de1d52e541f6d8c2ba2a5820508a38f2b554c9025beb2dfdbc",
+    "e004_degradation_by_session.csv": "813d043eb30eadb1ee0d99c6cf01cc9239d956f7badf1b49e5c7861a16fae19e",
+    "e004_forecast_by_session.csv": "da11c893aedce37f3841f384bc08f5cb1a345bad20035979cf7d288d966fd206",
+    "e004_invariants.json": "d50853806f89943990b8942526a8850e447a62b8c3baca21eaf3bc09d1fef321",
+    "e004_lambda.csv": "f92605c79114eca5e0f745cbc1805fc8d5ba297eaa7b627aa4c6bf5a04e55308",
+    "e004_policy_gross_by_session.csv": "4aff10ea6a56d0c653ea7db18a81dc6d9cd604ba9da25d556fc8db76861dfe00",
+    "e004_policy_net_by_session.csv": "4c3ec08eeb8b9da2b048e9678af25f47104a39ae20075423e1d5617f9eaa338d",
+    "e004_windows_by_session.csv": "01d9fec19c8f92875e794ca989eebc0c7104925526ed79bef48d81f234ef10ea"
+   },
+   "status": "complete"
+  }
+ },
+ "tables_sha256": {
+  "closeout_input_status.json": "16da840e2d5fce1ea7d4c0bf56cc6afe0db6fa617385e9718072eea9b7c781a7",
+  "closeout_relative_tick.json": "07fe23329cba88d38d35779dcd576554902a9fcc9cc4ae905a45ceb58fe097af",
+  "closeout_status_E001.json": "f7ec105c7de7dd1045d5fcf4d1714c9f962f6a3845a64823477fdd92ccb50d59",
+  "closeout_status_E002.json": "f5d8462d4530a58def0b881850b2b8358f3a55827d70cc70dd1c0c599a589b94",
+  "closeout_status_E003.json": "e207bdb786a4d6ecc45d94461640db446460bc989883e93305a2edac96c655dc",
+  "closeout_status_E004.json": "8b396a00bbba9e0836cf82961bd8070a893653912b7825d344269e6616ba7426",
+  "e001_cells.csv": "2e0e87ccf9ae8d1e85256a8c125844ca4216e9e6e082cf7c8d1d69e029d1026d",
+  "e001_cells.csv.status.json": "b5ab217f2b186486b7ab522d669e4c4e6333cb8042c43fb4c0a128f2cb15cb6b",
+  "e001_closeout.json": "b7fae310f1b15aa75f30d433dec5ae8be68fae26fdee9ee6fab864b7785ab189",
+  "e001_closeout.json.status.json": "b5ab217f2b186486b7ab522d669e4c4e6333cb8042c43fb4c0a128f2cb15cb6b",
+  "e001_per_session.csv": "56e2ba05effaf05c169d9beb8d4950b1b826ff54e62312231c824113cee553e0",
+  "e001_per_session.csv.status.json": "b5ab217f2b186486b7ab522d669e4c4e6333cb8042c43fb4c0a128f2cb15cb6b",
+  "e001_sensitivity.csv": "0e2c0cece7353ad73414c76d789e4e53cc3569fb3e842bf5af013874c0e83b96",
+  "e001_sensitivity.csv.status.json": "b5ab217f2b186486b7ab522d669e4c4e6333cb8042c43fb4c0a128f2cb15cb6b",
+  "e002_gross_by_session.csv": "e1999ea94dffe030db2022a23d52f1b9129c3f9eae7f324f97afd8e923c28d5d",
+  "e002_gross_by_session.csv.status.json": "feea551dbe3d8d64815ef6b52a36f6202ce4c2090bcd48d79750bc041a1ddf21",
+  "e002_net_by_session.csv": "1a23c751e329f809af6b859286d7f92c54c98b65e79fe5e4762fc8dd919e7f0e",
+  "e002_net_by_session.csv.status.json": "0f3b93a07ae50af3e52b8b21fde0839d0aa4566828f1a8af2b9569478e51426c",
+  "e003_calibration.csv": "4a3b05490dfe085492038eb4e43535b43ad670f7c8e44e1b001da622e2fc5616",
+  "e003_calibration.csv.status.json": "b5ab217f2b186486b7ab522d669e4c4e6333cb8042c43fb4c0a128f2cb15cb6b",
+  "e003_forecast_by_session.csv": "3e8cddd734fa3a81d8a7e7fd3120401234285ff6f0fd46ae20317958a7f06210",
+  "e003_forecast_by_session.csv.status.json": "b5ab217f2b186486b7ab522d669e4c4e6333cb8042c43fb4c0a128f2cb15cb6b",
+  "e003_gross_by_session.csv": "657aa5b5f7061983a3d8beceaf1b3d426a1b4996314a68180e58a328fb012982",
+  "e003_gross_by_session.csv.status.json": "feea551dbe3d8d64815ef6b52a36f6202ce4c2090bcd48d79750bc041a1ddf21",
+  "e003_models.json": "c3369789074e16e3dc1afb6235d07aba5ea626240872778d270fd994ce52456a",
+  "e003_models.json.status.json": "b5ab217f2b186486b7ab522d669e4c4e6333cb8042c43fb4c0a128f2cb15cb6b",
+  "e003_net_by_session.csv": "992ca97b0e2f3677b473491b1b1d94ca33d7cf5b08b9e2a2791c02e35a489316",
+  "e003_net_by_session.csv.status.json": "0f3b93a07ae50af3e52b8b21fde0839d0aa4566828f1a8af2b9569478e51426c",
+  "e003_trades_without_receipt_time.json": "d03f404a10bdbdba2c5d16502cc9298b0783c931dc13735efa760f5413260aa5",
+  "e003_trades_without_receipt_time.json.status.json": "b5ab217f2b186486b7ab522d669e4c4e6333cb8042c43fb4c0a128f2cb15cb6b",
+  "e004_calibration.csv": "d40eebafbe84e1de1d52e541f6d8c2ba2a5820508a38f2b554c9025beb2dfdbc",
+  "e004_degradation_by_session.csv": "813d043eb30eadb1ee0d99c6cf01cc9239d956f7badf1b49e5c7861a16fae19e",
+  "e004_forecast_by_session.csv": "da11c893aedce37f3841f384bc08f5cb1a345bad20035979cf7d288d966fd206",
+  "e004_invariants.json": "d50853806f89943990b8942526a8850e447a62b8c3baca21eaf3bc09d1fef321",
+  "e004_lambda.csv": "f92605c79114eca5e0f745cbc1805fc8d5ba297eaa7b627aa4c6bf5a04e55308",
+  "e004_policy_gross_by_session.csv": "4aff10ea6a56d0c653ea7db18a81dc6d9cd604ba9da25d556fc8db76861dfe00",
+  "e004_policy_net_by_session.csv": "4c3ec08eeb8b9da2b048e9678af25f47104a39ae20075423e1d5617f9eaa338d",
+  "e004_windows_by_session.csv": "01d9fec19c8f92875e794ca989eebc0c7104925526ed79bef48d81f234ef10ea"
+ },
+ "trained_on": {
+  "2026-06-01": [
+   "2025-03-01",
+   "2025-04-01",
+   "2025-05-01",
+   "2025-06-01",
+   "2025-07-01",
+   "2025-08-01",
+   "2025-09-01",
+   "2025-10-01",
+   "2025-11-01",
+   "2025-12-01",
+   "2026-01-01",
+   "2026-02-01",
+   "2026-03-01",
+   "2026-04-01",
+   "2026-05-01"
+  ],
+  "2026-07-01": [
+   "2025-03-01",
+   "2025-04-01",
+   "2025-05-01",
+   "2025-06-01",
+   "2025-07-01",
+   "2025-08-01",
+   "2025-09-01",
+   "2025-10-01",
+   "2025-11-01",
+   "2025-12-01",
+   "2026-01-01",
+   "2026-02-01",
+   "2026-03-01",
+   "2026-04-01",
+   "2026-05-01"
+  ],
+  "2026-08-01": [
+   "2025-03-01",
+   "2025-04-01",
+   "2025-05-01",
+   "2025-06-01",
+   "2025-07-01",
+   "2025-08-01",
+   "2025-09-01",
+   "2025-10-01",
+   "2025-11-01",
+   "2025-12-01",
+   "2026-01-01",
+   "2026-02-01",
+   "2026-03-01",
+   "2026-04-01",
+   "2026-05-01"
+  ],
+  "2026-09-01": [
+   "2025-03-01",
+   "2025-04-01",
+   "2025-05-01",
+   "2025-06-01",
+   "2025-07-01",
+   "2025-08-01",
+   "2025-09-01",
+   "2025-10-01",
+   "2025-11-01",
+   "2025-12-01",
+   "2026-01-01",
+   "2026-02-01",
+   "2026-03-01",
+   "2026-04-01",
+   "2026-05-01"
+  ],
+  "2026-10-01": [
+   "2025-03-01",
+   "2025-04-01",
+   "2025-05-01",
+   "2025-06-01",
+   "2025-07-01",
+   "2025-08-01",
+   "2025-09-01",
+   "2025-10-01",
+   "2025-11-01",
+   "2025-12-01",
+   "2026-01-01",
+   "2026-02-01",
+   "2026-03-01",
+   "2026-04-01",
+   "2026-05-01"
+  ]
+ }
+}

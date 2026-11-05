@@ -1,0 +1,12 @@
+# Raw and derived market data stay local (see results/data_acceptance_report.md)
+/data/
+*.parquet
+*.csv.gz
+*.zip
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+*.egg-info/
+.DS_Store

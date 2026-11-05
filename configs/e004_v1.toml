@@ -1,0 +1,80 @@
+# E004 — information robustness. FROZEN 2026-10-23 with docs/experiments/E004.md, before any E004 outcome was computed;
+# revised after two independent review rounds. Changes need a DECISIONS.md entry stating which E004 outcomes were seen.
+# Status: D0/REF forecasts "observed"; D0/REF policies "modeled historical replay"; degraded forecasts "stress test";
+# degraded policies "modeled historical replay under stress test"; degradation statistics "synthetic"; non-VIP0 fees
+# "hypothetical"; H4-0 forecasts "observed (model trained under stress test)".
+# Namespaces: E004's [scope], [policies] and [analysis] are separate from E003's sections read through base_config.
+
+[scope]
+symbol = "SOLUSDT"
+session_sets = ["train", "validation"]     # test sessions sealed
+validity_layer = "joint"
+min_episode_s = 600
+acceptance_git_commit = "50807dc1219d4d1de8650bcbd8e2768202695748"
+min_training_sessions = 5                  # evaluation sessions s6..s15 (as E003)
+base_config = "configs/e003_v1.toml"       # read only: [instrument] [pacing] [features] [latency] [fees] [fill_models] [policies]
+development_session = "2025-03-01"         # s1: runtime and invariant checks only
+
+[seeds]
+entropy = 20261023
+cell_codes = { D0 = 0, D1_E = 1, D1_S = 2, D1_S1 = 3, D1_S3 = 4, D3 = 5, D2 = 6, D4 = 7 }
+roles = { train = 0, eval = 1, placebo_train = 2, placebo_eval = 3, placebo_window = 4 }
+eval_replicates = 3
+training_draws = 1
+test_replicates = 3
+bootstrap_seed = 20261024
+schedule_hash = "sha256 of little-endian int64 microsecond endpoints after merging (floor), per (cell, role, replicate, day)"
+noise_spawn_suffix = 1                     # noise key = (cell_code, yyyymmdd, role, replicate, 1), indexed by state
+
+[degradations]
+# Drawn on the delivery (recorder) clock over the whole UTC day.
+D1_E  = { kind = "connection_drop_withhold", onsets_per_hour = 120, durations_ms = [949.392, 981.294, 1070.398, 1583.804, 1728.056, 1923.513], primary = "policy" }
+D1_S  = { kind = "book_stall_withhold", up_mean_s = 15, stall_mean_s = 3, stall_cap_s = 30, role = "secondary_forecast" }
+D1_S1 = { kind = "book_stall_withhold", up_mean_s = 60, stall_mean_s = 1, stall_cap_s = 30 }
+D1_S3 = { kind = "book_stall_withhold", up_mean_s = 10, stall_mean_s = 6, stall_cap_s = 30 }
+D3    = { kind = "catchup_delay", schedule_of = "D1_S" }
+D2    = { kind = "trade_outage_withhold", up_mean_s = 30, outage_mean_s = 5 }
+D4    = { kind = "size_noise", clean_mean_s = 900, noisy_mean_s = 300, sigma = 0.5 }
+# durations_ms: the 6 SOLUSDT reconnect gaps on discovery days (results/acceptance_001/summary.json); test days excluded.
+realised_share_targets = { D1_S = [0.167, 0.01], D1_E = [0.045, 0.005], D2 = [0.14, 0.01], D4 = [0.25, 0.02] }
+
+[indicators]
+tau_ms = 650             # max(350, p99.9 reference inter-update gap rounded up to 50 ms); p99.9 = 600.3 ms (tools/e004_tau_timing.py)
+# reference share of time with age >= tau on the delivery clock after warm-up: 0.148% (0.003-0.81% per session)
+age_bucket_edges_s = [0.65, 1, 3, 10]
+min_bucket_training_rows = 5000            # merge toward the fresh end; the freshest bucket merges upward
+targets = ["y_k", "y_view"]
+
+[policies]
+bases = ["P0", "P3_M2"]
+variants = ["REF", "N", "U", "P"]
+placebo_offset_range = [0.25, 0.75]        # fraction of each episode's post-warm-up span; redraw on seam cuts or abutting images
+placebo_max_redraws = 1000                 # episode excluded (and counted) if reached
+participation_ratio_band = [0.85, 1.15]
+
+[analysis]
+primary_cell = "D1_E"
+primary_scenario = { fill_model = "intermediate", latency = "regional" }
+descriptive_scenarios = [["conservative", "regional"], ["optimistic", "regional"]]
+descriptive_replicates = 1
+bootstrap_resamples = 10000
+alpha = 0.05
+primary_family_size = 2                    # H4-W[P0], H4-W[P3]
+min_defined_sessions = 8
+h4w_margin_bp = 1.0
+h4w_min_sign_count = 8                     # of the defined sessions
+h4w_min_orders_per_window = 20             # distinct filled orders in each window, per session (pooled over replicates)
+h4w_min_withdrawn_share = 0.005
+h4w_underpowered_width = 2.0               # x delta
+h4w_labels = ["stale-fill selection supported", "immaterial selection (< delta)", "inconclusive", "not testable"]
+h4w_natural_staleness_qualifier = true     # stall-only D_W giving a different label -> "sensitive to natural staleness"
+h4w_overlap_not_testable = 0.10
+h4f_cell = "D1_S"
+h4f_immaterial_pp = 0.20
+h4f_rho_a = 0.25
+h4f_rho_b = 0.10
+h4f_projection = { y_k = { rho_a = 0.37, rho_b = 0.31, L_pp = 0.75 }, y_view = { rho_a = 0.0 } }
+h40_margin_pp = 0.05
+markout_s = 5
+confirmation_min_sessions = 4              # of 5 test sessions
+confirmation_gates = { h4w = "withdrawn share >= 0.5%; >= 20 distinct filled orders in both windows and D_W defined in >= 4/5; overlap <= 10%", h4f = "mean L >= 0.20 pp and L > 0 in >= 4/5" }

@@ -1,0 +1,119 @@
+{
+ "experiment": "E002",
+ "status": "modeled historical replay",
+ "sessions": [
+  "2025-03-01",
+  "2025-04-01",
+  "2025-05-01",
+  "2025-06-01",
+  "2025-07-01",
+  "2025-08-01",
+  "2025-09-01",
+  "2025-10-01",
+  "2025-11-01",
+  "2025-12-01",
+  "2026-01-01",
+  "2026-02-01",
+  "2026-03-01",
+  "2026-04-01",
+  "2026-05-01"
+ ],
+ "run_at_utc": "2026-10-22T11:15:20+00:00",
+ "provenance": {
+  "git_commit": "be3fe772bd548fb3492e4fbec3bc8cd2c2aa455c",
+  "git_dirty": false,
+  "code_fingerprint": "d93f3a936764b196",
+  "configs": {
+   "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2",
+   "configs/research_v1.toml": "0e8279c5a830aad571871fc8c562df2f87d70a5a8ec32bf3a40142ed873dc8e0"
+  },
+  "raw_manifest_sha256": "3b9872ab2ad8311959a052c677ff48de9b0ec89ced7c370d25ae19565aab277c",
+  "spec_sha256": "0de48ed45e1eef53460c5b15b3a6132d2392848af6f1ea319a38a9798f76de70",
+  "assumptions_sha256": "6cb7c6140baeebc82bb2ac4d5142caaa4a5ff460b047c214797a8deec3e54b92",
+  "inputs": {
+   "acceptance_git_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+   "windows_csv_sha256": "d543187a263d2829fa27888148c9ecbe9f725197e72b83b3b22dc86fa688e718",
+   "sessions": {
+    "2025-03-01": {
+     "states_sha256": "b780768628cffb4e18284398cfc28e7bcc690946a3dfd2b526ff17aa42c361a3",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "5c8084f7b6ba395fc224ff2af719591eb2e5b13ca541f9b5e6a8d37786984c23"
+    },
+    "2025-04-01": {
+     "states_sha256": "4d55e4697c0fc6e723362c1546313141539b703f982d49fbffe74966fb702d15",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "38b3656dfebdd41ab3248a58e82b9fb88762d9552cec11dc97d7710e2f9e9d4a"
+    },
+    "2025-05-01": {
+     "states_sha256": "59a3e011dcb8da5f7d94a028f4f44d67a1a28a1a27acb987425abbd1ed5839ed",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "0361473db135876f3d349095c1b193c70d77948f6ccb95db4443f9514076b24c"
+    },
+    "2025-06-01": {
+     "states_sha256": "15d5eb4eb6fe8ff6affd0f1561cb3587d07af029bf06fd53b2a202f97876d50e",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "b273540f735efd0a9de8e7d1bef155a3a1e3b15a1cf51e5c584d121a68870f07"
+    },
+    "2025-07-01": {
+     "states_sha256": "494256e18e1289778cde2bd2e16a1b8ba400f3d0be7f4849ce97764d22e75159",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "f3727452f047cec91811087bff6f8f303f61a8bd1f92c75c3252859e959518ba"
+    },
+    "2025-08-01": {
+     "states_sha256": "66e4e220ca7f53291877ac8e47f1fda419004a1390bc1ee1e51a3dedad2c1896",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "f0aabf789a1624c21474644cb6e8bb1435efd81fd1b57e5a58b4b3fa1a7b53f8"
+    },
+    "2025-09-01": {
+     "states_sha256": "0984913a59f9c83fa00b9ae5c666d0d09dcb9945e63d98d2b05ed64cd65ca981",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "851705d266c82d54769e519c50039bf0e63032b1b36f3e68e2cd892b64f01475"
+    },
+    "2025-10-01": {
+     "states_sha256": "01796feed1c825dccf51234f389331b37e704224fc90935f19d84128381be294",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "40cc8ed1117f8dc04f17c4c8b5c7c4fb26ad5a90e76f7040d9ed0de86ebc9312"
+    },
+    "2025-11-01": {
+     "states_sha256": "b21b67e6291e015facec7db278cd1cd27b9e147c0093440067b1b0f3a86d89c6",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "c464ab5c726340d0cc1cd2dc80729e5618cc006644296e3734071b14b5641326"
+    },
+    "2025-12-01": {
+     "states_sha256": "06ed1dc02477a144f87670788c46a2ca4d6a1fca0d56d655c46fc4d6423f971c",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "0c240dc112031db591895f07dbec78b78c392552e496b0062561e742894c75fb"
+    },
+    "2026-01-01": {
+     "states_sha256": "3ce265a8acb92bcac94e47adc8fa19db0db5e7d2c54a3e8dff06379afd349216",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "601dd83395d9f42d0073d1a4feb6a92aff34cbe6c971adc7a41f8c3870c6ccf2"
+    },
+    "2026-02-01": {
+     "states_sha256": "3624b2f4f0ed5ace71b8145331ec39def49b9f18e4815d26312195391e3f470f",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "30bc57651351cfcd55d3fd16bbfb66aabaa5293745027040608a0d8fb62b0be4"
+    },
+    "2026-03-01": {
+     "states_sha256": "8755448bf7ef365120f1164c87b6871c0c64f29ab1e5fdc247e7bd6707192a28",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "10f5b80a4d13c8dea2721e922014aaebf16d8d244f74dac97ef40ff1133ec8a7"
+    },
+    "2026-04-01": {
+     "states_sha256": "9a178747a1bffc31b166adcfb20e9dbee879a12f733871b31c0b1bb576ef1279",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "0dd868c89952b6425c824f2f18b653b8831916d9b41b9326dd8e3e9d0aab3af0"
+    },
+    "2026-05-01": {
+     "states_sha256": "2399826f6f34b9ad4e380cd1c303a06effcfa4ae81b38ca20dd2fee2ef2bc68e",
+     "states_export_commit": "50807dc1219d4d1de8650bcbd8e2768202695748",
+     "trades_sha256": "c4b51f92d093619a839a0c62a3de36fa6779b6d126977af7c154407d3d92033b"
+    }
+   }
+  }
+ },
+ "outputs_sha256": {
+  "e002_gross_by_session.csv": "77aa56a81c04863b8770f3c6339014dc6d754554816228328d21b931b2eb2de5",
+  "e002_net_by_session.csv": "23133fb1bf70b803444b371d238099415421b9d93854f1e41be017d805f62909"
+ }
+}

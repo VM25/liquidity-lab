@@ -1,0 +1,32 @@
+# E001 exploratory addenda — declared 2026-10-20 BEFORE computing them, in response to the independent E001 review
+# (docs/audits/2026-10-19_e001_independent_review.md). They do not modify the frozen primary specification or results
+# (configs/research_v1.toml [e001]; results/e001/e001_discovery*.{json,csv}). All outputs are labelled "exploratory".
+declared = "2026-10-20"
+session_sets = ["train", "validation"]   # discovery only; test sessions stay sealed
+event_unit = "ts_side_cluster"          # same events and validity rules as the primary (exchange clock, joint windows)
+seed = 20261020
+bootstrap_resamples = 10000             # session-level percentile intervals
+
+[paired_horizons]
+# Onset timing on ONE event set: primary events whose 0.1 s outcome is also valid.
+#   mo(0.1); increments mo(1)-mo(0.1), mo(5)-mo(1), mo(30)-mo(5) — paired, same events.
+# Batch decomposition: m_next = mid of the first state with exchange time >= T (the depth batch that contains the
+# trade, same window, valid record). contemporaneous c = s (m_next - m0)/m0; drift(h) = s (m(T+h) - m_next)/m0 = mo(h) - c.
+# Split by touch_transition: whether the touch price on the side the trade hit changed between the pre-event state and
+# m_next (bid for sells, ask for buys). c includes other activity inside the same 100 ms batch; it is not a pure
+# mechanical impact.
+horizons_s = [0.1, 1, 5, 30]
+
+[weighting]
+# Per-session means weighted by event base quantity and by event notional (quote), then mean of session means.
+# Also reported: passive mark-to-mid per unit notional = rs/2 (rs uses the doubled spread convention).
+# These are descriptive weightings of all liquidity hit, not returns of any quoting policy.
+weights = ["event", "quantity", "notional"]
+
+[decision_time_imbalance]
+# Re-expresses the touch-imbalance cells from the passive side: a resting bid is filled only by sellers, a resting ask
+# only by buyers. I_q = (Q_q - Q_opp)/(Q_q + Q_opp) at the pre-event state from the passive side q's point of view,
+# bins (-1,-1/3] "thinner side", (-1/3,1/3) "balanced", [1/3,1) "thicker side". Observable when a quote is posted;
+# the outcome is still conditional on that liquidity being hit, and the average over all touch liquidity is not what a
+# newly posted order at the back of the queue receives (queue position and fill selection are E002's subject).
+bins = [-1.0, -0.333333333333, 0.333333333333, 1.0]

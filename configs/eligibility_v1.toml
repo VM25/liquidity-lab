@@ -1,0 +1,11 @@
+# Analysis-eligibility rule v1 — declared 2026-10-19, AFTER Dataset Acceptance Test 001 coverage was seen.
+# It is therefore not pre-specified: it is used only to label sessions and for sensitivity analyses, never to change
+# the pre-registered primary E001 sample (all discovery sessions, window-level validity).
+declared = "2026-10-19"
+
+# A session whose joint (book + trade record) coverage is below this many hours has state-dependent missingness: the
+# excluded hours are those in which price drifted beyond the snapshot-proven region, so its retained hours are not a
+# representative sample of that session. 20 h = 5/6 of the session.
+e001_min_joint_hours = 20.0
+
+# Counterfactual simulation (Stage 3) may only use windows of at least acceptance_001.toml:min_usable_window_s seconds.

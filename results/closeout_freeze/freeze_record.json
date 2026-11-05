@@ -1,0 +1,52 @@
+{
+ "allowed_diff": [
+  "A\tconfigs/closeout_v1.toml",
+  "A\tlpx/research/closeout.py",
+  "A\tlpx/research/closeout_analysis.py",
+  "A\ttests/test_closeout.py",
+  "A\ttools/closeout_dryrun.py",
+  "A\ttools/closeout_fits.py",
+  "A\ttools/closeout_precheck.py"
+ ],
+ "baseline": "5c9d93e39c7afc2eb1dbb2fca631270d2c44b49b",
+ "code_fingerprint": "9c378e21471e211a",
+ "parent_commit": "6e9ecaf8121bf7249e09d8cb01386542ee8e5b40",
+ "pinned_sha256": {
+  ".python-version": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d",
+  "configs/closeout_v1.toml": "0191b33c3353422e1019ff8d19ecdee786fedbb5d56ccb4d7f0b0e25a8346fd5",
+  "configs/e002_v1.toml": "a42eb66cfd06b5c9c2a539cf8d52f490cd2f12e333e7ad64fdf6457f1db7f7d2",
+  "configs/e003_v1.toml": "be2a134bb8fcf9264b44a019ff3143f79ef44a02646f90ada6b192ec48501622",
+  "configs/e004_v1.toml": "15d359050f6e4f78d1bf687de34f682b422850659a6215e6be401d6fba55369d",
+  "configs/research_v1.toml": "0e8279c5a830aad571871fc8c562df2f87d70a5a8ec32bf3a40142ed873dc8e0",
+  "docs/experiments/E002.md": "0de48ed45e1eef53460c5b15b3a6132d2392848af6f1ea319a38a9798f76de70",
+  "docs/experiments/E003.md": "2395a6b89076f12573cc05640f70a03b9d31958d3fbd23edaaebda25e423bf3b",
+  "docs/experiments/E004.md": "9c9ef80bd2ef8121a757c42571f45c6ae4378c3f1a294b7a01b2d4f8e6557c9e",
+  "docs/experiments/FINAL_EVALUATION.md": "2df2c191a4a3ede043cf65dc0c32c10a550dbb74bcd3babf36bbf55f3d0c94b7",
+  "lpx/research/closeout.py": "2af281a087a28abf56199670cc403627b54b77adf0f2b089048ab7b035fa8b12",
+  "lpx/research/closeout_analysis.py": "6eeb6ffebf5c4702310283e82a0ec6f725dff020acc74f08c782ff1a450f74df",
+  "pyproject.toml": "e153639fbbe94ad2a4c5e1fb680f66fd9dd05a99dd5ab13311f9102ab7da52f4",
+  "results/acceptance_001/sensitivity.json": "c4b282865f6a3f9527ddca85476afe8d665d84d50f8b721acad4cc5218d3e46c",
+  "results/acceptance_001/summary.json": "9a50c8feb805be30a27db3b1b83e3e4ee04b7f1f89edd1c8b24f6c7917fe6af1",
+  "results/acceptance_001/windows.csv": "d543187a263d2829fa27888148c9ecbe9f725197e72b83b3b22dc86fa688e718",
+  "results/acceptance_001/windows_sensitivity.csv": "17baee80f80f13f24f55c8c96f8652b9cd20ae2b25f22c55fff146135738551b",
+  "results/closeout_fits/MANIFEST.json": "4d396c5f1e14cedb24d22acf09bf66e0dd6991fba804d740ce2060a9212afb84",
+  "results/closeout_freeze/input_status.json": "d8c5cecbdae4a52fd4ecd611211efeba2cf5c598b77f88e849031cc106fc4d0a",
+  "results/e001/e001_discovery.json": "8e72975c5cfe2947f437ae078ab8371849174bb626580256a84c366b7c6c6907",
+  "results/e003/e003_analysis.json": "0f35231d3c51a7ae320cd50469618d73900bb6e8c5c34da8a6614bf4c3cf68ba",
+  "results/e004_prefreeze/schedule_hashes.json": "99ca1a82431e4d87b384e025150f8d05b69c4a2beb879ce6e429de80d6278618",
+  "tests/test_closeout.py": "fd3be330135404c1cbb9b8bfeb5531a46200ca4a1619bc80a8067e066d3403d2",
+  "tools/closeout_dryrun.py": "6e863d8c1b9b993319f8d33f3f232de9c56777920322373a58244811cf84f5c5",
+  "tools/closeout_fits.py": "2fe1e1792a5052b57d708275d4fa7dedc43739bd0c08ec496e1487fbb0207b31",
+  "tools/closeout_precheck.py": "5fa2bcc5386e902bc63d68036c84b41ddec8045c79b40f7daf88e2a685ed4e0c",
+  "uv.lock": "1083520ff24f87eeb950682f891da8c47843caffffbb51a7b51eff9b26956940"
+ },
+ "trees": {
+  ".python-version": "e4fba2183587225f216eeada4c78dfab6b2e65f5",
+  "configs": "4b59563ec60ef91b1dc176f416984b4ae71b118c",
+  "lpx": "7ab5769956c042aa3505401694911ae471e6d331",
+  "pyproject.toml": "fa914a4518d6563f6062b51207a688c6c0755481",
+  "tests": "24eed63daf4617c5c1e6ba76a9bc5bd2ebcaddb9",
+  "tools": "b8f352562fb4e064ae37ef6106ac94037f8dca5f",
+  "uv.lock": "7fb31cc96d26c03bc64426d0afd38ff34efcf9e6"
+ }
+}

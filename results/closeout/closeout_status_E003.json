@@ -1,0 +1,11 @@
+{
+ "outputs": {
+  "e003_calibration.csv": "4a3b05490dfe085492038eb4e43535b43ad670f7c8e44e1b001da622e2fc5616",
+  "e003_forecast_by_session.csv": "3e8cddd734fa3a81d8a7e7fd3120401234285ff6f0fd46ae20317958a7f06210",
+  "e003_gross_by_session.csv": "657aa5b5f7061983a3d8beceaf1b3d426a1b4996314a68180e58a328fb012982",
+  "e003_models.json": "c3369789074e16e3dc1afb6235d07aba5ea626240872778d270fd994ce52456a",
+  "e003_net_by_session.csv": "992ca97b0e2f3677b473491b1b1d94ca33d7cf5b08b9e2a2791c02e35a489316",
+  "e003_trades_without_receipt_time.json": "d03f404a10bdbdba2c5d16502cc9298b0783c931dc13735efa760f5413260aa5"
+ },
+ "status": "complete"
+}

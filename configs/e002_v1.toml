@@ -1,0 +1,64 @@
+# E002 — execution sensitivity. FROZEN 2026-10-20 before any simulation on market data; amended 2026-10-20 after the
+# adversarial engine review, still before any simulation on market data (docs/experiments/E002.md section 10).
+# Specification and rationale: docs/experiments/E002.md; assumption evidence: docs/experiments/E002_assumptions_evidence.md.
+# Status of every output: "modeled historical replay". Changes require a DECISIONS.md entry stating whether any E002
+# outcome had been seen.
+
+[scope]
+symbol = "SOLUSDT"
+session_sets = ["train", "validation"]     # test sessions sealed until the Stage 4 close-out
+validity_layer = "joint"
+min_episode_s = 600                        # an episode is one accepted joint window of at least this length
+acceptance_git_commit = "50807dc1219d4d1de8650bcbd8e2768202695748"
+
+[instrument]                               # verified for the whole sample (assumptions evidence, "Instrument filters")
+tick = 0.01
+lot = 0.001
+min_notional = 5.0
+max_orders_per_10s = 100
+max_orders_per_day = 200000
+
+[policies]
+# Fixed a priori; nothing is tuned on any session.
+size = 1.0                 # SOL per quote (~73-219 USDT; far below typical touch queues)
+inventory_limit = 10.0     # SOL; a side is posted only if a full fill keeps |inventory| <= limit
+p1_threshold = 3.0         # SOL; P1 withdraws the side that would add to inventory beyond this
+run = ["no_trade", "P0", "P1"]
+
+[fill_models]
+primary = ["conservative", "intermediate", "optimistic"]
+reference = ["naive"]      # reported only to show the optimism of touch-fill rules; never a result
+
+[latency]                  # microseconds; one-way order entry, fill acknowledgement, extra market-data delay
+# "tokyo" = Tokyo-hosted: low order-entry latency, but decisions still run on the 100 ms depth batches.
+tokyo    = { entry_us = 2000,   ack_us = 2000,   md_delay_us = 0,      label = "Tokyo-hosted (decisions on 100 ms depth batches)" }
+regional = { entry_us = 30000,  ack_us = 30000,  md_delay_us = 30000,  label = "regional" }
+distant  = { entry_us = 115000, ack_us = 115000, md_delay_us = 115000, label = "distant" }
+
+[fees]                     # fractions of notional; negative = rebate. Fees do not change fills (policies ignore fees).
+vip0     = { maker = 0.0010,   taker = 0.0010,  label = "attainable (default)" }
+vip0_bnb = { maker = 0.00075,  taker = 0.00075, label = "hypothetical: requires holding BNB" }
+vip9     = { maker = 0.00011,  taker = 0.00023, label = "hypothetical: >= 4B USD 30-day volume" }
+# LP programme taker rates are not published with the maker rates; the VIP9 taker (2.3 bp) is an assumption.
+lp_tier1 = { maker = 0.0,      taker = 0.00023, label = "hypothetical: >= 25M USD weekly maker volume; taker assumed VIP9" }
+lp_tier4 = { maker = -0.00008, taker = 0.00023, label = "hypothetical upper bound: >= 1% of exchange maker volume; taker assumed VIP9" }
+default = "vip0"
+
+[analysis]
+inference_unit = "session"
+bootstrap_resamples = 10000
+seed = 20261021
+markout_horizons_s = [1, 30]
+# H2 (pre-registered; evaluated on discovery sessions; confirmation only at close-out):
+#  primary outcome = session net P&L per unit traded notional (bp), liquidation-adjusted, per (policy, fill model,
+#  latency, fee schedule); also USDT per valid hour.
+#  H2 holds on discovery sessions if, for the default fee schedule, either
+#   (a) the session-mean net outcome of P0 or of P1 has 95% session-bootstrap intervals excluding zero on opposite sides
+#       under two fill-model x latency scenarios, or
+#   (b) the paired P1 - P0 session difference has intervals excluding zero in opposite directions under two scenarios;
+#  Amended before any run (E002.md section 10): only scenarios whose outcome is defined (>= 1 fill) in at least
+#  min_defined_sessions sessions enter (a) and (b); sensitivity is "material" if, for some policy and latency, the paired
+#  session difference between two primary fill models has |mean| >= materiality_bp and a 95% interval excluding zero
+#  (the range of point estimates is kept as a descriptive figure). Otherwise H2 is not supported on these sessions.
+materiality_bp = 1.0
+min_defined_sessions = 12   # of the 15 discovery sessions
