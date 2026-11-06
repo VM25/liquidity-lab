@@ -58,7 +58,7 @@ export function ResearchNav({ page }: { page: PageId }) {
 
 export function Footer() {
   return (
-    <footer className="site-foot" data-deploy-check="2026-11-06">
+    <footer className="site-foot">
       <p>
         Results come from the study and its paper, <cite>The Liquidity Paradox</cite>, rounded for display. Trading results are
         simulated replays of the historical market, not live trading. Diagrams marked “synthetic example” use made-up values to
