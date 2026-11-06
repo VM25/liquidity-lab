@@ -230,6 +230,23 @@ test('routing: the earlier .html addresses redirect permanently, keeping the has
   await expect(page.locator('.story h2')).toHaveText('The fee decides');
 });
 
+test('hydration survives the line break and comment Netlify inserts at the top of <head>', async ({ page }) => {
+  for (const p of PAGES) {
+    const errors: string[] = [];
+    page.on('pageerror', (e) => errors.push(String(e)));
+    await page.route((u) => u.pathname === p, async (route) => {
+      const r = await route.fetch();
+      const html = (await r.text()).replace(/(<meta charSet="utf-8"\/>)(?!\n<!-- This site)/, '$1\n<!-- This site is hosted on Netlify. -->');
+      await route.fulfill({ response: r, body: html });
+    });
+    await page.goto(p);
+    await page.waitForLoadState('networkidle');
+    expect(errors, p).toEqual([]);
+    await page.unrouteAll();
+    page.removeAllListeners('pageerror');
+  }
+});
+
 test('routing: an unknown address returns 404', async ({ request }) => {
   expect((await request.get('/no-such-page')).status()).toBe(404);
 });
