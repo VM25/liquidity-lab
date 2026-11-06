@@ -81,7 +81,8 @@ a finding of equivalence, and it says nothing about smaller effects.
 
 ## The interactive website
 
-The repository includes a companion website that lets readers work through the evidence rather than take it on trust.
+The repository includes a companion website, live at **[liquidityparadox.netlify.app](https://liquidityparadox.netlify.app)**,
+that lets readers work through the evidence rather than take it on trust.
 Every number on it is labelled as observed, simulated, a stress test or a hypothetical fee.
 
 - **Home** states the paradox in one figure: forecast skill above zero and the trading result below break-even, each
@@ -95,8 +96,9 @@ Every number on it is labelled as observed, simulated, a stress test or a hypoth
 - **Research** presents each experiment from its question to its limitations, the full table of held-out results, the
   methods and equations, and a guide to reading the paper.
 
-The site is not hosted. It builds locally from `web/` with Node 24:
-`cd web && npm ci && npm run build && npm run preview`.
+The site is a Next.js app in `web/`, deployed by Netlify from the `main` branch: every push to `main` publishes a new
+build. To run it locally with Node 24: `cd web && npm ci && npm run dev`. Building, deployment and checks are described
+in [`web/README.md`](web/README.md).
 
 ## Research paper
 
