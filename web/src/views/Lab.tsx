@@ -1,3 +1,4 @@
+'use client';
 // Explore: the Scenario Lab. A six-step guided story (the default) and a full lab over the frozen, precomputed grid. The
 // Lab selects tested cells; it simulates nothing, never interpolates, and explains each change from frozen values and
 // paper statements.
@@ -584,7 +585,7 @@ function Details({ S, r }: { S: State; r: Resolved }) {
           <li>Fees are accounting overlays on fixed fills, except for P3F and P4, whose decisions depend on the fee.</li>
           <li>Marked wealth obeys an accounting identity: the sum of fill edges against the mid, plus inventory revaluation, minus fees. Every episode starts flat and ends liquidated.</li>
         </ul>
-        <p><a href="./methods.html">Methods &amp; Data</a> has the full design, equations and limitations.</p>
+        <p><a href="/methods">Methods &amp; Data</a> has the full design, equations and limitations.</p>
       </Inspect>
       <Inspect title="What these results cannot tell you" note="limits">
         <ul className="plain">

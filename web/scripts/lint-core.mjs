@@ -1,4 +1,5 @@
-// Integrity rules for the built site (WEBSITE_PLAN section 7 and Task 9). Pure functions, tested in lint.test.ts.
+// Integrity rules for the built site. Pure functions, tested in lint.test.ts; scripts/lint-built.mjs applies them to the
+// Next.js build output.
 
 export const BANNED_FONTS = ['anthropic', 'fraunces', 'archivo', 'ibm plex', 'inter', 'geist', 'grotesk', 'grotesque', 'big shoulder',
   'saira', 'public sans', 'spline', 'arial', 'calibre', 'times new roman', 'jetbrains', 'dm mono', 'dm sans', 'dm serif', 'newsreader',
@@ -33,8 +34,13 @@ export function* textNodes(html) {
 
 const decode = (t) => t.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"');
 
-/** Violations in one page's HTML. */
-export function lintHtml(html, file = 'page') {
+// The production site's origin, and the only external pages a link may point to. Nothing is ever loaded from another origin.
+export const SITE = 'https://liquidityparadox.netlify.app';
+export const LINK_ALLOW = ['https://github.com/VM25/liquidity-lab'];
+
+/** Violations in one page's HTML. `indexable` is true only for Netlify's production build: it must then carry its canonical
+ *  URL and no noindex; every other build (deploy previews, branch deploys, local) must carry noindex. */
+export function lintHtml(html, file = 'page', { indexable = false } = {}) {
   const out = [];
   const body = html.slice(html.indexOf('<body'));
   for (const { text, stack } of textNodes(body)) {
@@ -53,9 +59,22 @@ export function lintHtml(html, file = 'page') {
   for (const m of body.matchAll(/<q[^>]*data-label="H4-W[^"]*"[^>]*>([\s\S]*?)<\/q>/g)) {
     if (!m[1].includes('no material deterioration under the specified threshold')) out.push(`${file}: an H4-W label without the required wording`);
   }
-  // No external resources; local builds are not for indexing.
-  for (const m of html.matchAll(/\b(?:src|href)="(https?:)?\/\/[^"]*"/g)) out.push(`${file}: external reference ${m[0]}`);
-  if (!/<meta name="robots" content="noindex/.test(html)) out.push(`${file}: missing noindex`);
+  // No external resources. The only absolute URLs allowed are the page's canonical link to the production site and links
+  // to the allowed pages (the public repository).
+  for (const t of html.matchAll(/<([a-zA-Z][\w-]*)\b([^>]*)>/g)) {
+    const [, tag, attrs] = t;
+    for (const m of attrs.matchAll(/\b(src|href|srcset|poster|action)="((?:https?:)?\/\/[^"]*)"/g)) {
+      const [, attr, url] = m;
+      const canonical = tag === 'link' && /\brel="canonical"/.test(attrs) && (url === SITE || url.startsWith(`${SITE}/`));
+      const link = tag === 'a' && attr === 'href' && LINK_ALLOW.some((a) => url === a || url.startsWith(`${a}/`));
+      if (!canonical && !link) out.push(`${file}: external reference <${tag} ${attr}="${url}">`);
+    }
+  }
+  const noindex = /<meta name="robots" content="noindex/.test(html);
+  if (indexable) {
+    if (noindex) out.push(`${file}: noindex in the production build`);
+    if (!new RegExp(`<link rel="canonical" href="${SITE.replace(/\./g, '\\.')}[/"]`).test(html)) out.push(`${file}: missing canonical URL`);
+  } else if (!noindex) out.push(`${file}: missing noindex outside the production build`);
   return out;
 }
 

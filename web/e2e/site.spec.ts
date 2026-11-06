@@ -1,7 +1,7 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
 
-const PAGES = ['index.html', 'research.html', 'lab.html', 'methods.html', 'paper.html'];
+const PAGES = ['/', '/research', '/lab', '/methods', '/paper'];
 
 for (const p of PAGES) {
   test(`${p}: no console errors and no serious accessibility violations`, async ({ page }) => {
@@ -58,10 +58,10 @@ for (const p of PAGES) {
 }
 
 test('home: the paradox, its qualification, four questions and a way in', async ({ page }) => {
-  await page.goto('index.html');
+  await page.goto('/');
   await expect(page.locator('h1')).toHaveText('We could predict the market. We couldn’t profitably make it.');
   await expect(page.locator('.qual')).toContainText('not every possible strategy');
-  await expect(page.locator('.hero .cta a.primary')).toHaveAttribute('href', './lab.html');
+  await expect(page.locator('.hero .cta a.primary')).toHaveAttribute('href', '/lab');
   await expect(page.locator('.strip li')).toHaveCount(4);
   await expect(page.locator('.hero-fig svg')).toBeVisible();
   await expect(page.locator('.hero-fig')).toContainText('reported only, descriptive (no confirmation claim)');
@@ -74,7 +74,7 @@ test('home: the paradox, its qualification, four questions and a way in', async 
 });
 
 const lab = async (page: Page, hash = '') => {
-  await page.goto(`lab.html${hash}`);
+  await page.goto(`/lab${hash}`);
   await page.waitForLoadState('networkidle');
 };
 const assumptions = async (page: Page) => {
@@ -184,7 +184,7 @@ test('full lab: settings explain themselves on request', async ({ page }) => {
 });
 
 test('research: experiments open one at a time, each from question to limits', async ({ page }) => {
-  await page.goto('research.html');
+  await page.goto('/research');
   await expect(page.locator('details.xp')).toHaveCount(4);
   for (const id of ['e001', 'e002', 'e003', 'e004']) {
     const xp = page.locator(`#${id}`);
@@ -198,7 +198,7 @@ test('research: experiments open one at a time, each from question to limits', a
 });
 
 test('methods: the seven steps are visible and topics open on demand', async ({ page }) => {
-  await page.goto('methods.html');
+  await page.goto('/methods');
   await expect(page.locator('.pipe li')).toHaveCount(7);
   await expect(page.locator('details.acc')).toHaveCount(11);
   await expect(page.locator('.acc-gh')).toHaveText(['Data', 'Simulation', 'Inference', 'Limits and sources']);
@@ -207,9 +207,48 @@ test('methods: the seven steps are visible and topics open on demand', async ({ 
 });
 
 test('paper: frozen PDFs are served', async ({ request }) => {
-  for (const f of ['paper/The_Liquidity_Paradox.pdf', 'paper/Reproducibility_Supplement.pdf']) {
+  for (const f of ['/paper/The_Liquidity_Paradox.pdf', '/paper/Reproducibility_Supplement.pdf']) {
     const r = await request.get(f);
     expect(r.status()).toBe(200);
     expect(r.headers()['content-type']).toContain('pdf');
   }
+});
+
+test('paper: the source-code note links to the public repository', async ({ page }) => {
+  await page.goto('/paper');
+  await expect(page.locator('a[href="https://github.com/VM25/liquidity-lab"]')).toHaveText('github.com/VM25/liquidity-lab');
+});
+
+test('routing: the earlier .html addresses redirect permanently, keeping the hash', async ({ page, request }) => {
+  for (const [from, to] of [['/index.html', '/'], ['/lab.html', '/lab'], ['/research.html', '/research'], ['/methods.html', '/methods'], ['/paper.html', '/paper']]) {
+    const r = await request.get(from, { maxRedirects: 0 });
+    expect(r.status()).toBe(308);
+    expect(r.headers().location).toBe(to);
+  }
+  await page.goto('/lab.html#step=3');
+  await expect(page).toHaveURL(/\/lab#step=3$/);
+  await expect(page.locator('.story h2')).toHaveText('The fee decides');
+});
+
+test('routing: an unknown address returns 404', async ({ request }) => {
+  expect((await request.get('/no-such-page')).status()).toBe(404);
+});
+
+test('metadata: titles, canonical URLs, share image, robots.txt and sitemap', async ({ page, request }) => {
+  const titles: Record<string, string> = { '/': 'The Liquidity Paradox', '/lab': 'Scenario Lab · The Liquidity Paradox', '/research': 'Research · The Liquidity Paradox', '/methods': 'Methods & Data · The Liquidity Paradox', '/paper': 'Paper & Code · The Liquidity Paradox' };
+  const indexable = process.env.CONTEXT === 'production';
+  for (const p of PAGES) {
+    await page.goto(p);
+    await expect(page).toHaveTitle(titles[p]);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://liquidityparadox.netlify.app${p === '/' ? '' : p}`);
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', 'https://liquidityparadox.netlify.app/og-image.png');
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', indexable ? 'index, follow' : 'noindex, nofollow');
+  }
+  const og = await request.get('/og-image.png');
+  expect(og.status()).toBe(200);
+  expect(og.headers()['content-type']).toContain('image/png');
+  const robots = await (await request.get('/robots.txt')).text();
+  expect(robots).toMatch(indexable ? /Allow: \/[\s\S]*Sitemap: https:\/\/liquidityparadox\.netlify\.app\/sitemap\.xml/ : /Disallow: \//);
+  const sitemap = await (await request.get('/sitemap.xml')).text();
+  for (const p of PAGES) expect(sitemap).toContain(`<loc>https://liquidityparadox.netlify.app${p === '/' ? '' : p}</loc>`);
 });

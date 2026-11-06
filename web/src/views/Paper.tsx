@@ -1,9 +1,11 @@
+'use client';
 // Paper & Code: the frozen paper and supplement (copied byte-identical at build), checksums, citation and reproduction.
 import { useState } from 'react';
 import { Footer, ResearchNav } from '../components/Layout';
 import { Inspect } from '../components/Explain';
 import { Quote } from '../components/N';
 import { core } from '../data/core';
+import { REPO_URL } from '../site';
 
 const SUBTITLE = 'Short-horizon predictability, adverse selection and the economics of passive market making: pre-registered evidence from Binance SOLUSDT with a one-time held-out evaluation';
 const BIBTEX = `@misc{maniar2026liquidity,
@@ -50,7 +52,7 @@ export default function Paper() {
             <ul className="dl-list">
               {core.paper.files.map((f) => (
                 <li key={f.file}>
-                  <a href={`./paper/${f.file}`}><span>{f.title.replace(/ \((paper, )?PDF\)$/, '')}</span><small>{f.file.includes('Supplement') ? 'Every result traced to its specification and output' : 'Vatsal Maniar, November 2026'}</small></a>
+                  <a href={`/paper/${f.file}`}><span>{f.title.replace(/ \((paper, )?PDF\)$/, '')}</span><small>{f.file.includes('Supplement') ? 'Every result traced to its specification and output' : 'Vatsal Maniar, November 2026'}</small></a>
                   <span className="ink-3 dl-meta" data-meta="file size">PDF · {mb(f.bytes)}</span>
                 </li>
               ))}
@@ -96,7 +98,7 @@ pdflatex The_Liquidity_Paradox && pdflatex The_Liquidity_Paradox`}</pre>
 uv run python -m lpx.research.e002
 uv run python -m lpx.research.e003`}</pre>
             <h3 className="sub-h mt-5">Source code</h3>
-            <p className="ink-2">The research code is not currently public. The supplement documents every specification, output and version behind the results.</p>
+            <p className="ink-2">The research code and this website’s source are public at <a href={REPO_URL}>github.com/VM25/liquidity-lab</a>, without the raw market data. The supplement documents every specification, output and version behind the results.</p>
           </div>
         </div>
         </Inspect>

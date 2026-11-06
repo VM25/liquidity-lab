@@ -1,6 +1,10 @@
 node_modules/
-dist/
-.ssr/
+.next/
+next-env.d.ts
+*.tsbuildinfo
+.netlify/
 test-results/
 playwright-report/
+# generated before each build and dev run (npm run assets)
 src/styles/katex.css
+public/paper/

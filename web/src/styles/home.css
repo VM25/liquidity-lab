@@ -48,7 +48,7 @@
 @media (prefers-reduced-motion: reduce) { .strip b::after { transition: none; } }
 
 /* the one entrance on the site: the claim, its qualification and the way in arrive in reading order, the figure follows,
-   and the coral word settles last. Runs once per visit, only when index.html's head script sets .intro. */
+   and the coral word settles last. Runs once per visit, only when the head script in src/app/layout.tsx sets .intro on Home. */
 @keyframes hero-rise { from { opacity: 0; transform: translateY(14px); } }
 @keyframes hero-fig { from { opacity: 0; transform: translateY(18px) scale(0.99); } }
 @keyframes hero-word { from { color: var(--ink); } }

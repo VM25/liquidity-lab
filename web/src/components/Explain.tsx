@@ -1,3 +1,4 @@
+'use client';
 // Progressive disclosure: Layer 1 (understand) is always visible, Layer 2 (explore) is interactive, Layer 3 (inspect)
 // sits one click away in <Inspect>. Help explains a control at the point of use without crowding the interface.
 import { useId, useState, type ReactNode } from 'react';

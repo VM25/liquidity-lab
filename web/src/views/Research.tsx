@@ -1,3 +1,4 @@
+'use client';
 // Research: E001–E004 as one connected investigation. Each experiment follows the same path: the question, why it
 // matters, how it was tested, the evidence, what it means and its limitations; exact values sit in <Inspect>.
 // Then the full held-out label table (paper Tables 6 and 7). Every number from the frozen bundle.
@@ -127,7 +128,7 @@ export default function Research() {
               <tbody>{core.e002.fees.map((f) => <tr key={f.id}><td>{f.label}</td><td className="num"><N id={`fee.${f.id}.maker`} /></td><td className="num"><N id={`fee.${f.id}.taker`} /></td><td>{f.status === 'attainable' ? <Vip0 text="attainable" /> : <Tag kind="hyp">hypothetical</Tag>}</td></tr>)}</tbody>
             </table>
           </Table>
-          <p className="held">Held-out range across the 18 combinations: <N id="e002.range.held" /> bp (<Held>{core.e002.heldout_label}</Held>). Paired fill-model differences were <N id="e002.fill_diff" /> bp, all below the 1.0 bp threshold. The full matrix is in the <a href="./lab.html#view=e002">Scenario Lab</a>.</p>
+          <p className="held">Held-out range across the 18 combinations: <N id="e002.range.held" /> bp (<Held>{core.e002.heldout_label}</Held>). Paired fill-model differences were <N id="e002.fill_diff" /> bp, all below the 1.0 bp threshold. The full matrix is in the <a href="/lab#view=e002">Scenario Lab</a>.</p>
         </>}
       />
 
@@ -248,7 +249,7 @@ export default function Research() {
               </tbody>
             </table>
           </Table>
-          <p className="held">H4-W[P3_M2]: discovery <N id="e004.p3m2.disc" /> [<N id="e004.p3m2.disc_lo" />, <N id="e004.p3m2.disc_hi" />]; held-out <N id="e004.p3m2.held" />. The withdrawal contrasts are in the <a href="./lab.html#view=e004">Scenario Lab</a>.</p>
+          <p className="held">H4-W[P3_M2]: discovery <N id="e004.p3m2.disc" /> [<N id="e004.p3m2.disc_lo" />, <N id="e004.p3m2.disc_hi" />]; held-out <N id="e004.p3m2.held" />. The withdrawal contrasts are in the <a href="/lab#view=e004">Scenario Lab</a>.</p>
         </>}
       />
 

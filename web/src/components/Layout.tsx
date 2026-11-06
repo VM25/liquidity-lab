@@ -1,59 +1,34 @@
-import { useEffect, useRef, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 export type PageId = 'overview' | 'research' | 'lab' | 'methods' | 'paper';
 
-// Three destinations. Methods & Data and Paper & Code are part of Research.
+// Three destinations. Methods & Data and Paper & Code are part of Research. Links are plain anchors: every page is
+// prerendered, and a full page load keeps each page's first render free of entrance motion (see useEnter).
 export const NAV: Array<{ id: 'home' | 'explore' | 'research'; href: string; label: string; sub: string; pages: PageId[] }> = [
-  { id: 'home', href: './index.html', label: 'Home', sub: 'the paradox', pages: ['overview'] },
-  { id: 'explore', href: './lab.html', label: 'Explore', sub: 'the Scenario Lab', pages: ['lab'] },
-  { id: 'research', href: './research.html', label: 'Research', sub: 'experiments, methods, paper', pages: ['research', 'methods', 'paper'] },
+  { id: 'home', href: '/', label: 'Home', sub: 'the paradox', pages: ['overview'] },
+  { id: 'explore', href: '/lab', label: 'Explore', sub: 'the Scenario Lab', pages: ['lab'] },
+  { id: 'research', href: '/research', label: 'Research', sub: 'experiments, methods, paper', pages: ['research', 'methods', 'paper'] },
 ];
 
 export const RESEARCH_NAV: Array<{ id: PageId; href: string; label: string }> = [
-  { id: 'research', href: './research.html', label: 'Experiments' },
-  { id: 'methods', href: './methods.html', label: 'Methods & data' },
-  { id: 'paper', href: './paper.html', label: 'Paper & code' },
+  { id: 'research', href: '/research', label: 'Experiments' },
+  { id: 'methods', href: '/methods', label: 'Methods & data' },
+  { id: 'paper', href: '/paper', label: 'Paper & code' },
 ];
 
-/** Opens the <details> a link points at (research.html#e002, methods.html#limits), then scrolls to it. */
-function openTarget(smooth: boolean) {
-  const id = decodeURIComponent(location.hash.slice(1));
-  if (!id || id.includes('=')) return;
-  const el = document.getElementById(id);
-  if (!(el instanceof HTMLDetailsElement)) return;
-  el.open = true;
-  requestAnimationFrame(() => el.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' }));
-}
-
 export function Layout({ page, children }: { page: PageId; children: ReactNode }) {
-  const hdr = useRef<HTMLElement>(null);
-  useEffect(() => {
-    // the header gains a soft edge once content scrolls beneath it
-    let raf = 0;
-    const onScroll = () => {
-      if (raf) return;
-      raf = requestAnimationFrame(() => { raf = 0; hdr.current?.classList.toggle('scrolled', scrollY > 8); });
-    };
-    onScroll();
-    addEventListener('scroll', onScroll, { passive: true });
-    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    openTarget(false);
-    const onHash = () => openTarget(!reduced);
-    addEventListener('hashchange', onHash);
-    return () => { removeEventListener('scroll', onScroll); removeEventListener('hashchange', onHash); cancelAnimationFrame(raf); };
-  }, []);
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>
-      <header className="hdr" ref={hdr}>
+      <header className="hdr">
         <div className="wrap">
-          <a className="mark" href="./index.html"><i aria-hidden="true" />The Liquidity Paradox</a>
+          <a className="mark" href="/"><i aria-hidden="true" />The Liquidity Paradox</a>
           <nav aria-label="Primary">
             <ul className="nav">
               {NAV.map((n) => (
                 <li key={n.id}><a href={n.href} aria-current={n.pages.includes(page) ? 'page' : undefined}>{n.label}</a></li>
               ))}
-              <li className="pdf"><a href="./paper/The_Liquidity_Paradox.pdf">Paper (PDF)</a></li>
+              <li className="pdf"><a href="/paper/The_Liquidity_Paradox.pdf">Paper (PDF)</a></li>
             </ul>
             <details className="menu">
               <summary>Menu</summary>
@@ -61,7 +36,7 @@ export function Layout({ page, children }: { page: PageId; children: ReactNode }
                 {NAV.map((n) => (
                   <li key={n.id}><a href={n.href} aria-current={n.pages.includes(page) ? 'page' : undefined}>{n.label} <span>{n.sub}</span></a></li>
                 ))}
-                <li><a href="./paper/The_Liquidity_Paradox.pdf">Paper <span>PDF</span></a></li>
+                <li><a href="/paper/The_Liquidity_Paradox.pdf">Paper <span>PDF</span></a></li>
               </ul>
             </details>
           </nav>

@@ -1,3 +1,4 @@
+'use client';
 // Home: the paradox and one simple figure on the first screen, the research in four short sentences, and a way in.
 // Depth lives in Explore (interactive) and Research (rigour). Numbers come only from the frozen bundle.
 import type { CSSProperties } from 'react';
@@ -9,10 +10,10 @@ import { HeroDuo } from '../charts/home';
 import { rec } from '../data/core';
 
 const STRIP: Array<{ k: string; t: string; href: string }> = [
-  { k: 'Question', t: 'Can predicting the next few seconds make passive market making profitable?', href: './lab.html#step=1' },
-  { k: 'Method', t: 'Rebuilt the order book, fixed four experiments in advance, tested once on sealed days.', href: './methods.html' },
-  { k: 'Finding', t: 'The forecasts worked. Every quoting rule still lost money; the best simply traded least.', href: './lab.html#step=4' },
-  { k: 'Meaning', t: 'Fees and being traded against, not prediction, decide a small market maker’s result.', href: './lab.html#step=5' },
+  { k: 'Question', t: 'Can predicting the next few seconds make passive market making profitable?', href: '/lab#step=1' },
+  { k: 'Method', t: 'Rebuilt the order book, fixed four experiments in advance, tested once on sealed days.', href: '/methods' },
+  { k: 'Finding', t: 'The forecasts worked. Every quoting rule still lost money; the best simply traded least.', href: '/lab#step=4' },
+  { k: 'Meaning', t: 'Fees and being traded against, not prediction, decide a small market maker’s result.', href: '/lab#step=5' },
 ];
 
 export default function Overview() {
@@ -24,8 +25,8 @@ export default function Overview() {
           <h1 id="h1">We could predict the market. We couldn’t <em>profitably</em> make it.</h1>
           <p className="qual">Within the quoting rules, execution models and attainable fees tested, not every possible strategy.</p>
           <div className="cta">
-            <a className="btn primary" href="./lab.html">Explore the findings <span className="arr" aria-hidden="true">→</span></a>
-            <a className="btn quiet" href="./research.html">Read the research</a>
+            <a className="btn primary" href="/lab">Explore the findings <span className="arr" aria-hidden="true">→</span></a>
+            <a className="btn quiet" href="/research">Read the research</a>
           </div>
         </div>
         <figure className="hero-fig">
@@ -54,8 +55,8 @@ export default function Overview() {
           <h2 id="inv-h">See it for yourself</h2>
           <p>Six short steps from a working forecast to a losing market maker, then every tested scenario.</p>
           <div className="cta">
-            <a className="btn light" href="./lab.html">Open the Scenario Lab <span className="arr" aria-hidden="true">→</span></a>
-            <a className="btn ghost" href="./research.html">Experiments and methods</a>
+            <a className="btn light" href="/lab">Open the Scenario Lab <span className="arr" aria-hidden="true">→</span></a>
+            <a className="btn ghost" href="/research">Experiments and methods</a>
           </div>
         </div>
       </section>

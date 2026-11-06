@@ -1,3 +1,4 @@
+'use client';
 // Teaching diagrams. Everything drawn from made-up values sits inside <Synth> (tagged "Synthetic example, not market
 // data"). The two exceptions are labelled as what they are: WalkForward draws the study's real session design, and
 // CountRule draws the protocol's own arithmetic.
